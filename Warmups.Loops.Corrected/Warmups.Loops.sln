@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warmups.Loops.BLL", "..\June2015-DotNetAkron-Materials\Samples\Warmups.Loops\Warmups.Loops.BLL\Warmups.Loops.BLL.csproj", "{832CD729-E0F2-40FD-97AA-D916BA91E5B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warmups.Loops.BLL", "Warmups.Loops.BLL\Warmups.Loops.BLL.csproj", "{832CD729-E0F2-40FD-97AA-D916BA91E5B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warmups.Loops.Tests", "..\June2015-DotNetAkron-Materials\Samples\Warmups.Loops\Warmups.Loops.Tests\Warmups.Loops.Tests.csproj", "{F6E86A63-FCCC-4784-85CC-B8414DD6BC01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warmups.Loops.Tests", "Warmups.Loops.Tests\Warmups.Loops.Tests.csproj", "{F6E86A63-FCCC-4784-85CC-B8414DD6BC01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
