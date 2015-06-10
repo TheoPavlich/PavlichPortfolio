@@ -9,7 +9,7 @@ namespace BattleShip.BLL.Requests
     public class TranslateLetter
     {
 
-        public Dictionary<string, int> convertLetters = new Dictionary<string, int>()
+        public Dictionary<string, int> ConvertLetters = new Dictionary<string, int>()
         {
             {"A", 1},
             {"B", 2},
