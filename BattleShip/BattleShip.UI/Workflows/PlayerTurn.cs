@@ -12,7 +12,7 @@ namespace BattleShip.UI.Workflows
     {
         public void PlayerTurn(Player player)
         {
-            
+            PlayerShot(player);
         }
         private void PrintDisplayBoard(Player currentPlayer)
         {
@@ -23,7 +23,7 @@ namespace BattleShip.UI.Workflows
             Console.WriteLine("\n\n");
         }
 
-        private void CurrentPlayerTurn(Player currentPlayer)
+        private void PlayerShot(Player currentPlayer)
         {
             //Console.WriteLine("");
         }
