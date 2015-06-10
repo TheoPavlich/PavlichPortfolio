@@ -17,16 +17,32 @@ namespace BattleShip.UI.Workflows
         public void Play(Player player1, Player player2)
         {
             SetupGame newSetUp = new SetupGame();
-            newSetUp.SetupBoards(player1,player2);
+
+            Board p1Board = newSetUp.SetupBoard(player1);
+            newSetUp.PrintShipSetupBoard(player1);
+            Console.WriteLine("Press enter to clear the screen and continue for {0}'s setup", player2.Name);
+            Console.ReadLine();
+            Console.Clear();
+
+            Board p2Board = newSetUp.SetupBoard(player2);
+            newSetUp.PrintShipSetupBoard(player2);
+            Console.WriteLine("Press enter to clear the screen and start playing!");
+            Console.ReadLine();
+            Console.Clear();
+
             PlayerTurn turn = new PlayerTurn();
             Player currentPlayer = player1;
+            Board currentBoard = p2Board;
+            Player opponent = player2;
 
             bool gameOver = false;
 
             do
             {
-                turn.PlayTurn(currentPlayer);
+                turn.PlayTurn(currentPlayer, opponent, currentBoard);
                 currentPlayer = currentPlayer == player1 ? player2 : player1;
+                currentBoard = currentBoard == p2Board ? p1Board : p2Board;
+                opponent = opponent == player2 ? player1 : player2;
 
             } while (!gameOver);
         }

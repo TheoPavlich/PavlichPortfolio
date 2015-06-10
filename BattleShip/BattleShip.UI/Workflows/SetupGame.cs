@@ -12,35 +12,22 @@ namespace BattleShip.UI.Workflows
 {
     public class SetupGame
     {
-        public void SetupBoards(Player player1,Player player2)
+        public Board SetupBoard(Player player1)
         {
-            Board p1Board = new Board();
-            Board p2Board = new Board();
+            Board board = new Board();
+           // Board p2Board = new Board();
 
 
             for(int i = 0; i<5; i++)
             {
                 PrintShipSetupBoard(player1);
-                PlaceShips(player1, p1Board, i);
+                PlaceShips(player1, board, i);
             }
-            PrintShipSetupBoard(player1);
-            Console.WriteLine("Press enter to clear the screen and continue for {0}'s setup", player2.Name);
-            Console.ReadLine();
-            Console.Clear();
-
-            for (int i = 0; i < 5; i++)
-            {
-                PrintShipSetupBoard(player2);
-                PlaceShips(player2, p2Board, i);
-            }
-            PrintShipSetupBoard(player1);
-            Console.WriteLine("Press enter to clear the screen and start playing!");
-            Console.ReadLine();
-            Console.Clear();
+            return board;
 
         }
 
-        private void UpdateShipSetupBoard(Player player, int length, int x, int y, string direction)
+        public void UpdateShipSetupBoard(Player player, int length, int x, int y, string direction)
         {
 
             switch (direction)
@@ -77,7 +64,7 @@ namespace BattleShip.UI.Workflows
 
         }
 
-        private void PrintShipSetupBoard(Player player)
+        public void PrintShipSetupBoard(Player player)
         {
             foreach (string s in player.ShipSetup)
             {
