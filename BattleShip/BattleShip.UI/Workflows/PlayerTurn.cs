@@ -10,7 +10,7 @@ namespace BattleShip.UI.Workflows
 {
     class PlayerTurn
     {
-        public void PlayerTurn(Player player)
+        public void PlayTurn(Player player)
         {
             PlayerShot(player);
         }

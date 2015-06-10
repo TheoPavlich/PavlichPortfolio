@@ -25,7 +25,7 @@ namespace BattleShip.UI.Workflows
 
             do
             {
-                turn.PlayerTurn(currentPlayer);
+                turn.PlayTurn(currentPlayer);
                 currentPlayer = currentPlayer == player1 ? player2 : player1;
 
             } while (!gameOver);
