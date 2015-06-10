@@ -53,7 +53,7 @@ namespace BattleShip.UI
 
         public void CreateNewPlayer(Player player,int n)
         {
-            string[] alpha = new[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+            string[] alpha = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", };
             player.PlayerNum = n;
             Console.WriteLine("Player {0} enter your name:", player.PlayerNum);
             player.Name = Console.ReadLine();
@@ -81,7 +81,7 @@ namespace BattleShip.UI
                     }
                     else
                     {
-                        player.DisplayBoard[i,j] = "[]  ";
+                        player.DisplayBoard[i,j] = "[ ] ";
                     }
 
                 }

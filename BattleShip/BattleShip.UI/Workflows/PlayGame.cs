@@ -18,14 +18,15 @@ namespace BattleShip.UI.Workflows
         {
             SetupGame newSetUp = new SetupGame();
             newSetUp.SetupBoards(player1,player2);
-
             PlayerTurn turn = new PlayerTurn();
-
             Player currentPlayer = player1;
+
             bool gameOver = false;
 
             do
             {
+                turn.PlayerTurn(currentPlayer);
+                currentPlayer = currentPlayer == player1 ? player2 : player1;
 
             } while (!gameOver);
         }

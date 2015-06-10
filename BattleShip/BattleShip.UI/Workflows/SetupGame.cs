@@ -22,20 +22,59 @@ namespace BattleShip.UI.Workflows
             {
                 PrintShipSetupBoard(player1);
                 PlaceShips(player1, p1Board, i);
-                UpdateShipSetupBoard();
             }
+            PrintShipSetupBoard(player1);
+            Console.WriteLine("Press enter to clear the screen and continue for {0}'s setup", player2.Name);
+            Console.ReadLine();
+            Console.Clear();
 
             for (int i = 0; i < 5; i++)
             {
                 PrintShipSetupBoard(player2);
                 PlaceShips(player2, p2Board, i);
-                UpdateShipSetupBoard();
             }
+            PrintShipSetupBoard(player1);
+            Console.WriteLine("Press enter to clear the screen and start playing!");
+            Console.ReadLine();
+            Console.Clear();
+
         }
 
-        private void UpdateShipSetupBoard()
+        private void UpdateShipSetupBoard(Player player, int length, int x, int y, string direction)
         {
-            throw new NotImplementedException();
+
+            switch (direction)
+            {
+                case "UP":
+                    for (int i = 0; i < length; i++)
+                    {
+                        player.DisplayBoard[x, y] = "[S] ";
+                        x--;
+                    }
+                    break;
+                case "DOWN":
+                    for (int i = 0; i < length; i++)
+                    {
+                        player.DisplayBoard[x, y] = "[S] ";
+                        x++;
+                    }
+                    break;
+                case "LEFT":
+                    for (int i = 0; i < length; i++)
+                    {
+                        player.DisplayBoard[x, y] = "[S] ";
+                        y--;
+                    }
+                    break;
+                case "RIGHT":
+                    for (int i = 0; i < length; i++)
+                    {
+                        player.DisplayBoard[x, y] = "[S] ";
+                        y++;
+                    }
+                    break;
+            }
+
         }
 
         private void PrintShipSetupBoard(Player player)
@@ -43,6 +82,11 @@ namespace BattleShip.UI.Workflows
             foreach (string s in player.ShipSetup)
             {
                 Console.Write(s);
+                if (s == "[S] ")
+                {
+                    Console.BackgroundColor=ConsoleColor.Blue;
+                }
+                Console.BackgroundColor = ConsoleColor.Black;
             }
             Console.WriteLine("\n\n");
         }
@@ -52,26 +96,33 @@ namespace BattleShip.UI.Workflows
 
             PlaceShipRequest shipRequest = new PlaceShipRequest();
             //int type determines ship type
+            int length = 0;
             switch (type)
             {
                 case 0:
                     shipRequest.ShipType = ShipType.Submarine;
+                    length = 3;
                     break;
                 case 1:
                     shipRequest.ShipType = ShipType.Destroyer;
+                    length = 2;
                     break;
                 case 2:
                     shipRequest.ShipType = ShipType.Cruiser;
+                    length = 3;
                     break;
                 case 3:
                     shipRequest.ShipType = ShipType.Carrier;
+                    length = 5;
                     break;
                 default:
                     shipRequest.ShipType = ShipType.Battleship;
+                    length = 4;
                     break;
 
             }
-            Console.WriteLine("{1}, please enter coordinates for your {0}: ",shipRequest.ShipType,player.Name);
+
+            Console.WriteLine("{1}, please enter coordinates for your {0} of length {2} (ie. A1): ",shipRequest.ShipType,player.Name, length);
 
             //Set Coordinates
             string coords = Console.ReadLine();
@@ -92,21 +143,25 @@ namespace BattleShip.UI.Workflows
                     case "1":
                         shipRequest.Direction = ShipDirection.Up;
                         dirSet = true;
+                        UpdateShipSetupBoard(player, length, coordX, coordY, "UP");
                         break;
 
                     case "2":
                         shipRequest.Direction = ShipDirection.Down;
                         dirSet = true;
+                        UpdateShipSetupBoard(player, length, coordX, coordY, "DOWN");
                         break;
 
                     case "3":
                         shipRequest.Direction = ShipDirection.Left;
                         dirSet = true;
+                        UpdateShipSetupBoard(player, length, coordX, coordY, "LEFT");
                         break;
 
                     case "4":
                         shipRequest.Direction = ShipDirection.Right;
                         dirSet = true;
+                        UpdateShipSetupBoard(player, length, coordX, coordY, "RIGHT");
                         break;
 
                     default:

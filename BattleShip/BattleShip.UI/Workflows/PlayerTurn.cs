@@ -10,6 +10,10 @@ namespace BattleShip.UI.Workflows
 {
     class PlayerTurn
     {
+        public void PlayerTurn(Player player)
+        {
+            
+        }
         private void PrintDisplayBoard(Player currentPlayer)
         {
             foreach (string s in currentPlayer.DisplayBoard)
