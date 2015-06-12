@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,46 @@ namespace BattleShip.UI.Workflows
 
             foreach (string s in player.DisplayBoard)
             {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
+                if (s == "[M] ")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                if (s == "[H] ")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                if (s == "[X] ")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                }
                 Console.Write(s);
             }
             Console.WriteLine("\n\n");
         }
-        
+
+        private void UpdateDisplayBoard(Player player, ShotStatus shotStatus, int x, int y)
+        {   //Updates display board, does not reprint before end of turn
+            //Shows yellow M for miss and red H for hit
+            //Also needs shot response input
+
+            if (shotStatus == ShotStatus.Miss)
+            {
+                player.DisplayBoard[x, y] = "[M] ";
+            }
+            else if (shotStatus == ShotStatus.Hit)
+            {
+                player.DisplayBoard[x, y] = "[H] ";
+            }
+            else if (shotStatus == ShotStatus.HitAndSunk)
+            {
+                player.DisplayBoard[x, y] = "[X] ";
+            }
+        }
+
+
         private void PlayerShot(Player player, Board board )
         {
             Console.WriteLine("{0}, enter coordinates for your shot (ie A2): ", player.Name);
