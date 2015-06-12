@@ -16,8 +16,9 @@ namespace BattleShip.UI.Workflows
     {
         public void PlayTurn(Player player, Board board)
         {
-            PlayerShot(player, board);
             PrintDisplayBoard(player);
+            PlayerShot(player, board);
+            Console.Clear();
         }
 
         private void PrintDisplayBoard(Player player)
@@ -25,8 +26,6 @@ namespace BattleShip.UI.Workflows
 
             foreach (string s in player.DisplayBoard)
             {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.BackgroundColor = ConsoleColor.Black;
                 if (s == "[M] ")
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -41,27 +40,30 @@ namespace BattleShip.UI.Workflows
                     Console.BackgroundColor = ConsoleColor.Yellow;
                 }
                 Console.Write(s);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
             }
             Console.WriteLine("\n\n");
         }
 
-        private void UpdateDisplayBoard(Player player, ShotStatus shotStatus, int x, int y)
+        private void UpdateDisplayBoard(Player player, ShotStatus shotStatus, int y, int x)
         {   //Updates display board, does not reprint before end of turn
             //Shows yellow M for miss and red H for hit
             //Also needs shot response input
+            //can add logic for sunk ship
 
             if (shotStatus == ShotStatus.Miss)
             {
                 player.DisplayBoard[x, y] = "[M] ";
             }
-            else if (shotStatus == ShotStatus.Hit)
+            else if (shotStatus == ShotStatus.Hit||shotStatus == ShotStatus.HitAndSunk)
             {
                 player.DisplayBoard[x, y] = "[H] ";
             }
-            else if (shotStatus == ShotStatus.HitAndSunk)
-            {
-                player.DisplayBoard[x, y] = "[X] ";
-            }
+            //else if (shotStatus == ShotStatus.HitAndSunk)
+            //{
+            //    player.DisplayBoard[x, y] = "[X] ";
+            //}
         }
 
 
@@ -81,7 +83,7 @@ namespace BattleShip.UI.Workflows
             var response = shotFire.ShotStatus;
             Console.WriteLine(response);
 
-            //UpdateDisplayBoard(player, response, inputX, inputY);
+            UpdateDisplayBoard(player, response, inputX, inputY);
 
             if (response == ShotStatus.Victory)
             {
@@ -90,8 +92,6 @@ namespace BattleShip.UI.Workflows
             }
 
             else
-
-            Console.WriteLine("{0} it's your turn! Press Enter", player.Name);
 
             Console.ReadLine();
 
