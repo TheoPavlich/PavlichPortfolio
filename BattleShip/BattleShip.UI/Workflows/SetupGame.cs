@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BattleShip.BLL;
 using BattleShip.BLL.GameLogic;
 using BattleShip.BLL.Requests;
+using BattleShip.BLL.Responses;
 using BattleShip.BLL.Ships;
 
 namespace BattleShip.UI.Workflows
@@ -17,12 +18,12 @@ namespace BattleShip.UI.Workflows
             Board board = new Board();
            // Board p2Board = new Board();
 
-
-            for(int i = 0; i<5; i++)
+            int i = 0;
+            do
             {
                 PrintShipSetupBoard(player1);
-                PlaceShips(player1, board, i);
-            }
+                i = PlaceShips(player1, board, i);
+            } while (i < 5);
             return board;
 
         }
@@ -78,11 +79,13 @@ namespace BattleShip.UI.Workflows
             Console.WriteLine("\n\n");
         }
 
-        private void PlaceShips(Player player, Board board, int type)
+        private int PlaceShips(Player player, Board board, int type)
         {
 
             PlaceShipRequest shipRequest = new PlaceShipRequest();
+            
             //int type determines ship type
+            int shipIndex = type;
             int length = 0;
             switch (type)
             {
@@ -108,13 +111,12 @@ namespace BattleShip.UI.Workflows
                     break;
 
             }
-
             Console.WriteLine("{1}, please enter coordinates for your {0} of length {2} (ie. A1): ",shipRequest.ShipType,player.Name, length);
 
             //Set Coordinates
             string coords = Console.ReadLine();
             TranslateLetter xLetter = new TranslateLetter();
-
+            
             int coordX = xLetter.ConvertLetters[coords.Substring(0, 1).ToUpper()];
             int coordY = Int32.Parse(coords.Substring(1));
             shipRequest.Coordinate = new Coordinate(coordX, coordY);
@@ -130,36 +132,41 @@ namespace BattleShip.UI.Workflows
                     case "1":
                         shipRequest.Direction = ShipDirection.Up;
                         dirSet = true;
-                        UpdateShipSetupBoard(player, length, coordX, coordY, "UP");
                         break;
 
                     case "2":
                         shipRequest.Direction = ShipDirection.Down;
                         dirSet = true;
-                        UpdateShipSetupBoard(player, length, coordX, coordY, "DOWN");
                         break;
 
                     case "3":
                         shipRequest.Direction = ShipDirection.Left;
                         dirSet = true;
-                        UpdateShipSetupBoard(player, length, coordX, coordY, "LEFT");
                         break;
 
                     case "4":
                         shipRequest.Direction = ShipDirection.Right;
                         dirSet = true;
-                        UpdateShipSetupBoard(player, length, coordX, coordY, "RIGHT");
                         break;
 
                     default:
                         dirSet = false;
-                        Console.WriteLine("That wasn't a valid suggestion. Please try again.");
+                        Console.WriteLine("That wasn't a valid selection. Please try again.");
                         break;
 
                 }
             } while (!dirSet);
+
             
-            board.PlaceShip(shipRequest);
+            var result = board.PlaceShip(shipRequest);
+            if (result == ShipPlacement.Ok)
+            {
+                UpdateShipSetupBoard(player, length, coordX, coordY, shipRequest.Direction.ToString().ToUpper());
+                shipIndex++;
+            }
+            Console.WriteLine("{0}", result);
+            return shipIndex;
+
         }
 
     }

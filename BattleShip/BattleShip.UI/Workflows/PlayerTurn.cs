@@ -16,10 +16,10 @@ namespace BattleShip.UI.Workflows
         public void PlayTurn(Player player, Player opponent, Board board)
         {
             PlayerShot(board);
-            //PrintDisplayBoard(opponent);
+            PrintDisplayBoard(opponent);
         }
 
-  /*      private void PrintDisplayBoard(Player opponent)
+        private void PrintDisplayBoard(Player opponent)
         {
 
             foreach (string s in opponent.DisplayBoard)
@@ -28,7 +28,7 @@ namespace BattleShip.UI.Workflows
             }
             Console.WriteLine("\n\n");
         }
-        */
+        
         private void PlayerShot(Board board )
         {
             Console.WriteLine("Enter coordinates for your shot (ie A2): ");
