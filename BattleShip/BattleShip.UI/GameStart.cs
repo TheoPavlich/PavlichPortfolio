@@ -58,7 +58,8 @@ namespace BattleShip.UI
             Console.WriteLine("Player {0} enter your name:", player.PlayerNum);
             player.Name = Console.ReadLine();
             player.DisplayBoard = new string[11,11];
-            
+            player.ShipSetup = new string[11, 11];
+
             for (int i = 0; i < 11; i++)
             {
                 for (int j = 0; j < 11; j++)
@@ -86,7 +87,35 @@ namespace BattleShip.UI
 
                 }
             }
-            player.ShipSetup = player.DisplayBoard;
+
+            for (int i = 0; i < 11; i++)
+            {
+                for (int j = 0; j < 11; j++)
+                {
+                    if (i == 0 && j > 0)
+                    {
+                        player.ShipSetup[i, j] = "   " + alpha[j - 1];
+                    }
+                    else if (i == 10 && j == 0)
+                    {
+                        player.ShipSetup[i, j] = "\n\n" + i.ToString() + " ";
+                    }
+                    else if (j == 0 && i > 0)
+                    {
+                        player.ShipSetup[i, j] = "\n\n " + i.ToString() + " ";
+                    }
+                    else if (i == 0 && j == 0)
+                    {
+                        player.ShipSetup[i, j] = " ";
+                    }
+                    else
+                    {
+                        player.ShipSetup[i, j] = "[ ] ";
+                    }
+
+                }
+            }
+            //player.ShipSetup = player.DisplayBoard;
         }
 
         public void DisplayMenu()

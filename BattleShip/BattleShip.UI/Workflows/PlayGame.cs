@@ -33,16 +33,16 @@ namespace BattleShip.UI.Workflows
             PlayerTurn turn = new PlayerTurn();
             Player currentPlayer = player1;
             Board currentBoard = p2Board;
-            Player opponent = player2;
+            //Player opponent = player2;
 
             bool gameOver = false;
 
             do
             {
-                turn.PlayTurn(currentPlayer, opponent, currentBoard);
+                turn.PlayTurn(currentPlayer, currentBoard);
                 currentPlayer = currentPlayer == player1 ? player2 : player1;
                 currentBoard = currentBoard == p2Board ? p1Board : p2Board;
-                opponent = opponent == player2 ? player1 : player2;
+                //opponent = opponent == player2 ? player1 : player2;
 
             } while (!gameOver);
         }

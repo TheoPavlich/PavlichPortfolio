@@ -13,16 +13,15 @@ namespace BattleShip.UI.Workflows
 {
     public class SetupGame
     {
-        public Board SetupBoard(Player player1)
+        public Board SetupBoard(Player player)
         {
             Board board = new Board();
-           // Board p2Board = new Board();
-
+           
             int i = 0;
             do
             {
-                PrintShipSetupBoard(player1);
-                i = PlaceShips(player1, board, i);
+                PrintShipSetupBoard(player);
+                i = PlaceShips(player, board, i);
             } while (i < 5);
             return board;
 
@@ -36,28 +35,28 @@ namespace BattleShip.UI.Workflows
                 case "UP":
                     for (int i = 0; i < length; i++)
                     {
-                        player.DisplayBoard[x, y] = "[S] ";
+                        player.ShipSetup[x, y] = "[S] ";
                         x--;
                     }
                     break;
                 case "DOWN":
                     for (int i = 0; i < length; i++)
                     {
-                        player.DisplayBoard[x, y] = "[S] ";
+                        player.ShipSetup[x, y] = "[S] ";
                         x++;
                     }
                     break;
                 case "LEFT":
                     for (int i = 0; i < length; i++)
                     {
-                        player.DisplayBoard[x, y] = "[S] ";
+                        player.ShipSetup[x, y] = "[S] ";
                         y--;
                     }
                     break;
                 case "RIGHT":
                     for (int i = 0; i < length; i++)
                     {
-                        player.DisplayBoard[x, y] = "[S] ";
+                        player.ShipSetup[x, y] = "[S] ";
                         y++;
                     }
                     break;

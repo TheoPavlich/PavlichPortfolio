@@ -13,32 +13,32 @@ namespace BattleShip.UI.Workflows
 {
     class PlayerTurn
     {
-        public void PlayTurn(Player player, Player opponent, Board board)
+        public void PlayTurn(Player player, Board board)
         {
-            PlayerShot(board);
-            PrintDisplayBoard(opponent);
+            PlayerShot(player, board);
+            PrintDisplayBoard(player);
         }
 
-        private void PrintDisplayBoard(Player opponent)
+        private void PrintDisplayBoard(Player player)
         {
 
-            foreach (string s in opponent.DisplayBoard)
+            foreach (string s in player.DisplayBoard)
             {
                 Console.Write(s);
             }
             Console.WriteLine("\n\n");
         }
         
-        private void PlayerShot(Board board )
+        private void PlayerShot(Player player, Board board )
         {
-            Console.WriteLine("Enter coordinates for your shot (ie A2): ");
+            Console.WriteLine("{0}, enter coordinates for your shot (ie A2): ", player.Name);
             string coords = Console.ReadLine();
             TranslateLetter xLetter = new TranslateLetter();
 
             int inputX = xLetter.ConvertLetters[coords.Substring(0, 1).ToUpper()];
             int inputY = int.Parse(coords.Substring(1));
 
-            var coordinate = new Coordinate(inputX, inputY);
+            var coordinate = new Coordinate(inputY, inputX);
 
             board.FireShot(coordinate);
 
