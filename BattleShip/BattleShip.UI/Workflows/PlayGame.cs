@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -33,28 +34,44 @@ namespace BattleShip.UI.Workflows
             PlayerTurn turn = new PlayerTurn();
             Player currentPlayer = player1;
             Board currentBoard = p2Board;
-            //Player opponent = player2;
+            Player opponent = player2;
 
             bool gameOver = false;
 
             do
             {
-                turn.PlayTurn(currentPlayer, currentBoard);
+                gameOver = turn.PlayTurn(currentPlayer, currentBoard);
                 currentPlayer = currentPlayer == player1 ? player2 : player1;
                 currentBoard = currentBoard == p2Board ? p1Board : p2Board;
-                //opponent = opponent == player2 ? player1 : player2;
+                opponent = opponent == player2 ? player1 : player2;
 
             } while (!gameOver);
+
+            GameOver(opponent, currentPlayer);
         }
 
-        private bool IsGameOver(FireShotResponse response)
+        public void GameOver(Player winner, Player loser)
         {
-            if (response.ShotStatus == ShotStatus.Victory)
+            Console.WriteLine("Congratulations {0}, you beat {1}! How about a rematch? ", winner.Name, loser.Name);
+            Console.WriteLine("\"P\"lay again \n \"Q\"uit");
+            string response = Console.ReadLine().ToUpper();
+            switch (response)
             {
-                return true;
+                case "P":
+                    GameStart newGame = new GameStart();
+                    newGame.StartGame();
+                    break;
+                case "Q":
+                    Console.WriteLine("Goodbye");
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("That is not a valid selection. Please press enter and try again.");
+                    Console.ReadLine();
+                    break;
             }
-            return false;
         }
+
 
         
 
