@@ -14,11 +14,12 @@ namespace BattleShip.UI.Workflows
 {
     class PlayerTurn
     {
-        public void PlayTurn(Player player, Board board)
+        public bool PlayTurn(Player player, Board board)
         {
             PrintDisplayBoard(player);
-            PlayerShot(player, board);
+            bool endGame = PlayerShot(player, board);
             Console.Clear();
+            return endGame;
         }
 
         private void PrintDisplayBoard(Player player)
@@ -65,9 +66,8 @@ namespace BattleShip.UI.Workflows
             //    player.DisplayBoard[x, y] = "[X] ";
             //}
         }
-
-
-        private void PlayerShot(Player player, Board board )
+        
+        private bool PlayerShot(Player player, Board board )
         {
             Console.WriteLine("{0}, enter coordinates for your shot (ie A2): ", player.Name);
             string coords = Console.ReadLine();
@@ -84,18 +84,12 @@ namespace BattleShip.UI.Workflows
             Console.WriteLine(response);
 
             UpdateDisplayBoard(player, response, inputX, inputY);
-
+            Console.ReadLine();
             if (response == ShotStatus.Victory)
             {
-                //EndGame end = new EndGame();
-                //end.gameOver;
+                return true;
             }
-
-            else
-
-            Console.ReadLine();
-
-
+            return false;
         }
 
        

@@ -41,7 +41,7 @@ namespace BattleShip.UI
             }
         }
 
-        private void StartGame()
+        public void StartGame()
         {
             Player player1 = new Player();
             CreateNewPlayer(player1,1);
