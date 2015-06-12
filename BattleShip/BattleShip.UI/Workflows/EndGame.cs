@@ -8,6 +8,6 @@ namespace BattleShip.UI.Workflows
 {
     class EndGame
     {
-
+        
     }
 }

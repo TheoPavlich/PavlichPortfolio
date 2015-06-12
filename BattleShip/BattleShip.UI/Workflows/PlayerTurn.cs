@@ -38,10 +38,30 @@ namespace BattleShip.UI.Workflows
             int inputX = xLetter.ConvertLetters[coords.Substring(0, 1).ToUpper()];
             int inputY = int.Parse(coords.Substring(1));
 
-            var coordinate = new Coordinate(inputY, inputX);
+            var coordinate = new Coordinate(inputX, inputY);
 
-            board.FireShot(coordinate);
+            //board.FireShot(coordinate);
+            var shotFire = board.FireShot(coordinate);
+            var response = shotFire.ShotStatus;
+            Console.WriteLine(response);
+
+            //UpdateDisplayBoard(player, response, inputX, inputY);
+
+            if (response == ShotStatus.Victory)
+            {
+                //EndGame end = new EndGame();
+                //end.gameOver;
+            }
+
+            else
+
+            Console.WriteLine("{0} it's your turn! Press Enter", player.Name);
+
+            Console.ReadLine();
+
 
         }
+
+       
     }
 }
