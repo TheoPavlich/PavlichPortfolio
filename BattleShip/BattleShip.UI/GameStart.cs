@@ -63,17 +63,17 @@ namespace BattleShip.UI
             {
                 for (int j = 0; j < 11; j++)
                 {
-                    if (i == 0&&j>0&&j<10)
+                    if (i == 0&&j>0)
                     {
-                        player.DisplayBoard[i, j] ="   "+ j.ToString();
+                        player.DisplayBoard[i, j] ="   "+ alpha[j-1];
                     }
-                    else if (i == 0 && j == 10)
+                    else if (i == 10 && j == 0)
                     {
-                        player.DisplayBoard[i, j] = "  " + j.ToString();
+                        player.DisplayBoard[i, j] = "\n\n" + i.ToString()+ " ";
                     }
                     else if (j == 0&&i>0)
                     {
-                        player.DisplayBoard[i, j] = "\n\n "+alpha[i - 1]+ " ";
+                        player.DisplayBoard[i, j] = "\n\n "+i.ToString()+ " ";
                     }
                     else if (i == 0 && j == 0)
                     {

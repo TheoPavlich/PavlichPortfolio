@@ -54,8 +54,8 @@ namespace Battleship.Tests
             // let's put a carrier at (10,10), (9,10), (8,10), (7,10), (6,10)
             var carrierRequest = new PlaceShipRequest()
             {
-                Coordinate = new Coordinate(10, 10),
-                Direction = ShipDirection.Left,
+                Coordinate = new Coordinate(1, 1),
+                Direction = ShipDirection.Right,
                 ShipType = ShipType.Carrier
             };
 
@@ -66,7 +66,7 @@ namespace Battleship.Tests
             // now let's put a destroyer overlapping the y coordinate
             var destroyerRequest = new PlaceShipRequest()
             {
-                Coordinate = new Coordinate(9, 9),
+                Coordinate = new Coordinate(2, 1),
                 Direction = ShipDirection.Down,
                 ShipType = ShipType.Destroyer
             };

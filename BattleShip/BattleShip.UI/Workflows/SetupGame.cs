@@ -28,7 +28,7 @@ namespace BattleShip.UI.Workflows
 
         }
 
-        public void UpdateShipSetupBoard(Player player, int length, int x, int y, string direction)
+        public void UpdateShipSetupBoard(Player player, int length, int y, int x, string direction)
         {
 
             switch (direction)
