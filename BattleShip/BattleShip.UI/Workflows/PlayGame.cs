@@ -71,16 +71,5 @@ namespace BattleShip.UI.Workflows
                     break;
             }
         }
-
-
-        
-
-        
-
-
-
-        
-
-
     }
 }

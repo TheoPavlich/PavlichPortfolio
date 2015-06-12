@@ -167,6 +167,5 @@ namespace BattleShip.UI.Workflows
             return shipIndex;
 
         }
-
     }
 }

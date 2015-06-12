@@ -35,14 +35,9 @@ namespace BattleShip.UI.Workflows
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
-                if (s == "[X] ")
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                }
+
                 Console.Write(s);
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.BackgroundColor = ConsoleColor.Black;
             }
             Console.WriteLine("\n\n");
         }
@@ -61,37 +56,76 @@ namespace BattleShip.UI.Workflows
             {
                 player.DisplayBoard[x, y] = "[H] ";
             }
-            //else if (shotStatus == ShotStatus.HitAndSunk)
-            //{
-            //    player.DisplayBoard[x, y] = "[X] ";
-            //}
         }
         
         private bool PlayerShot(Player player, Board board )
         {
-            Console.WriteLine("{0}, enter coordinates for your shot (ie A2): ", player.Name);
-            string coords = Console.ReadLine();
-            TranslateLetter xLetter = new TranslateLetter();
-
-            int inputX = xLetter.ConvertLetters[coords.Substring(0, 1).ToUpper()];
-            int inputY = int.Parse(coords.Substring(1));
-
-            var coordinate = new Coordinate(inputX, inputY);
-
-            //board.FireShot(coordinate);
-            var shotFire = board.FireShot(coordinate);
-            var response = shotFire.ShotStatus;
-            Console.WriteLine(response);
+           bool validResponse = false;
+           int inputX = 0;
+           int inputY = 0;
+           var coordinate = new Coordinate(inputX, inputY);
+           var shotFire = board.FireShot(coordinate);
+           var response = shotFire.ShotStatus;
+ 
+           do
+           {
+               Console.WriteLine("{0}, enter coordinates for your shot (ie A2): ", player.Name);
+               string coords = Console.ReadLine();
+               TranslateLetter xLetter = new TranslateLetter();
+ 
+               inputX = xLetter.ConvertLetters[coords.Substring(0, 1).ToUpper()];
+               //if (int.Parse(coords.Substring(1)) < 11 || int.Parse(coords.Substring(1)) > 0)
+               //{
+                   inputY = int.Parse(coords.Substring(1));
+               //}
+ 
+               coordinate = new Coordinate(inputX, inputY);
+ 
+               shotFire = board.FireShot(coordinate);
+               response = shotFire.ShotStatus;
+               string responseText = response.ToString();
+               Console.WriteLine(response);
+ 
+ 
+               switch (responseText)
+               {
+                   case "Duplicate":
+                       Console.WriteLine("You have already fired at that coordinate. Enter new coordinate.");
+                       validResponse = false;
+                       break;
+                   case "Invalid":
+                       Console.WriteLine("That is an invalid coordinate. Enter new coordinate.");
+                       validResponse = false;
+                       break;
+                   case "Hit":
+                       Console.WriteLine("You hit something!");
+                       validResponse = true;
+                       break;
+ 
+                   case "HitAndSunk":
+                       Console.WriteLine("You sank your opponent's {0}", shotFire.ShipImpacted);
+                       validResponse = true;
+                       break;
+                   case "Miss":
+                       Console.WriteLine("Your projectile splashes into the ocean, you missed!");
+                       validResponse = true;
+                       break;
+ 
+                   default:
+                       validResponse = true;
+                       break;
+ 
+               }
+           } while (validResponse == false);
 
             UpdateDisplayBoard(player, response, inputX, inputY);
             Console.ReadLine();
+
             if (response == ShotStatus.Victory)
             {
                 return true;
             }
             return false;
         }
-
-       
     }
 }
