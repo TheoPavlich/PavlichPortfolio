@@ -73,6 +73,10 @@ namespace SGBank.UI.Workflows
                     var withdrawWorkflow = new WithdrawWorkflow();
                     withdrawWorkflow.Execute(_currentAccount);
                     break;
+                case "3":
+                    var transferWorkflow = new TransferWorkflow();
+                    transferWorkflow.Execute(_currentAccount);
+                    break;
             }
         }
 

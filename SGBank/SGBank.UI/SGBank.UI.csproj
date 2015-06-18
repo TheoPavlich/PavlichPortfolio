@@ -47,6 +47,7 @@
     <Compile Include="Workflows\DepositWorkflow.cs" />
     <Compile Include="Workflows\LookupMenu.cs" />
     <Compile Include="Workflows\MainMenu.cs" />
+    <Compile Include="Workflows\TransferWorkflow.cs" />
     <Compile Include="Workflows\WithdrawWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
