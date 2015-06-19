@@ -48,6 +48,16 @@ namespace SGBank.Data
             return accounts;
         }
 
+        public void WriteNewAccount(List<Account> accounts)
+        {
+            OverwriteFile(accounts);
+        }
+
+        public void DeleteAccount(List<Account> accounts)
+        {
+            OverwriteFile(accounts);
+        }
+
         public void UpdateAccount(Account accountToUpdate)
         {
             var allAccounts = GetAllAcounts();

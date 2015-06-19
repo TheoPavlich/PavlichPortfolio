@@ -44,6 +44,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\UserInteractions.cs" />
+    <Compile Include="Workflows\CreateAccountWorkflow.cs" />
+    <Compile Include="Workflows\DeleteAccountWorkflow.cs" />
     <Compile Include="Workflows\DepositWorkflow.cs" />
     <Compile Include="Workflows\LookupMenu.cs" />
     <Compile Include="Workflows\MainMenu.cs" />
@@ -63,6 +65,10 @@
     <ProjectReference Include="..\SGBank.BLL\SGBank.BLL.csproj">
       <Project>{4d8f225d-537c-49ab-b4e2-249b6e7fe900}</Project>
       <Name>SGBank.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SGBank.Data\SGBank.Data.csproj">
+      <Project>{29ccb3c4-f515-42de-b916-900dd1a97227}</Project>
+      <Name>SGBank.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\SGBank.Models\SGBank.Models.csproj">
       <Project>{deb3c9a2-17df-43b7-8937-85ca0795eb77}</Project>

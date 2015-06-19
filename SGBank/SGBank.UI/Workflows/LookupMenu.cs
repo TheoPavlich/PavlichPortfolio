@@ -19,7 +19,7 @@ namespace SGBank.UI.Workflows
             DisplayAccountInformation(accountNumber);
         }
 
-        private void DisplayAccountInformation(string accountNumber)
+        public void DisplayAccountInformation(string accountNumber)
         {
             var ops = new AccountOperations();
             var response = ops.GetAccount(accountNumber);
@@ -80,7 +80,7 @@ namespace SGBank.UI.Workflows
             }
         }
 
-        private void PrintAccountDetails(Response<Account> response)
+        public void PrintAccountDetails(Response<Account> response)
         {
             Console.WriteLine("Account Information");
             Console.WriteLine("=========================================");
