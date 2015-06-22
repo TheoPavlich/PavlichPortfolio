@@ -8,5 +8,9 @@ namespace FlooringUI.Workflows
 {
     class RemoveOrder
     {
+        public void Execute()
+        {
+            
+        }
     }
 }
