@@ -62,6 +62,22 @@ namespace Flooring.Data
             return orders;
         }
 
+        public decimal GetTaxRate(string state)
+        {
+            var stateTaxes = @"DataFiles/Taxes.txt";
+            var reader = File.ReadAllLines(stateTaxes);
+
+            for (int i = 0; i < reader.Length; i++)
+            {
+                var column = reader[i].Split(',');
+                if (column[0] == state)
+                {
+                    return decimal.Parse(column[1]);
+                }
+            }
+            return 0;
+        }
+
         public void WriteNewOrder(List<Order> orders, string date)
         {
             OverwriteFile(orders,date);
@@ -114,6 +130,38 @@ namespace Flooring.Data
                         order.LaborPerSqFt,order.MaterialCost, order.TaxRate,order.Tax,order.Total);
                 }
             }
+        }
+
+        public decimal GetCostPerSqFt(string productType)
+        {
+            var products = @"DataFiles/Products.txt";
+            var reader = File.ReadAllLines(products);
+
+            for (int i = 1; i < reader.Length; i++)
+            {
+                var column = reader[i].Split(',');
+                if (column[0] == productType)
+                {
+                    return decimal.Parse(column[1]);
+                }
+            }
+            return 0;
+        }
+
+        public decimal GetLaborPerSqFt(string productType)
+        {
+            var products = @"DataFiles/Products.txt";
+            var reader = File.ReadAllLines(products);
+
+            for (int i = 1; i < reader.Length; i++)
+            {
+                var column = reader[i].Split(',');
+                if (column[0] == productType)
+                {
+                    return decimal.Parse(column[2]);
+                }
+            }
+            return 0;
         }
     }
 }

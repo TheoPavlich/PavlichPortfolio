@@ -13,11 +13,8 @@ namespace FlooringUI.Workflows
     {
         public void Execute()
         {
-
             string orderFile = GetOrderDateFromUser();
             FindOrderFile(orderFile);
-
-
         }
 
         private void FindOrderFile(string orderFile)
@@ -25,10 +22,10 @@ namespace FlooringUI.Workflows
             if (File.Exists(orderFile))
             {
                 Console.WriteLine("Order Information");
-                Console.WriteLine("Order Date: {0}", orderFile.Substring(16, 6));
+                
                 var repo = new OrderRepository();
-                List<Order> orders = repo.GetAllOrders(orderFile.Substring(16,6));
-                PrintOrderDetails(orders);
+                List<Order> orders = repo.GetAllOrders(orderFile.Substring(17,8));
+                PrintOrderDetails(orders, orderFile.Substring(17, 8));
             }
             else
             {
@@ -37,17 +34,15 @@ namespace FlooringUI.Workflows
             Console.ReadLine();
         }
 
-        public void PrintOrderDetails(List<Order> orders)
+        public void PrintOrderDetails(List<Order> orders, string date)
         {
-            Console.Clear();
-
-
+            Console.WriteLine("Orders for "+ date + ":");
             foreach (var order in orders)
             {
-                Console.WriteLine("First Name: {0}", order.FirstName);
-                Console.WriteLine("Last Name: {0}", order.LastName);
+                
+                Console.WriteLine("Name: {0} {1}", order.FirstName,order.LastName);
                 Console.WriteLine("Product Type: {0}", order.ProductType);
-                Console.WriteLine("Total: {0}", order.Total);
+                Console.WriteLine("Total: {0:C}\n", order.Total);
             }
 
         }
@@ -59,7 +54,7 @@ namespace FlooringUI.Workflows
                 Console.Clear();
                 //string date = DateTime.Today.ToString("MMddyyy");
 
-                Console.Write("Enter an order date (MMddyy): ");
+                Console.Write("Enter an order date (MMddyyyy): ");
                 string orderDate = Console.ReadLine();
 
                 return @"DataFiles\Orders_" + orderDate + ".txt";

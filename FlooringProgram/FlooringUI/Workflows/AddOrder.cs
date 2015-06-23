@@ -16,6 +16,8 @@ namespace FlooringUI.Workflows
             var repo = new OrderRepository();
             //GetAllOrders fetches only orders for specific DATE
             string date = DateTime.Today.ToString("MMddyyy");
+            //string date = "01242015";
+            //string date = "03122015";
             List<Order> orders = repo.GetAllOrders(date);
 
             string orderNumber = "";
@@ -36,7 +38,7 @@ namespace FlooringUI.Workflows
             {
                 orders.Add(newOrder);
                 repo.WriteNewOrder(orders,date);
-                Console.WriteLine("New oreder has been committed. Press enter to continue...");
+                Console.WriteLine("New order has been committed. Press enter to continue...");
             }
             else
             {
@@ -59,27 +61,31 @@ namespace FlooringUI.Workflows
 
         private Order GetOrderInformation(string orderNumber)
         {
+            var repo = new OrderRepository();
+
             Console.WriteLine("\nEnter customer first name: ");
             string firstName = Console.ReadLine();
 
             Console.WriteLine("\nEnter customer last name: ");
             string lastName = Console.ReadLine();
 
-            Console.WriteLine("\nEnter customer state: ");
-            string state = Console.ReadLine();
+            Console.WriteLine("\nEnter customer state abbreviation: ");
+            string state = Console.ReadLine().ToUpper();
 
             Console.WriteLine("\nEnter Product Type: ");
-            string productType = Console.ReadLine();
+            string productType = Console.ReadLine().ToUpper();
+
 
             bool valid;
             decimal area;
             do
             {
                 valid = true;
-                Console.WriteLine("\nEnter job area: ");
+                Console.WriteLine("\nEnter flooring area in square feet: ");
                 valid = Decimal.TryParse(Console.ReadLine(), out area);
             } while (!valid);
 
+             
             
             var order = new Order();
             order.FirstName = firstName;
@@ -88,9 +94,16 @@ namespace FlooringUI.Workflows
             order.State = state;
             order.ProductType = productType;
             order.Area = area;
+            order.TaxRate=repo.GetTaxRate(state);
+            order.CostPerSqFt = repo.GetCostPerSqFt(productType);
+            order.LaborPerSqFt = repo.GetLaborPerSqFt(productType);
+            order.MaterialCost = order.CostPerSqFt*order.Area;
+            order.LaborCost = order.LaborPerSqFt*order.Area;
 
-            //here will be calculations base on data files for other Order info
-            //here be demons
+            decimal subtotal = order.MaterialCost + order.LaborCost;
+
+            order.Tax = subtotal*order.TaxRate;
+            order.Total = subtotal + order.Tax;
 
             return order;
         }
