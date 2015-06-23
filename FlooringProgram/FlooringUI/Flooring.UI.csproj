@@ -54,7 +54,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataFiles\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +69,11 @@
       <Project>{5512d4b9-6496-4b4c-af92-927bab49ed52}</Project>
       <Name>Flooring.BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataFiles\dummy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

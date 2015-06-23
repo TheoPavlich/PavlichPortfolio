@@ -36,6 +36,7 @@ namespace FlooringUI.Workflows
             {
                 orders.Add(newOrder);
                 repo.WriteNewOrder(orders,date);
+                Console.WriteLine("New oreder has been committed. Press enter to continue...");
             }
             else
             {
@@ -89,6 +90,7 @@ namespace FlooringUI.Workflows
             order.Area = area;
 
             //here will be calculations base on data files for other Order info
+            //here be demons
 
             return order;
         }

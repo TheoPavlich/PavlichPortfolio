@@ -12,7 +12,6 @@ namespace Flooring.Data
     public class OrderRepository
     {
         private string FilePath;
-        //FUCK EVERYTHING DAMMIT 
 
         public Order GetOrder(string orderNumber, string date)
         {
@@ -104,10 +103,7 @@ namespace Flooring.Data
             {
                 File.Delete(FilePath);
             }
-            else
-            {
-                File.Create(FilePath);
-               }
+
             using (var writer = File.CreateText(FilePath))
             {
                 writer.WriteLine("OrderNumber,FirstName,LastName,State,ProductType,Area,CostPerSqFt,LaborCost,LaborPerSqFt,MaterialCost,TaxRate,Tax,Total");
