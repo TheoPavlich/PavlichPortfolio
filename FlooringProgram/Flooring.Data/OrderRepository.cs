@@ -11,7 +11,7 @@ namespace Flooring.Data
 {
     public class OrderRepository
     {
-        private const string FilePath = @"DataFiles\Orders_"++".txt";
+        private const string FilePath;
 
         public Order GetOrder(string orderNumber)
         {
@@ -48,15 +48,16 @@ namespace Flooring.Data
 
         public void WriteNewOrder(List<Order> orders)
         {
-            OverwriteFile(orders);
+            string date = DateTime.Today.ToString("d");
+            OverwriteFile(orders,date);
         }
 
-        public void DeleteOrder(List<Order> orders)
+        public void DeleteOrder(List<Order> orders, string date)
         {
-            OverwriteFile(orders);
+            OverwriteFile(orders,date);
         }
 
-        public void UpdateOrder(Order orderToUpdate)
+        public void UpdateOrder(Order orderToUpdate, string date)
         {
             var allOrders = GetAllOrders();
 
@@ -76,13 +77,14 @@ namespace Flooring.Data
             existingOrder.Tax = orderToUpdate.Tax;
             existingOrder.Total = orderToUpdate.Total;
 
-            OverwriteFile(allOrders);
+            OverwriteFile(allOrders,date);
 
         }
 
-        private void OverwriteFile(List<Order> allOrders)
+        private void OverwriteFile(List<Order> allOrders, string date)
         {
-            File.Delete(FilePath);
+            //File.Delete(FilePath);
+            FilePath = @"DataFiles\Orders_"+date+".txt";
 
             using (var writer = File.CreateText(FilePath))
             {

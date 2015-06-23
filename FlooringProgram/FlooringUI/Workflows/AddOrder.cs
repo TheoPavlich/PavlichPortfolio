@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Flooring.Data;
@@ -50,12 +51,29 @@ namespace FlooringUI.Workflows
             Console.WriteLine("\nEnter customer last name: ");
             string lastName = Console.ReadLine();
 
-            //And all those other things
+            Console.WriteLine("\nEnter customer state: ");
+            string state = Console.ReadLine();
 
+            Console.WriteLine("\nEnter Product Type: ");
+            string productType = Console.ReadLine();
+
+            bool valid;
+            decimal area;
+            do
+            {
+                valid = true;
+                Console.WriteLine("\nEnter job area: ");
+                valid = Decimal.TryParse(Console.ReadLine(), out area);
+            } while (!valid);
+
+            
             var order = new Order();
             order.FirstName = firstName;
             order.LastName = lastName;
             order.OrderNumber = orderNumber;
+            order.State = state;
+            order.ProductType = productType;
+            order.Area = area;
 
             return order;
         }
@@ -65,8 +83,14 @@ namespace FlooringUI.Workflows
             Console.WriteLine("Order to be committed is as follows:");
             Console.WriteLine("Name on order: {0} {1}.", order.FirstName, order.LastName);
             Console.WriteLine("Order number: {0}\n Order Total: {1:C}", order.OrderNumber, order.Total);
+            Console.WriteLine("Is this correct? (Y or N)");
+            string yesOrNo = Console.ReadLine().ToUpper();
+            if (yesOrNo == "Y")
+            {
+                return true;
+            }
+            return false;
 
-        
         }
     }
 }
