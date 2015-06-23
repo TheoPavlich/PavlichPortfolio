@@ -57,6 +57,20 @@
     <Folder Include="Data Files\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flooring.Data\Flooring.Data.csproj">
+      <Project>{c0542e7b-2b2a-475e-a191-06bcb3f3b800}</Project>
+      <Name>Flooring.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Flooring.Models\Flooring.Models.csproj">
+      <Project>{2C8AA06A-F3EC-417A-9F96-CC92615282DA}</Project>
+      <Name>Flooring.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlooringBLL\Flooring.BLL.csproj">
+      <Project>{5512d4b9-6496-4b4c-af92-927bab49ed52}</Project>
+      <Name>Flooring.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

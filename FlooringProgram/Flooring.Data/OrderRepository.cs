@@ -11,7 +11,7 @@ namespace Flooring.Data
 {
     public class OrderRepository
     {
-        //private const string FilePath = @"DataFiles\_____.txt";
+        private const string FilePath = @"DataFiles\Orders_"++".txt";
 
         public Order GetOrder(string orderNumber)
         {
@@ -62,7 +62,7 @@ namespace Flooring.Data
 
             var existingOrder = allOrders.First(a => a.OrderNumber == orderToUpdate.OrderNumber);
 
-            
+
             existingOrder.FirstName = orderToUpdate.FirstName;
             existingOrder.LastName = orderToUpdate.LastName;
             existingOrder.State = orderToUpdate.State;
@@ -80,7 +80,7 @@ namespace Flooring.Data
 
         }
 
-      private void OverwriteFile(List<Order> allOrders)
+        private void OverwriteFile(List<Order> allOrders)
         {
             File.Delete(FilePath);
 
@@ -92,6 +92,7 @@ namespace Flooring.Data
                 {
                     writer.WriteLine("{0},{1},{2},{3}", order.OrderNumber, order.FirstName, order.LastName, order.Total);
                 }
+            }
         }
     }
 }
