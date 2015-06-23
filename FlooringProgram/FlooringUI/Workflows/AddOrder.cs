@@ -14,15 +14,28 @@ namespace FlooringUI.Workflows
         public void Execute()
         {
             var repo = new OrderRepository();
-            List<Order> orders = repo.GetAllOrders();
+            //GetAllOrders fetches only orders for specific DATE
+            string date = DateTime.Today.ToString("MMddyyy");
+            List<Order> orders = repo.GetAllOrders(date);
 
-            string orderNumber = GetNewOrderNumber(orders);
+            string orderNumber = "";
+
+            if (orders != null)
+            {
+                orderNumber = GetNewOrderNumber(orders);
+            }
+            else
+            {
+                orderNumber = "1";
+            }
+
             Order newOrder = GetOrderInformation(orderNumber);
-            orders.Add(newOrder);
             bool commit = DisplayNewOrderSummary(newOrder);
+            
             if (commit)
             {
-                repo.WriteNewOrder(orders);
+                orders.Add(newOrder);
+                repo.WriteNewOrder(orders,date);
             }
             else
             {
@@ -74,6 +87,8 @@ namespace FlooringUI.Workflows
             order.State = state;
             order.ProductType = productType;
             order.Area = area;
+
+            //here will be calculations base on data files for other Order info
 
             return order;
         }

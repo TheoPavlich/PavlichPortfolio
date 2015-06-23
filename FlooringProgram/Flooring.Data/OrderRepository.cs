@@ -11,11 +11,12 @@ namespace Flooring.Data
 {
     public class OrderRepository
     {
-        private const string FilePath;
+        private string FilePath;
+        //FUCK EVERYTHING DAMMIT 
 
-        public Order GetOrder(string orderNumber)
+        public Order GetOrder(string orderNumber, string date)
         {
-            List<Order> allOrders = GetAllOrders();
+            List<Order> allOrders = GetAllOrders(date);
 
             foreach (var order in allOrders)
             {
@@ -26,29 +27,44 @@ namespace Flooring.Data
             return null;
         }
 
-        public List<Order> GetAllOrders()
+        public List<Order> GetAllOrders(string date)
         {
+            FilePath = @"DataFiles/Orders_" + date + ".txt";
             List<Order> orders = new List<Order>();
 
-            //var reader = File.ReadAllLines(FilePath);
+            if (File.Exists(FilePath))
+            {
+                var reader = File.ReadAllLines(FilePath);
 
-            //for (int i = 1; i < reader.Length; i++)
-            //{
-            //    var columns = reader[i].Split(',');
+                for (int i = 1; i < reader.Length; i++)
+                {
+                    var columns = reader[i].Split(',');
 
-            //    var order = new Order();
+                    var order = new Order();
+
+                    order.OrderNumber = columns[0];
+                    order.FirstName = columns[1];
+                    order.LastName = columns[2];
+                    order.State = columns[3];
+                    order.ProductType = columns[4];
+                    order.Area = decimal.Parse(columns[5]);
+                    order.CostPerSqFt = decimal.Parse(columns[6]);
+                    order.LaborCost = decimal.Parse(columns[7]);
+                    order.LaborPerSqFt = decimal.Parse(columns[8]);
+                    order.MaterialCost = decimal.Parse(columns[9]);
+                    order.TaxRate = decimal.Parse(columns[10]);
+                    order.Tax = decimal.Parse(columns[11]);
+                    order.Total = decimal.Parse(columns[12]);
 
 
-
-            //    orders.Add(order);
-            //}
-
+                    orders.Add(order);
+                }
+            }
             return orders;
         }
 
-        public void WriteNewOrder(List<Order> orders)
+        public void WriteNewOrder(List<Order> orders, string date)
         {
-            string date = DateTime.Today.ToString("d");
             OverwriteFile(orders,date);
         }
 
@@ -59,7 +75,7 @@ namespace Flooring.Data
 
         public void UpdateOrder(Order orderToUpdate, string date)
         {
-            var allOrders = GetAllOrders();
+            var allOrders = GetAllOrders(date);
 
             var existingOrder = allOrders.First(a => a.OrderNumber == orderToUpdate.OrderNumber);
 
@@ -83,16 +99,23 @@ namespace Flooring.Data
 
         private void OverwriteFile(List<Order> allOrders, string date)
         {
-            //File.Delete(FilePath);
             FilePath = @"DataFiles\Orders_"+date+".txt";
-
+            if (File.Exists(FilePath))
+            {
+                File.Delete(FilePath);
+            }
+            else
+            {
+                File.Create(FilePath);
+               }
             using (var writer = File.CreateText(FilePath))
             {
-                writer.WriteLine("OrderNumber,FirstName,LastName,Total");
+                writer.WriteLine("OrderNumber,FirstName,LastName,State,ProductType,Area,CostPerSqFt,LaborCost,LaborPerSqFt,MaterialCost,TaxRate,Tax,Total");
 
                 foreach (var order in allOrders)
                 {
-                    writer.WriteLine("{0},{1},{2},{3}", order.OrderNumber, order.FirstName, order.LastName, order.Total);
+                    writer.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", order.OrderNumber, order.FirstName, order.LastName, order.State,order.ProductType,order.Area,order.CostPerSqFt,order.LaborCost,
+                        order.LaborPerSqFt,order.MaterialCost, order.TaxRate,order.Tax,order.Total);
                 }
             }
         }

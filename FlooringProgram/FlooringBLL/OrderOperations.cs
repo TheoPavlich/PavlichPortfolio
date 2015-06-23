@@ -11,14 +11,14 @@ namespace FlooringBLL
 {
     public class OrderOperations
     {
-        public Response<Order> GetOrder(string orderNumber)
+        public Response<Order> GetOrder(string orderNumber, string date)
         {
             var repo = new OrderRepository();
             var response = new Response<Order>();
 
             try
             {
-                var order = repo.GetOrder(orderNumber);
+                var order = repo.GetOrder(orderNumber,date);
 
                 if (order == null)
                 {

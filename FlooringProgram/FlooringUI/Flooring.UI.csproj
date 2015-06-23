@@ -54,7 +54,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data Files\" />
+    <Folder Include="DataFiles\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
