@@ -17,14 +17,14 @@ namespace FlooringBLL
             _taxRepository = taxRepo;
         }
 
-        public List<StateTax> ListAll()
+        public List<StateTax> GetAllItems()
         {
-            return _taxRepository.ListAll();
+            return _taxRepository.GetAllItems();
         }
 
         public decimal GetTaxRate(string stateAbbr)
         {
-            var allStates = _taxRepository.ListAll();
+            var allStates = _taxRepository.GetAllItems();
             var state = allStates.First(s => s.StateAbbreviation == stateAbbr);
 
             return state.TaxRate;
@@ -32,7 +32,7 @@ namespace FlooringBLL
 
         public bool IsValidState(string stateAbbr)
         {
-            var allStates = _taxRepository.ListAll();
+            var allStates = _taxRepository.GetAllItems();
             return allStates.Any(s => s.StateAbbreviation == stateAbbr);
         }
     }

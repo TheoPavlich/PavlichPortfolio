@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="OrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Temps\ProductRepositoryMock.cs" />
     <Compile Include="Temps\StateTaxRepositoryMock.cs" />
   </ItemGroup>
   <ItemGroup>

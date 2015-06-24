@@ -24,7 +24,7 @@ namespace FlooringUI.Workflows
                 Console.WriteLine("Order Information");
                 
                 var repo = new OrderRepository();
-                List<Order> orders = repo.GetAllOrders(orderFile.Substring(17,8));
+                List<Order> orders = repo.GetAllItems("Orders_"+orderFile.Substring(17,8));
                 PrintOrderDetails(orders, orderFile.Substring(17, 8));
             }
             else

@@ -55,7 +55,7 @@ namespace FlooringBLL
 
             try
             {
-                var orders = _orderRepo.ListAll(request.OrderDate);
+                var orders = _orderRepo.GetAllItems("Order_"+request.OrderDate.ToString("MMddyyy"));
 
                 int orderNumber = 0;
 
@@ -77,6 +77,38 @@ namespace FlooringBLL
                 response.Message = ex.Message;
             }
             return response;
+        }
+
+        public decimal GetCostPerSqFt(string productType)
+        {
+            var products = @"DataFiles/Products.txt";
+            var reader = File.ReadAllLines(products);
+
+            for (int i = 1; i < reader.Length; i++)
+            {
+                var column = reader[i].Split(',');
+                if (column[0] == productType)
+                {
+                    return decimal.Parse(column[1]);
+                }
+            }
+            return 0;
+        }
+
+        public decimal GetLaborPerSqFt(string productType)
+        {
+            var products = @"DataFiles/Products.txt";
+            var reader = File.ReadAllLines(products);
+
+            for (int i = 1; i < reader.Length; i++)
+            {
+                var column = reader[i].Split(',');
+                if (column[0] == productType)
+                {
+                    return decimal.Parse(column[2]);
+                }
+            }
+            return 0;
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Flooring.Data;
 using Flooring.Models;
+using FlooringBLL;
+using FlooringUI.Utilities;
 
 namespace FlooringUI.Workflows
 {
@@ -13,41 +15,62 @@ namespace FlooringUI.Workflows
     {
         public void Execute()
         {
-            var repo = new OrderRepository();
-            //GetAllOrders fetches only orders for specific DATE
-            string date = DateTime.Today.ToString("MMddyyy");
-            //string date = "01242015";
-            //string date = "03122015";
-            List<Order> orders = repo.GetAllOrders(date);
-
-            string orderNumber = "";
-
-            if (orders != null)
-            {
-                orderNumber = GetNewOrderNumber(orders);
-            }
-            else
-            {
-                orderNumber = "1";
-            }
-
-            Order newOrder = GetOrderInformation(orderNumber);
-            bool commit = DisplayNewOrderSummary(newOrder);
+            var request = new OrderRequest();
             
-            if (commit)
+            CreateRequest(request);
+
+            if (ConfirmRequest(request) =="Y")
             {
-                orders.Add(newOrder);
-                repo.WriteNewOrder(orders,date);
-                Console.WriteLine("New order has been committed. Press enter to continue...");
+                SubmitRequest(request);
             }
             else
             {
-                Console.WriteLine("Order has not been committed. Press enter to return to main menu.");
+                Console.WriteLine("Your order has not been saved.");
             }
-            Console.ReadLine();
+
+            UserInteractions.PromptToContinue();
         }
 
-        private string GetNewOrderNumber(List<Order> orders)
+        private void CreateRequest(OrderRequest request)
+        {
+            request.OrderDate = DateTime.Today;
+            request.Order = new Order();
+            request.Order.FirstName = UserInteractions.PromptForRequiredString("Enter First Name: ");
+            request.Order.LastName = UserInteractions.PromptForRequiredString("Enter Last Name: ");
+            request.Order.State = UserInteractions.PromptForValidState("Enter state abbreviation: ");
+            request.Order.Area = UserInteractions.PromptForDecimal("Enter area in square feet: ");
+            request.Order.ProductType = UserInteractions.PromptForRequiredString("Enter a product type: ");
+        }
+
+        private string ConfirmRequest(OrderRequest request)
+        {
+            var ops = OperationsMode.CreateOrderOperations();
+            //var order - ops.PrepareOrderTotal(request);
+
+            Console.WriteLine("Order to be committed is as follows:");
+            Console.WriteLine("Name on order: {0} {1}.", request.Order.FirstName, request.Order.LastName);
+            Console.WriteLine("Order Total: {0:C}", request.Order.Total);
+
+
+            return UserInteractions.PromptForConfirmation("Do you want to commit this order? (Y or N): ");
+        }
+
+        private void SubmitRequest(OrderRequest request)
+        {
+            var ops = OperationsMode.CreateOrderOperations();
+            var result = ops.AddOrder(request);
+
+            if (result.Success)
+            {
+                Console.WriteLine("New order number {0} of total {1:C} has been committed.", request.Order.OrderNumber, request.Order.Total);
+            }
+            else
+            {
+                Console.WriteLine("Order has not been committed.");
+            }
+        }
+
+        /*private string GetNewOrderNumber(List<Order> orders)
         {
             var orderNumbers = from o in orders
                 select o.OrderNumber;
@@ -121,6 +144,6 @@ namespace FlooringUI.Workflows
             }
             return false;
 
-        }
+        }*/
     }
 }

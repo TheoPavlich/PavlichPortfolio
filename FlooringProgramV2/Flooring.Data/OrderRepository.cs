@@ -5,17 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Flooring.Models;
+using Flooring.Models.Interfaces;
 
 
 namespace Flooring.Data
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private string FilePath;
 
         public Order GetOrder(string orderNumber, string date)
         {
-            List<Order> allOrders = GetAllOrders(date);
+            List<Order> allOrders = GetAllItems("Order_" + date);
 
             foreach (var order in allOrders)
             {
@@ -26,9 +27,9 @@ namespace Flooring.Data
             return null;
         }
 
-        public List<Order> GetAllOrders(string date)
+        public List<Order> GetAllItems(string fileName)
         {
-            FilePath = @"DataFiles/Orders_" + date + ".txt";
+            FilePath = @"DataFiles/" + fileName + ".txt";
             List<Order> orders = new List<Order>();
 
             if (File.Exists(FilePath))
@@ -58,11 +59,26 @@ namespace Flooring.Data
 
                     orders.Add(order);
                 }
+                return orders;
             }
-            return orders;
+            return null;
         }
 
-        public decimal GetTaxRate(string state)
+        public void Add(OrderRequest orderToAdd)
+        {
+            //Might also use for edit
+            var orders = GetAllItems("Orders_" + orderToAdd.OrderDate.ToString("MMddyyyy"));
+
+            if (orders == null)
+                orders = new List<Order>();
+
+            orders.Add(orderToAdd.Order);
+
+            OverwriteFile(orders, orderToAdd.OrderDate.ToString("MMddyyyy"));
+        }
+
+        //Many of the below methods may move elsewhere.
+      /*  public decimal GetTaxRate(string state)
         {
             var stateTaxes = @"DataFiles/Taxes.txt";
             var reader = File.ReadAllLines(stateTaxes);
@@ -77,20 +93,15 @@ namespace Flooring.Data
             }
             return 0;
         }
-
-        public void WriteNewOrder(List<Order> orders, string date)
-        {
-            OverwriteFile(orders,date);
-        }
-
+        */
         public void DeleteOrder(List<Order> orders, string date)
         {
-            OverwriteFile(orders,date);
+            OverwriteFile(orders, date);
         }
 
         public void UpdateOrder(Order orderToUpdate, string date)
         {
-            var allOrders = GetAllOrders(date);
+            var allOrders = GetAllItems("Orders_" + date);
 
             var existingOrder = allOrders.First(a => a.OrderNumber == orderToUpdate.OrderNumber);
 
@@ -108,13 +119,13 @@ namespace Flooring.Data
             existingOrder.Tax = orderToUpdate.Tax;
             existingOrder.Total = orderToUpdate.Total;
 
-            OverwriteFile(allOrders,date);
+            OverwriteFile(allOrders, date);
 
         }
 
         private void OverwriteFile(List<Order> allOrders, string date)
         {
-            FilePath = @"DataFiles\Orders_"+date+".txt";
+            FilePath = @"DataFiles\Orders_" + date + ".txt";
             if (File.Exists(FilePath))
             {
                 File.Delete(FilePath);
@@ -122,46 +133,19 @@ namespace Flooring.Data
 
             using (var writer = File.CreateText(FilePath))
             {
-                writer.WriteLine("OrderNumber,FirstName,LastName,State,ProductType,Area,CostPerSqFt,LaborCost,LaborPerSqFt,MaterialCost,TaxRate,Tax,Total");
+                writer.WriteLine(
+                    "OrderNumber,FirstName,LastName,State,ProductType,Area,CostPerSqFt,LaborCost,LaborPerSqFt,MaterialCost,TaxRate,Tax,Total");
 
                 foreach (var order in allOrders)
                 {
-                    writer.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", order.OrderNumber, order.FirstName, order.LastName, order.State,order.ProductType,order.Area,order.CostPerSqFt,order.LaborCost,
-                        order.LaborPerSqFt,order.MaterialCost, order.TaxRate,order.Tax,order.Total);
+                    writer.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", order.OrderNumber,
+                        order.FirstName, order.LastName, order.State, order.ProductType, order.Area, order.CostPerSqFt,
+                        order.LaborCost,
+                        order.LaborPerSqFt, order.MaterialCost, order.TaxRate, order.Tax, order.Total);
                 }
             }
         }
+      
 
-        public decimal GetCostPerSqFt(string productType)
-        {
-            var products = @"DataFiles/Products.txt";
-            var reader = File.ReadAllLines(products);
-
-            for (int i = 1; i < reader.Length; i++)
-            {
-                var column = reader[i].Split(',');
-                if (column[0] == productType)
-                {
-                    return decimal.Parse(column[1]);
-                }
-            }
-            return 0;
-        }
-
-        public decimal GetLaborPerSqFt(string productType)
-        {
-            var products = @"DataFiles/Products.txt";
-            var reader = File.ReadAllLines(products);
-
-            for (int i = 1; i < reader.Length; i++)
-            {
-                var column = reader[i].Split(',');
-                if (column[0] == productType)
-                {
-                    return decimal.Parse(column[2]);
-                }
-            }
-            return 0;
-        }
     }
 }

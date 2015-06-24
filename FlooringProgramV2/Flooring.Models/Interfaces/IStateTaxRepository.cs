@@ -8,6 +8,6 @@ namespace Flooring.Models.Interfaces
 {
     public interface IStateTaxRepository
     {
-        List<StateTax> ListAll();
+        List<StateTax> GetAllItems();
     }
 }

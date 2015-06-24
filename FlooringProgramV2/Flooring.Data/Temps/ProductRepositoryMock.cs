@@ -5,16 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Flooring.Models;
-using Flooring.Models.Interfaces;
 
 namespace Flooring.Data.Temps
 {
-    public class StateTaxRepositoryMock : IStateTaxRepository
+    class ProductRepositoryMock
     {
-        public List<StateTax> GetAllItems()
+        public List<Product> GetAllItems()
         {
-            var FilePath = @"DataFiles/Taxes.txt";
-            List<StateTax> taxes = new List<StateTax>();
+            var FilePath = @"DataFiles/Products.txt";
+            List<Product> products = new List<Product>();
 
             var reader = File.ReadAllLines(FilePath);
 
@@ -22,14 +21,15 @@ namespace Flooring.Data.Temps
             {
                 var columns = reader[i].Split(',');
 
-                var tax = new StateTax();
+               var product = new Product();
 
-                tax.StateAbbreviation = columns[0];
-                tax.TaxRate = decimal.Parse(columns[1]);
+                product.ProductType = columns[0];
+                product.CostPerSqFt = decimal.Parse(columns[1]);
+                product.LaborCostPerSqFt = decimal.Parse(columns[2]);
             }
 
 
-            return taxes;
+            return products;
           
             /*return new List<StateTax>()
             {
@@ -38,4 +38,5 @@ namespace Flooring.Data.Temps
             };*/
         }
     }
+    
 }

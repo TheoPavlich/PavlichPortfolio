@@ -8,7 +8,7 @@ namespace Flooring.Models.Interfaces
 {
     public interface IOrderRepository
     {
-        List<Order> ListAll(DateTime orderDate);
+        List<Order> GetAllItems(string orderDate);
         void Add(OrderRequest orderToAdd);
     }
 }
