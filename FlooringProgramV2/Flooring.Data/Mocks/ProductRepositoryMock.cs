@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Flooring.Models;
+using Flooring.Models.Interfaces;
 
 namespace Flooring.Data.Temps
 {
-    class ProductRepositoryMock
+    public class ProductRepositoryMock: IProductRepository
     {
         public List<Product> GetAllItems()
         {
@@ -26,6 +27,8 @@ namespace Flooring.Data.Temps
                 product.ProductType = columns[0];
                 product.CostPerSqFt = decimal.Parse(columns[1]);
                 product.LaborCostPerSqFt = decimal.Parse(columns[2]);
+
+                products.Add(product);
             }
 
 

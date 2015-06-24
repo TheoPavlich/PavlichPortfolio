@@ -45,7 +45,7 @@ namespace FlooringUI.Utilities
             while (!validInput)
             {
                 Console.WriteLine(message);
-                output = Console.ReadLine();
+                output = Console.ReadLine().ToUpper();
 
                 if (!taxOperations.IsValidState(output))
                 {
@@ -93,7 +93,7 @@ namespace FlooringUI.Utilities
             while (!validInput)
             {
                 Console.Write(message);
-                output = Console.ReadLine();
+                output = Console.ReadLine().ToUpper();
 
                 if (mode == "Edit" && String.IsNullOrWhiteSpace(output))
                     return output;
@@ -193,7 +193,7 @@ namespace FlooringUI.Utilities
             while (!validInput)
             {
                 Console.Write(message);
-                output = Console.ReadLine();
+                output = Console.ReadLine().ToUpper();
 
 
                 if (String.IsNullOrEmpty(output))

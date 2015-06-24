@@ -18,7 +18,7 @@ namespace Flooring.Data.Temps
 
             var reader = File.ReadAllLines(FilePath);
 
-            for (int i = 1; i < reader.Length; i++)
+            for (int i = 0; i < reader.Length; i++)
             {
                 var columns = reader[i].Split(',');
 
@@ -32,12 +32,6 @@ namespace Flooring.Data.Temps
 
 
             return taxes;
-          
-            /*return new List<StateTax>()
-            {
-                new StateTax() {StateAbbreviation = "OH", TaxRate = 0.065M},
-                new StateTax() {StateAbbreviation = "PA", TaxRate = 0.075M}
-            };*/
         }
     }
 }

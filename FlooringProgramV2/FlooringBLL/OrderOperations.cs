@@ -55,7 +55,7 @@ namespace FlooringBLL
 
             try
             {
-                var orders = _orderRepo.GetAllItems("Order_"+request.OrderDate.ToString("MMddyyy"));
+                var orders = _orderRepo.GetAllItems("Orders_"+request.OrderDate.ToString("MMddyyy"));
 
                 int orderNumber = 0;
 

@@ -21,7 +21,7 @@ namespace FlooringUI.Workflows
         {
             if (File.Exists(orderFile))
             {
-                Console.WriteLine("Order Information");
+                Console.WriteLine("\n*****Order Information*****\n");
                 
                 var repo = new OrderRepository();
                 List<Order> orders = repo.GetAllItems("Orders_"+orderFile.Substring(17,8));
@@ -36,7 +36,7 @@ namespace FlooringUI.Workflows
 
         public void PrintOrderDetails(List<Order> orders, string date)
         {
-            Console.WriteLine("Orders for "+ date + ":");
+            Console.WriteLine("Orders for "+ date + ":\n");
             foreach (var order in orders)
             {
                 

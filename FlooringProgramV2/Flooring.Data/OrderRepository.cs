@@ -78,22 +78,7 @@ namespace Flooring.Data
         }
 
         //Many of the below methods may move elsewhere.
-      /*  public decimal GetTaxRate(string state)
-        {
-            var stateTaxes = @"DataFiles/Taxes.txt";
-            var reader = File.ReadAllLines(stateTaxes);
 
-            for (int i = 0; i < reader.Length; i++)
-            {
-                var column = reader[i].Split(',');
-                if (column[0] == state)
-                {
-                    return decimal.Parse(column[1]);
-                }
-            }
-            return 0;
-        }
-        */
         public void DeleteOrder(List<Order> orders, string date)
         {
             OverwriteFile(orders, date);
