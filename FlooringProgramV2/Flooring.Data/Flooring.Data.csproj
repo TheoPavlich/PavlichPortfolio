@@ -41,8 +41,8 @@
   <ItemGroup>
     <Compile Include="OrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Temps\ProductRepositoryMock.cs" />
-    <Compile Include="Temps\StateTaxRepositoryMock.cs" />
+    <Compile Include="Mocks\ProductRepositoryMock.cs" />
+    <Compile Include="Mocks\StateTaxRepositoryMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Flooring.Models\Flooring.Models.csproj">

@@ -26,6 +26,8 @@ namespace Flooring.Data.Temps
 
                 tax.StateAbbreviation = columns[0];
                 tax.TaxRate = decimal.Parse(columns[1]);
+
+                taxes.Add(tax);
             }
 
 
