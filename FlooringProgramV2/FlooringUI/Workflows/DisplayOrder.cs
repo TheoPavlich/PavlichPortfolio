@@ -49,23 +49,13 @@ namespace FlooringUI.Workflows
 
         public string GetOrderDateFromUser()
         {
-           // do
-           // {
-                Console.Clear();
-                //string date = DateTime.Today.ToString("MMddyyy");
 
-                Console.Write("Enter an order date (MMddyyyy): ");
-                string orderDate = Console.ReadLine();
+            Console.Clear();
 
-                return @"DataFiles\Orders_" + orderDate + ".txt";
+            Console.Write("Enter an order date (MMddyyyy): ");
+            string orderDate = Console.ReadLine();
 
-                //} while (true);
-                //foreach (var order in orders)
-            }
-
-            
-
-
-        
+            return @"DataFiles\Orders_" + orderDate + ".txt";
+        }
     }
 }

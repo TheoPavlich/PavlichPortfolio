@@ -85,7 +85,7 @@ namespace FlooringUI.Utilities
             Console.ReadKey();
         }
 
-        public static string PromptForRequiredString(string message, string mode = "Add")
+        public static string PromptForRequiredString(string message, string mode)
         {
             bool validInput = false;
             string output = "";
@@ -95,9 +95,17 @@ namespace FlooringUI.Utilities
                 Console.Write(message);
                 output = Console.ReadLine().ToUpper();
 
-                if (mode == "Edit" && String.IsNullOrWhiteSpace(output))
-                    return output;
+                if (mode == "Edit")
+                {
+                    if (String.IsNullOrWhiteSpace(output))
+                    {
+                        string[] split = message.Split("(".ToCharArray());
+                        string[] split2 = split[1].Split(")".ToCharArray());
+                        output = split2[0];
+                    }
 
+                return output;
+                }
                 if (String.IsNullOrEmpty(output))
                 {
                     Console.WriteLine("Please enter some data.");
@@ -111,8 +119,7 @@ namespace FlooringUI.Utilities
             return output;
         }
 
-
-        public static decimal PromptForDecimal(string message, string mode = "Add")
+        public static decimal PromptForDecimal(string message, string mode)
         {
             bool validInput = false;
             decimal output = 0;
@@ -122,8 +129,17 @@ namespace FlooringUI.Utilities
                 Console.Write(message);
                 var input = Console.ReadLine();
 
-                if (mode == "Edit" && String.IsNullOrWhiteSpace(input))
-                    return -1;
+                if (mode == "Edit")
+                {
+                    if (output==0)
+                    {
+                        string[] split = message.Split("(".ToCharArray());
+                        string[] split2 = split[1].Split(")".ToCharArray());
+                        output = Decimal.Parse(split2[0]);
+                    }
+
+                    return output;
+                }
 
                 validInput = Decimal.TryParse(input, out output);
 

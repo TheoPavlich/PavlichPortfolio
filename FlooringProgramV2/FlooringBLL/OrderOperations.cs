@@ -19,14 +19,14 @@ namespace FlooringBLL
             _orderRepo = myRepo;
         }
 
-        public Response<Order> GetOrder(string orderNumber, string date)
+       /* public Response<Order> GetOrder(string orderNumber, string date)
         {
             var repo = new OrderRepository();
             var response = new Response<Order>();
 
             try
             {
-                var order = repo.GetOrder(orderNumber,date);
+                var order = repo.GetOrder(orderNumber, date);
 
                 if (order == null)
                 {
@@ -47,7 +47,7 @@ namespace FlooringBLL
             }
             return response;
 
-        }
+        }*/
 
         public Response<Order> AddOrder(OrderRequest request)
         {
@@ -55,7 +55,7 @@ namespace FlooringBLL
 
             try
             {
-                var orders = _orderRepo.GetAllItems("Orders_"+request.OrderDate.ToString("MMddyyy"));
+                var orders = _orderRepo.GetAllItems("Orders_" + request.OrderDate.ToString("MMddyyy"));
 
                 int orderNumber = 0;
 
@@ -77,38 +77,6 @@ namespace FlooringBLL
                 response.Message = ex.Message;
             }
             return response;
-        }
-
-        public decimal GetCostPerSqFt(string productType)
-        {
-            var products = @"DataFiles/Products.txt";
-            var reader = File.ReadAllLines(products);
-
-            for (int i = 1; i < reader.Length; i++)
-            {
-                var column = reader[i].Split(',');
-                if (column[0] == productType)
-                {
-                    return decimal.Parse(column[1]);
-                }
-            }
-            return 0;
-        }
-
-        public decimal GetLaborPerSqFt(string productType)
-        {
-            var products = @"DataFiles/Products.txt";
-            var reader = File.ReadAllLines(products);
-
-            for (int i = 1; i < reader.Length; i++)
-            {
-                var column = reader[i].Split(',');
-                if (column[0] == productType)
-                {
-                    return decimal.Parse(column[2]);
-                }
-            }
-            return 0;
         }
     }
 }

@@ -29,8 +29,6 @@ namespace Flooring.Data.Temps
 
                 taxes.Add(tax);
             }
-
-
             return taxes;
         }
     }

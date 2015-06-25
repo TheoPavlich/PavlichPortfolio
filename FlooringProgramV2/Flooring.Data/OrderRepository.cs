@@ -87,7 +87,7 @@ namespace Flooring.Data
         public void UpdateOrder(Order orderToUpdate, string date)
         {
             var allOrders = GetAllItems("Orders_" + date);
-
+            
             var existingOrder = allOrders.First(a => a.OrderNumber == orderToUpdate.OrderNumber);
 
 
@@ -103,7 +103,7 @@ namespace Flooring.Data
             existingOrder.LaborCost = orderToUpdate.LaborCost;
             existingOrder.Tax = orderToUpdate.Tax;
             existingOrder.Total = orderToUpdate.Total;
-
+            
             OverwriteFile(allOrders, date);
 
         }

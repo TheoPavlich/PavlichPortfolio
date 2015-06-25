@@ -30,15 +30,7 @@ namespace Flooring.Data.Temps
 
                 products.Add(product);
             }
-
-
             return products;
-          
-            /*return new List<StateTax>()
-            {
-                new StateTax() {StateAbbreviation = "OH", TaxRate = 0.065M},
-                new StateTax() {StateAbbreviation = "PA", TaxRate = 0.075M}
-            };*/
         }
     }
     
