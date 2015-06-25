@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FlooringBLL;
 
 namespace FlooringUI.Utilities
 {
-    class UserInteractions
+    internal class UserInteractions
     {
         public static int PromptForChoice(string message, int lowerBound, int upperBound)
         {
-            bool validInput = false;
-            int output = 0;
+            var validInput = false;
+            var output = 0;
 
             while (!validInput)
             {
                 Console.Write(message);
-                validInput = Int32.TryParse(Console.ReadLine(), out output);
+                validInput = int.TryParse(Console.ReadLine(), out output);
 
                 if (!validInput)
                 {
@@ -38,14 +34,15 @@ namespace FlooringUI.Utilities
 
         public static string PromptForValidState(string message)
         {
-            bool validInput = false;
-            string output = "";
+            var validInput = false;
+            var output = "";
             var taxOperations = OperationsMode.CreateTaxOperations();
 
             while (!validInput)
             {
                 Console.WriteLine(message);
-                output = Console.ReadLine().ToUpper();
+                var readLine = Console.ReadLine();
+                if (readLine != null) output = readLine.ToUpper();
 
                 if (!taxOperations.IsValidState(output))
                 {
@@ -62,18 +59,19 @@ namespace FlooringUI.Utilities
 
         public static string PromptForValidStateEdit(string message)
         {
-            bool validInput = false;
-            string output = "";
+            var validInput = false;
+            var output = "";
             var taxOperations = OperationsMode.CreateTaxOperations();
 
             while (!validInput)
             {
                 Console.WriteLine(message);
-                output = Console.ReadLine().ToUpper();
-                if (String.IsNullOrWhiteSpace(output))
+                var readLine = Console.ReadLine();
+                if (readLine != null) output = readLine.ToUpper();
+                if (string.IsNullOrWhiteSpace(output))
                 {
-                    string[] split = message.Split("(".ToCharArray());
-                    string[] split2 = split[1].Split(")".ToCharArray());
+                    var split = message.Split("(".ToCharArray());
+                    var split2 = split[1].Split(")".ToCharArray());
                     output = split2[0];
                     return output;
                 }
@@ -85,7 +83,6 @@ namespace FlooringUI.Utilities
                 else
                 {
                     validInput = true;
-                    
                 }
             }
             return output;
@@ -93,8 +90,8 @@ namespace FlooringUI.Utilities
 
         public static DateTime PromptForDate(string message)
         {
-            bool validInput = false;
-            DateTime output = new DateTime();
+            var validInput = false;
+            var output = new DateTime();
 
             while (!validInput)
             {
@@ -118,26 +115,27 @@ namespace FlooringUI.Utilities
 
         public static string PromptForRequiredString(string message, string mode)
         {
-            bool validInput = false;
-            string output = "";
+            var validInput = false;
+            var output = "";
 
             while (!validInput)
             {
                 Console.Write(message);
-                output = Console.ReadLine().ToUpper();
+                var readLine = Console.ReadLine();
+                if (readLine != null) output = readLine.ToUpper();
 
                 if (mode == "Edit")
                 {
-                    if (String.IsNullOrWhiteSpace(output))
+                    if (string.IsNullOrWhiteSpace(output))
                     {
-                        string[] split = message.Split("(".ToCharArray());
-                        string[] split2 = split[1].Split(")".ToCharArray());
+                        var split = message.Split("(".ToCharArray());
+                        var split2 = split[1].Split(")".ToCharArray());
                         output = split2[0];
                     }
 
-                return output;
+                    return output;
                 }
-                if (String.IsNullOrEmpty(output))
+                if (string.IsNullOrEmpty(output))
                 {
                     Console.WriteLine("Please enter some data.");
                 }
@@ -152,7 +150,7 @@ namespace FlooringUI.Utilities
 
         public static decimal PromptForDecimal(string message, string mode)
         {
-            bool validInput = false;
+            var validInput = false;
             decimal output = 0;
 
             while (!validInput)
@@ -162,17 +160,17 @@ namespace FlooringUI.Utilities
 
                 if (mode == "Edit")
                 {
-                    if (output==0)
+                    if (output == 0)
                     {
-                        string[] split = message.Split("(".ToCharArray());
-                        string[] split2 = split[1].Split(")".ToCharArray());
-                        output = Decimal.Parse(split2[0]);
+                        var split = message.Split("(".ToCharArray());
+                        var split2 = split[1].Split(")".ToCharArray());
+                        output = decimal.Parse(split2[0]);
                     }
 
                     return output;
                 }
 
-                validInput = Decimal.TryParse(input, out output);
+                validInput = decimal.TryParse(input, out output);
 
                 if (!validInput)
                 {
@@ -185,13 +183,13 @@ namespace FlooringUI.Utilities
 
         internal static int PromptForInt(string message)
         {
-            bool validInput = false;
-            int output = 0;
+            var validInput = false;
+            var output = 0;
 
             while (!validInput)
             {
                 Console.Write(message);
-                validInput = Int32.TryParse(Console.ReadLine(), out output);
+                validInput = int.TryParse(Console.ReadLine(), out output);
 
                 if (!validInput)
                 {
@@ -234,16 +232,17 @@ namespace FlooringUI.Utilities
 
         public static string PromptForConfirmation(string message)
         {
-            bool validInput = false;
-            string output = "";
+            var validInput = false;
+            var output = "";
 
             while (!validInput)
             {
                 Console.Write(message);
-                output = Console.ReadLine().ToUpper();
+                var readLine = Console.ReadLine();
+                if (readLine != null) output = readLine.ToUpper();
 
 
-                if (String.IsNullOrEmpty(output))
+                if (string.IsNullOrEmpty(output))
                 {
                     Console.WriteLine("Please make a selection.");
                 }
@@ -252,6 +251,41 @@ namespace FlooringUI.Utilities
                     output = output.Substring(0, 1).ToUpper();
                     if (output == "Y" || output == "N")
                         validInput = true;
+                }
+            }
+
+            return output;
+        }
+
+        public static string PromptForValidProduct(string message, string mode)
+        {
+            var validInput = false;
+            var output = "";
+            var productOperations = OperationsMode.CreateOrderOperations();
+
+            while (!validInput)
+            {
+                Console.WriteLine(message);
+                var readLine = Console.ReadLine();
+                if (readLine != null) output = readLine.ToUpper();
+                
+                if (mode == "Edit")
+                {
+                    if (string.IsNullOrWhiteSpace(output))
+                    {
+                        var split = message.Split("(".ToCharArray());
+                        var split2 = split[1].Split(")".ToCharArray());
+                        output = split2[0];
+                    }
+                }
+
+                if (!productOperations.IsValidProduct(output))
+                {
+                    Console.WriteLine("That is not a product we sell.");
+                }
+                else
+                {
+                    validInput = true;
                 }
             }
 

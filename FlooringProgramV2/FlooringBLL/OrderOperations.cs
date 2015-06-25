@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Flooring.Data;
 using Flooring.Models;
 using Flooring.Models.Interfaces;
 
@@ -12,14 +7,17 @@ namespace FlooringBLL
 {
     public class OrderOperations
     {
-        private IOrderRepository _orderRepo;
+        private readonly IOrderRepository _orderRepo;
 
-        public OrderOperations(IOrderRepository myRepo)
+        private readonly IProductRepository _productRepository;
+
+        public OrderOperations(IOrderRepository myRepo, IProductRepository productRepository)
         {
             _orderRepo = myRepo;
+            _productRepository = productRepository;
         }
 
-       /* public Response<Order> GetOrder(string orderNumber, string date)
+        /* public Response<Order> GetOrder(string orderNumber, string date)
         {
             var repo = new OrderRepository();
             var response = new Response<Order>();
@@ -57,10 +55,10 @@ namespace FlooringBLL
             {
                 var orders = _orderRepo.GetAllItems("Orders_" + request.OrderDate.ToString("MMddyyy"));
 
-                int orderNumber = 0;
+                var orderNumber = 0;
 
                 if (orders != null)
-                    orderNumber = orders.Max(o => Int32.Parse(o.OrderNumber));
+                    orderNumber = orders.Max(o => int.Parse(o.OrderNumber));
 
                 orderNumber++;
 
@@ -77,6 +75,12 @@ namespace FlooringBLL
                 response.Message = ex.Message;
             }
             return response;
+        }
+
+        public bool IsValidProduct(string product)
+        {
+            var allProducts = _productRepository.GetAllItems();
+            return allProducts.Any(p => p.ProductType == product);
         }
     }
 }

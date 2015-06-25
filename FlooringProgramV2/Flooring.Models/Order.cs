@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Flooring.Models
+﻿namespace Flooring.Models
 {
     public class Order
     {
@@ -22,6 +15,5 @@ namespace Flooring.Models
         public decimal LaborCost { get; set; }
         public decimal Tax { get; set; }
         public decimal Total { get; set; }
-
     }
 }

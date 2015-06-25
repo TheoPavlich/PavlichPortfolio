@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using Flooring.Data;
-using Flooring.Data.Temps;
 using Flooring.Models;
 using Flooring.Models.Interfaces;
 using FlooringBLL;
@@ -44,12 +38,10 @@ namespace FlooringUI.Workflows
                 request.Order.CostPerSqFt = p.CostPerSqFt;
                 request.Order.LaborPerSqFt = p.LaborCostPerSqFt;
             }
-
         }
 
         private void ProcessRequestInputTaxes(OrderRequest request)
         {
-
             IStateTaxRepository stateTaxRepository = new StateTaxRepositoryMock();
             var states = stateTaxRepository.GetAllItems();
 
@@ -58,27 +50,28 @@ namespace FlooringUI.Workflows
                 request.Order.TaxRate = s.TaxRate;
                 break;
             }
-
         }
 
         private void CreateRequest(OrderRequest request)
         {
             request.OrderDate = DateTime.Today;
-            request.Order = new Order();
-            request.Order.FirstName = UserInteractions.PromptForRequiredString("Enter First Name: ", "Add");
-            request.Order.LastName = UserInteractions.PromptForRequiredString("Enter Last Name: ", "Add");
-            request.Order.State = UserInteractions.PromptForValidState("Enter state abbreviation: ").ToUpper();
-            request.Order.Area = UserInteractions.PromptForDecimal("Enter area in square feet: ", "Add");
-            request.Order.ProductType = UserInteractions.PromptForRequiredString("Enter a product type: ", "Add");
+            request.Order = new Order
+            {
+                FirstName = UserInteractions.PromptForRequiredString("Enter First Name: ", "Add"),
+                LastName = UserInteractions.PromptForRequiredString("Enter Last Name: ", "Add"),
+                State = UserInteractions.PromptForValidState("Enter state abbreviation: ").ToUpper(),
+                Area = UserInteractions.PromptForDecimal("Enter area in square feet: ", "Add"),
+                ProductType = UserInteractions.PromptForValidProduct("Enter a product type: ", "Add")
+            };
 
             ProcessRequestInputProduct(request);
             ProcessRequestInputTaxes(request);
-            
+
             request.Order.MaterialCost = request.Order.CostPerSqFt*request.Order.Area;
             request.Order.LaborCost = request.Order.LaborPerSqFt*request.Order.Area;
-            
+
             var subtotal = request.Order.LaborCost + request.Order.MaterialCost;
-            
+
             request.Order.Tax = subtotal*request.Order.TaxRate;
             request.Order.Total = subtotal + request.Order.Tax;
         }

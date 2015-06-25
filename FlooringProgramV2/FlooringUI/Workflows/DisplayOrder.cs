@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Flooring.Data;
 using Flooring.Models;
 
 namespace FlooringUI.Workflows
 {
-    class DisplayOrder
+    internal class DisplayOrder
     {
         public void Execute()
         {
-            string orderFile = GetOrderDateFromUser();
+            var orderFile = GetOrderDateFromUser();
             FindOrderFile(orderFile);
         }
 
@@ -22,9 +19,9 @@ namespace FlooringUI.Workflows
             if (File.Exists(orderFile))
             {
                 Console.WriteLine("\n*****Order Information*****\n");
-                
+
                 var repo = new OrderRepository();
-                List<Order> orders = repo.GetAllItems("Orders_"+orderFile.Substring(17,8));
+                var orders = repo.GetAllItems("Orders_" + orderFile.Substring(17, 8));
                 PrintOrderDetails(orders, orderFile.Substring(17, 8));
             }
             else
@@ -36,24 +33,21 @@ namespace FlooringUI.Workflows
 
         public void PrintOrderDetails(List<Order> orders, string date)
         {
-            Console.WriteLine("Orders for "+ date + ":\n");
+            Console.WriteLine("Orders for " + date + ":\n");
             foreach (var order in orders)
             {
-                
-                Console.WriteLine("Name: {0} {1}", order.FirstName,order.LastName);
+                Console.WriteLine("Name: {0} {1}", order.FirstName, order.LastName);
                 Console.WriteLine("Product Type: {0}", order.ProductType);
                 Console.WriteLine("Total: {0:C}\n", order.Total);
             }
-
         }
 
         public string GetOrderDateFromUser()
         {
-
             Console.Clear();
 
             Console.Write("Enter an order date (MMddyyyy): ");
-            string orderDate = Console.ReadLine();
+            var orderDate = Console.ReadLine();
 
             return @"DataFiles\Orders_" + orderDate + ".txt";
         }

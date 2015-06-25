@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Flooring.Models;
 using Flooring.Models.Interfaces;
 
@@ -10,7 +7,7 @@ namespace FlooringBLL
 {
     public class TaxOperations
     {
-        private IStateTaxRepository _taxRepository;
+        private readonly IStateTaxRepository _taxRepository;
 
         public TaxOperations(IStateTaxRepository taxRepo)
         {

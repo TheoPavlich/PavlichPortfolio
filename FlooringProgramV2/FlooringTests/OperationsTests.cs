@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FlooringTests
+﻿namespace FlooringTests
 {
-    class OperationsTests
+    internal class OperationsTests
     {
     }
 }
