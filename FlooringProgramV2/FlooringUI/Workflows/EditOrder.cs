@@ -20,25 +20,27 @@ namespace FlooringUI.Workflows
         {
             string orderFile = GetOrderDateFromUser();
             List<Order> orders = FindOrderFile(orderFile);
-            if (orders != null)
+            if (orders.Count!=0)
             {
-                int userChoice =UserInteractions.PromptForChoice("Select order number to edit. Press 0 to return to main menu.\n", 0,orders.Count);
+                int userChoice =
+                    UserInteractions.PromptForChoice("Select order number to edit. Press 0 to return to main menu.\n", 0,
+                        orders.Count);
                 if (userChoice != 0)
                 {
                     Order updatedOrder = EditSelectedOrder(userChoice.ToString(), orders);
-                    string confirm = UserInteractions.PromptForConfirmation("Would you like to commit these order edits?");
+                    string confirm =
+                        UserInteractions.PromptForConfirmation("Would you like to commit these order edits?");
                     if (confirm == "Y")
                     {
-                       // orders.Add(updatedOrder)
+                        // orders.Add(updatedOrder)
 
                         var ops = new OrderRepository();
-                        ops.UpdateOrder(updatedOrder, orderFile.Substring(17,8));
+                        ops.UpdateOrder(updatedOrder, orderFile.Substring(17, 8));
                         Console.WriteLine("Order has been committed.");
                         UserInteractions.PromptToContinue();
                     }
                 }
             }
-
         }
 
         private Order EditSelectedOrder(string orderNumber, List<Order> orders)
@@ -49,7 +51,7 @@ namespace FlooringUI.Workflows
             updatedOrder.OrderNumber = orderNumber;
             updatedOrder.FirstName = UserInteractions.PromptForRequiredString(("First Name ("+ order.FirstName+"): "), "Edit");
             updatedOrder.LastName = UserInteractions.PromptForRequiredString(("Last Name (" + order.LastName + "): "), "Edit");
-            updatedOrder.State = UserInteractions.PromptForRequiredString(("State Abbreviation (" + order.State + "): "), "Edit");
+            updatedOrder.State = UserInteractions.PromptForValidStateEdit("State Abbreviation (" + order.State + "): ");
             updatedOrder.Area = UserInteractions.PromptForDecimal(("Area (" + order.Area + "): "), "Edit");
             updatedOrder.ProductType = UserInteractions.PromptForRequiredString(("Product Type (" + order.ProductType + "): "), "Edit");
             

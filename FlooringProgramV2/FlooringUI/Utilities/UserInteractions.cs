@@ -60,6 +60,37 @@ namespace FlooringUI.Utilities
             return output;
         }
 
+        public static string PromptForValidStateEdit(string message)
+        {
+            bool validInput = false;
+            string output = "";
+            var taxOperations = OperationsMode.CreateTaxOperations();
+
+            while (!validInput)
+            {
+                Console.WriteLine(message);
+                output = Console.ReadLine().ToUpper();
+                if (String.IsNullOrWhiteSpace(output))
+                {
+                    string[] split = message.Split("(".ToCharArray());
+                    string[] split2 = split[1].Split(")".ToCharArray());
+                    output = split2[0];
+                    return output;
+                }
+
+                if (!taxOperations.IsValidState(output))
+                {
+                    Console.WriteLine("That is not a state we sell in.");
+                }
+                else
+                {
+                    validInput = true;
+                    
+                }
+            }
+            return output;
+        }
+
         public static DateTime PromptForDate(string message)
         {
             bool validInput = false;
