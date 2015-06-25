@@ -52,7 +52,7 @@ namespace FlooringUI.Workflows
             updatedOrder.State = UserInteractions.PromptForRequiredString(("State Abbreviation (" + order.State + "): "), "Edit");
             updatedOrder.Area = UserInteractions.PromptForDecimal(("Area (" + order.Area + "): "), "Edit");
             updatedOrder.ProductType = UserInteractions.PromptForRequiredString(("Product Type (" + order.ProductType + "): "), "Edit");
-
+            
             if (updatedOrder.ProductType != order.ProductType)
             {
                 ProcessRequestInputProduct(updatedOrder);
@@ -62,6 +62,9 @@ namespace FlooringUI.Workflows
                 updatedOrder.CostPerSqFt = order.CostPerSqFt;
                 updatedOrder.LaborPerSqFt = order.LaborPerSqFt;
             }
+            
+            updatedOrder.CostPerSqFt = UserInteractions.PromptForDecimal(("Material Cost Per Square Foot (" + updatedOrder.CostPerSqFt + "): "), "Edit");
+            updatedOrder.LaborPerSqFt = UserInteractions.PromptForDecimal(("Labor Cost Per Square Foot (" + updatedOrder.LaborPerSqFt + "): "), "Edit");
 
             if (updatedOrder.State != order.State)
             {
