@@ -21,7 +21,7 @@ namespace Flooring.Data
 
                 for (var i = 1; i < reader.Length; i++)
                 {
-                    var columns = reader[i].Split(',');
+                    var columns = reader[i].Split('~');
 
                     var order = new Order
                     {
@@ -107,11 +107,11 @@ namespace Flooring.Data
             using (var writer = File.CreateText(_filePath))
             {
                 writer.WriteLine(
-                    "OrderNumber,FirstName,LastName,State,ProductType,Area,CostPerSqFt,LaborCost,LaborPerSqFt,MaterialCost,TaxRate,Tax,Total");
+                    "OrderNumber~FirstName~LastName~State~ProductType~Area~CostPerSqFt~LaborCost~LaborPerSqFt~MaterialCost~TaxRate~Tax~Total");
 
                 foreach (var order in allOrders)
                 {
-                    writer.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", order.OrderNumber,
+                    writer.WriteLine("{0}~{1}~{2}~{3}~{4}~{5}~{6}~{7}~{8}~{9}~{10}~{11}~{12}", order.OrderNumber,
                         order.FirstName, order.LastName, order.State, order.ProductType, order.Area, order.CostPerSqFt,
                         order.LaborCost,
                         order.LaborPerSqFt, order.MaterialCost, order.TaxRate, order.Tax, order.Total);

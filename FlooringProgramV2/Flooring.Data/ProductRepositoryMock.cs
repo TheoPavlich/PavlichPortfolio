@@ -16,7 +16,7 @@ namespace Flooring.Data
 
             for (var i = 1; i < reader.Length; i++)
             {
-                var columns = reader[i].Split(',');
+                var columns = reader[i].Split('~');
 
                 var product = new Product
                 {

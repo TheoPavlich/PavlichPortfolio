@@ -14,7 +14,7 @@ namespace Flooring.Data
 
             var reader = File.ReadAllLines(FilePath);
 
-            return reader.Select(t => t.Split(',')).Select(columns => new StateTax
+            return reader.Select(t => t.Split('~')).Select(columns => new StateTax
             {
                 StateAbbreviation = columns[0], TaxRate = decimal.Parse(columns[1])
             }).ToList();

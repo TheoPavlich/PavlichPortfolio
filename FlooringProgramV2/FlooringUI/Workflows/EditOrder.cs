@@ -15,25 +15,40 @@ namespace FlooringUI.Workflows
         {
             var orderFile = GetOrderDateFromUser();
             var orders = FindOrderFile(orderFile);
+
             if (orders.Count != 0)
             {
-                var userChoice =
-                    UserInteractions.PromptForChoice("Select order number to edit. Press 0 to return to main menu.\n", 0,
-                        orders.Count);
-                if (userChoice != 0)
+                bool orderExists = false;
+                while (!orderExists)
                 {
-                    var updatedOrder = EditSelectedOrder(userChoice.ToString(), orders);
-                    var confirm =
-                        UserInteractions.PromptForConfirmation("Would you like to commit these order edits?");
-                    if (confirm == "Y")
-                    {
-                        // orders.Add(updatedOrder)
+                    Console.WriteLine("Select order number to edit.");
+                    string userChoice = Console.ReadLine();
 
-                        var ops = new OrderRepository();
-                        ops.UpdateOrder(updatedOrder, orderFile.Substring(17, 8));
-                        Console.WriteLine("Order has been committed.");
-                        UserInteractions.PromptToContinue();
+                    if (userChoice == "0") return;
+
+                    var orderNumbers = from o in orders select o.OrderNumber;
+
+                    if (orderNumbers.Contains(userChoice))
+                    {
+                        orderExists = true;
+                        var updatedOrder = EditSelectedOrder(userChoice, orders);
+
+                        var confirm =
+                            UserInteractions.PromptForConfirmation("Would you like to commit these order edits?");
+
+                        if (confirm == "Y")
+                        {
+                            var ops = new OrderRepository();
+                            ops.UpdateOrder(updatedOrder, orderFile.Substring(17, 8));
+                            Console.WriteLine("Order has been committed.");
+                            UserInteractions.PromptToContinue();
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
+                    Console.WriteLine("Order does not exist, please try again.");
                 }
             }
         }
@@ -41,6 +56,7 @@ namespace FlooringUI.Workflows
         private Order EditSelectedOrder(string orderNumber, List<Order> orders)
         {
             Console.Clear();
+            
             var order = orders.First(o => o.OrderNumber == orderNumber);
             var updatedOrder = new Order
             {
