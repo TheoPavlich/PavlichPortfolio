@@ -1,0 +1,14 @@
+﻿@model SGCorp.UI.Models.Applicant
+@{
+    ViewBag.Title = "ResumeCompleted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+<h2>Your resume has been submitted!</h2>
+<p>Applicant Name: @Html.DisplayFor(m => m.ApplicantName)</p>
+<p>Confirmation ID: @Html.DisplayFor(m => m.ApplicantID)</p>
+<form action="Index">
+    <button>Return to Home Screen</button>
+</form>

@@ -1,0 +1,10 @@
+MVC application
+
+Use Bootstrap to style
+
+Ability to upload Resumes to the website
+Ability for admin to view
+
+C# MVC upload
+
+look up dir and list all files to view Resumes
