@@ -19,7 +19,7 @@ namespace SGCorp.UI.Controllers
 
 
         [HttpPost]
-        public ActionResult AddResume(HttpPostedFileBase file)
+        public ActionResult AddResume(HttpPostedFileBase file, Resume resume)
         {
             var fileName = Path.GetFileName(file.FileName);
             var path = "~/Resumes/";
@@ -27,16 +27,17 @@ namespace SGCorp.UI.Controllers
             var mapPath = Server.MapPath(path);
             file.SaveAs(mapPath);
 
+            var r = new ResumeDatabase();
+            var textPath = "~/DataFiles/Resume.txt";
+            var textMapPath = Server.MapPath(textPath);
 
-            var r = new Resume();
-            r.ApplicantName = Request.Form["ApplicantName"];
-            r.ResumeFilePath = mapPath;
+            r.Add(resume, textMapPath);
 
-            var database = new ResumeDatabase();
-
-            database.Add(r);
-
-            return /*System.Web.UI.WebControls.*/ View("ResumeCompleted", r);
+            if (ModelState.IsValid)
+            {
+                return View("ResumeCompleted", resume);
+            }
+            return View(resume);
         }
 
         public ActionResult ShowFile(string filePath)
@@ -61,17 +62,13 @@ namespace SGCorp.UI.Controllers
         public ActionResult ListResumes()
         {
             var fileResumes = new ResumeDatabase();
-            //DirectoryInfo directory = new DirectoryInfo(Server.MapPath("~/Resumes/"));
+            
+            var path = "~/DataFiles/Resumes.txt";
+            var mapPath = Server.MapPath(path);
 
-            var resumes = fileResumes.GetAll();
-            //var files = directory.GetFiles().ToList();
+            var resumes = fileResumes.GetAll(mapPath);
 
-            //foreach (var a in applicants)
-            //{
-
-            //}
-
-            return /*System.Web.UI.WebControls.*/View(resumes);
+            return View(resumes);
         }
     }
 }

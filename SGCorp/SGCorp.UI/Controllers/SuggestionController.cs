@@ -25,9 +25,6 @@ namespace SGCorp.UI.Controllers
 
             s.Add(suggestion, mapPath);
 
-            //s.EmployeeName = Request.Form["Employee Name"];
-            //s.SuggestionId = int.Parse(Request.Form["Suggestion ID"]);
-            //s.SuggestionText = Request.Form["Suggestion Text"];
             if (ModelState.IsValid)
             {
                 return View("SuggestionCompleted", suggestion);
