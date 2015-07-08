@@ -22,7 +22,7 @@ namespace SGCorp.UI.Controllers
         public ActionResult AddResume(HttpPostedFileBase file)
         {
             var fileName = Path.GetFileName(file.FileName);
-            var path = "~/Data/Resumes/";
+            var path = "~/Resumes/";
             path += fileName;
             var mapPath = Server.MapPath(path);
             file.SaveAs(mapPath);

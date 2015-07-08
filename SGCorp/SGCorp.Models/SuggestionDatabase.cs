@@ -6,7 +6,7 @@ namespace SGCorp.Models
 {
     public class SuggestionDatabase
     {
-        private string _filePath = @"~/DataFiles/suggestions.txt";
+        //private string _filePath = @"~/SGCorp/Data/DataFiles/suggestions.txt";
 
         List<Suggestion> suggestions = new List<Suggestion>();
         //private static List<Suggestion>  _suggestions = new List<Suggestion>();
