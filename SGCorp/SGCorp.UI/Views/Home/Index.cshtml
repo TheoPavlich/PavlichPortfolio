@@ -1,0 +1,30 @@
+﻿@using SGCorp.Models
+@model List<Suggestion>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>SG Corporation HR Home</h1>
+<div>
+    <form action="/Resume/AddResume">
+        <button>Submit a Resume</button>
+        <p></p>
+    </form>
+
+    <form action="/Resume/ListResumes">
+        <button>View Submitted Resumes</button>
+        <p></p>
+    </form>
+
+    <form action="/Suggestion/AddSuggestion">
+        <button>Submit a Suggestion</button>
+        <p></p>
+    </form>
+
+    <form action="/Suggestion/ViewSuggestions">
+        <button>View Submitted Suggestions</button>
+        <p></p>
+    </form>
+</div>
+
