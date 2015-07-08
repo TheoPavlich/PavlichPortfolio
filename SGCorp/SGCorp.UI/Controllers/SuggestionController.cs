@@ -42,5 +42,17 @@ namespace SGCorp.UI.Controllers
 
             return View(suggestions);
         }
+
+        public ActionResult DeleteContact()
+        {
+            int suggestion = int.Parse(Request.Form["contactID"]);
+
+            var database = new SuggestionDatabase();
+
+            database.Delete(contactId);
+
+            var contacts = database.GetAll();
+            return View("Index", contacts);
+        }
     }
 }

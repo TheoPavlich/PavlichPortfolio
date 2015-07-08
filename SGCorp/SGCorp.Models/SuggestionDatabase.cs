@@ -48,6 +48,12 @@ namespace SGCorp.Models
             OverwriteFile(suggestions, fileName);
         }
 
+
+        public void Delete(int id)
+        {
+           suggestions.RemoveAll(s => s.SuggestionId == id);
+        }
+
         public void Delete(Suggestion suggestion, string fileName)
         {
             var suggestions = GetAll(fileName);
