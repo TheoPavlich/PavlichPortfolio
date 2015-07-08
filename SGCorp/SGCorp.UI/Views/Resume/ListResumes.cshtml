@@ -1,5 +1,5 @@
 ﻿@using System.ServiceModel.Activities.Tracking.Configuration
-@model List<SGCorp.UI.Models.Applicant>
+@model List<SGCorp.Models.Resume>
 @{
     ViewBag.Title = "ListResumes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,11 +26,11 @@
             {
                 <tr>
                     <td>@apps.ApplicantName</td>
-                    <td>@apps.ApplicantID</td>
+                    <td>@apps.ResumeID</td>
                     <td>
-                        @using (Html.BeginForm("ShowFile", "Home"))
+                        @using (Html.BeginForm("ShowFile", "Resume"))
                         {
-                            <input type="hidden" name="filePath" id="filePath" value="@apps.ApplicantResumeFilePath"/>
+                            <input type="hidden" name="filePath" id="filePath" value="@apps.ResumeFilePath"/>
                             <input type="submit" class="btn btn-primary" value="Show File"/>
                         }
                     </td>

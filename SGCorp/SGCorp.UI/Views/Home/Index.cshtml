@@ -7,24 +7,15 @@
 
 <h1>SG Corporation HR Home</h1>
 <div>
-    <form action="/Resume/AddResume">
-        <button>Submit a Resume</button>
-        <p></p>
-    </form>
+    <h2>Resumes</h2>
+    @Html.ActionLink("Submit a Resume", "AddResume", "Resume", null, new {@class = "btn btn-primary"})
+    <p></p>
+    @Html.ActionLink("View Submitted Resume", "ListResumes", "Resume", null, new {@class = "btn btn-primary"})
+    <p></p>
+    <h2>Suggestions</h2>
+    @Html.ActionLink("Submit a Suggestion", "AddSuggestion", "Suggestion", null, new {@class = "btn btn-primary"})
+    <p></p>
+    @Html.ActionLink("View Submitted Suggestion", "ViewSuggestions", "Suggestion", null, new {@class = "btn btn-primary"})
 
-    <form action="/Resume/ListResumes">
-        <button>View Submitted Resumes</button>
-        <p></p>
-    </form>
-
-    <form action="/Suggestion/AddSuggestion">
-        <button>Submit a Suggestion</button>
-        <p></p>
-    </form>
-
-    <form action="/Suggestion/ViewSuggestions">
-        <button>View Submitted Suggestions</button>
-        <p></p>
-    </form>
 </div>
 

@@ -60,10 +60,10 @@ namespace SGCorp.UI.Controllers
 
         public ActionResult ListResumes()
         {
-            var fileApplicants = new ResumeDatabase();
+            var fileResumes = new ResumeDatabase();
             //DirectoryInfo directory = new DirectoryInfo(Server.MapPath("~/Resumes/"));
 
-            var applicants = fileApplicants.GetAll();
+            var resumes = fileResumes.GetAll();
             //var files = directory.GetFiles().ToList();
 
             //foreach (var a in applicants)
@@ -71,7 +71,7 @@ namespace SGCorp.UI.Controllers
 
             //}
 
-            return /*System.Web.UI.WebControls.*/View(applicants);
+            return /*System.Web.UI.WebControls.*/View(resumes);
         }
     }
 }
