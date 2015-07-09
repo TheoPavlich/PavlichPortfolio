@@ -28,6 +28,9 @@
                     <tr>
                         <td>@apps.EmployeeName</td>
                         <td>@apps.SuggestionText</td>
+                        <td>
+                            @Html.ActionLink("Delete","DeleteSuggestion","Suggestion",new{id = @apps.SuggestionId},new {@class= "btn btn-primary"})
+                        </td>
                     </tr>
                     
                 }

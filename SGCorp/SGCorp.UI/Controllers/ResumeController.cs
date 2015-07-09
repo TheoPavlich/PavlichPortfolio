@@ -17,7 +17,6 @@ namespace SGCorp.UI.Controllers
             return View();
         }
 
-
         [HttpPost]
         public ActionResult AddResume(HttpPostedFileBase file, Resume resume)
         {

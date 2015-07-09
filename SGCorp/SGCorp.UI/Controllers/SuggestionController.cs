@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using SGCorp.Models;
@@ -43,16 +44,19 @@ namespace SGCorp.UI.Controllers
             return View(suggestions);
         }
 
-        public ActionResult DeleteContact()
+        public ActionResult DeleteSuggestion(int id)
         {
-            int suggestion = int.Parse(Request.Form["contactID"]);
+            var s = new SuggestionDatabase();
+            var path = "~/DataFiles/Suggestions.txt";
+            var mapPath = Server.MapPath(path);
+            var suggestions = s.GetAll(mapPath);
 
-            var database = new SuggestionDatabase();
+            Suggestion suggestion = suggestions.First(sug => sug.SuggestionId == id);
 
-            database.Delete(contactId);
-
-            var contacts = database.GetAll();
-            return View("Index", contacts);
+            suggestions.Remove(suggestion);
+            s.Delete(suggestions, mapPath);
+            
+            return View("DeleteSuggestion");
         }
     }
 }

@@ -49,15 +49,8 @@ namespace SGCorp.Models
         }
 
 
-        public void Delete(int id)
+        public void Delete(List<Suggestion> suggestions, string fileName)
         {
-           suggestions.RemoveAll(s => s.SuggestionId == id);
-        }
-
-        public void Delete(Suggestion suggestion, string fileName)
-        {
-            var suggestions = GetAll(fileName);
-            suggestions.Remove(suggestion);
             OverwriteFile(suggestions, fileName);
         }
 
