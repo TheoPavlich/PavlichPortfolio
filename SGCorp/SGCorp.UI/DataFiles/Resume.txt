@@ -1,10 +1,2 @@
 ResumeId`ApplicantName`ResumeFilePath
-1`k`
-1`k`
-2`paul`
-1`k`
-1`k`
-2`paul`
-3`t`
-4`b`
-5`Bill`
+1`Paul`C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\Resumes\Customers.txt

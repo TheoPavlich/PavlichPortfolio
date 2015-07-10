@@ -1,5 +1,4 @@
-﻿@using SGCorp.Models
-@model SGCorp.Models.Suggestion
+﻿@model SGCorp.Models.Suggestion
 @{
     ViewBag.Title = "AddSuggestion";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,12 +8,10 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary()
-    <p>@Html.ValidationMessageFor(m=>m.EmployeeName)</p>
+    <p>@Html.ValidationMessageFor(m => m.EmployeeName)</p>
     <p>Employee Name: @Html.EditorFor(m => m.EmployeeName)</p>
-    <p>@Html.ValidationMessageFor(m=>m.SuggestionText)</p>
-    <p>Suggestion: @Html.TextAreaFor(m=>m.SuggestionText)</p>
+    <p>@Html.ValidationMessageFor(m => m.SuggestionText)</p>
+    <p>Suggestion: @Html.TextAreaFor(m => m.SuggestionText)</p>
     <input type="hidden" name="SuggestionId" id="SuggestionId" value="0"/>
     <button>Submit</button>
-
 }
-

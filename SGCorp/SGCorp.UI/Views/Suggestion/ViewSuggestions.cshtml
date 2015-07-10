@@ -1,5 +1,4 @@
-﻿@using SGCorp.Models
-@model List<Suggestion>
+﻿@model List<SGCorp.Models.Suggestion>
 
 @{
     ViewBag.Title = "ViewSuggestions";
@@ -17,23 +16,22 @@
     {
         <table class="table">
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Suggestion</th>
-                </tr>
+            <tr>
+                <th>Name</th>
+                <th>Suggestion</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var apps in Model)
-                {
-                    <tr>
-                        <td>@apps.EmployeeName</td>
-                        <td>@apps.SuggestionText</td>
-                        <td>
-                            @Html.ActionLink("Delete","DeleteSuggestion","Suggestion",new{id = @apps.SuggestionId},new {@class= "btn btn-primary"})
-                        </td>
-                    </tr>
-                    
-                }
+            @foreach (var apps in Model)
+            {
+                <tr>
+                    <td>@apps.EmployeeName</td>
+                    <td>@apps.SuggestionText</td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteSuggestion", "Suggestion", new {id = @apps.SuggestionId}, new {@class = "btn btn-primary"})
+                    </td>
+                </tr>
+            }
             </tbody>
         </table>
     }

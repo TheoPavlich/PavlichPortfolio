@@ -7,10 +7,6 @@ namespace SGCorp.UI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            //    var database = new ApplicantDatabase();
-
-            //    var applicants = database.GetAll();
-
             return View();
         }
     }

@@ -1,5 +1,4 @@
-﻿@using System.ServiceModel.Activities.Tracking.Configuration
-@model List<SGCorp.Models.Resume>
+﻿@model List<SGCorp.Models.Resume>
 @{
     ViewBag.Title = "ListResumes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +25,7 @@
             {
                 <tr>
                     <td>@apps.ApplicantName</td>
-                    <td>@apps.ResumeID</td>
+                    <td>@apps.ResumeId</td>
                     <td>
                         @using (Html.BeginForm("ShowFile", "Resume"))
                         {

@@ -9,6 +9,5 @@ namespace SGCorp.Data.Interfaces
         List<Suggestion> GetAllSuggestions();
         void AddSuggestion(Suggestion addSuggestion);
         void OverwriteFile(List<Suggestion> allSuggestions);
-        
     }
 }

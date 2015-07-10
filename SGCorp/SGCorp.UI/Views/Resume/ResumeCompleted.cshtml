@@ -2,11 +2,10 @@
 @{
     ViewBag.Title = "ResumeCompleted";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
 }
 
 
 <h2>Your resume has been submitted!</h2>
 <p>Applicant Name: @Html.DisplayFor(m => m.ApplicantName)</p>
-<p>Confirmation ID: @Html.DisplayFor(m => m.ResumeID)</p>
-@Html.ActionLink("Return to Home", "Index", "Home", null, new { @class = "btn btn-success" })
+<p>Confirmation ID: @Html.DisplayFor(m => m.ResumeId)</p>
+@Html.ActionLink("Return to Home", "Index", "Home", null, new {@class = "btn btn-success"})

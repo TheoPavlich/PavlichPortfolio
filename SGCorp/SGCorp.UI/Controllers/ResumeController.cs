@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SGCorp.BLL;
 using SGCorp.Models;
-
 
 namespace SGCorp.UI.Controllers
 {
@@ -25,12 +23,13 @@ namespace SGCorp.UI.Controllers
             path += fileName;
             var mapPath = Server.MapPath(path);
             file.SaveAs(mapPath);
+            resume.ResumeFilePath = mapPath;
 
-            var r = new ResumeDatabase();
+            var r = new ResumeOperations();
             var textPath = "~/DataFiles/Resume.txt";
             var textMapPath = Server.MapPath(textPath);
 
-            r.Add(resume, textMapPath);
+            r.AddResume(resume, textMapPath);
 
             if (ModelState.IsValid)
             {
@@ -41,7 +40,7 @@ namespace SGCorp.UI.Controllers
 
         public ActionResult ShowFile(string filePath)
         {
-            string content = "";
+            var content = "";
 
             try
             {
@@ -52,20 +51,19 @@ namespace SGCorp.UI.Controllers
             }
             catch (Exception ex)
             {
-                return Content("No file found");
+                content = ex.Message;
             }
-
             return Content(content);
         }
 
         public ActionResult ListResumes()
         {
-            var fileResumes = new ResumeDatabase();
-            
+            var r = new ResumeOperations();
+
             var path = "~/DataFiles/Resumes.txt";
             var mapPath = Server.MapPath(path);
 
-            var resumes = fileResumes.GetAll(mapPath);
+            var resumes = r.GetAll(mapPath);
 
             return View(resumes);
         }

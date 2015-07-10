@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using SGCorp.BLL;
 using SGCorp.Models;
-
 
 namespace SGCorp.UI.Controllers
 {
@@ -20,7 +15,7 @@ namespace SGCorp.UI.Controllers
         [HttpPost]
         public ActionResult AddSuggestion(Suggestion suggestion)
         {
-            var s = new SuggestionDatabase();
+            var s = new SuggestionOperations();
             var path = "~/DataFiles/Suggestions.txt";
             var mapPath = Server.MapPath(path);
 
@@ -35,7 +30,7 @@ namespace SGCorp.UI.Controllers
 
         public ActionResult ViewSuggestions()
         {
-            var s = new SuggestionDatabase();
+            var s = new SuggestionOperations();
             var path = "~/DataFiles/Suggestions.txt";
             var mapPath = Server.MapPath(path);
 
@@ -46,16 +41,12 @@ namespace SGCorp.UI.Controllers
 
         public ActionResult DeleteSuggestion(int id)
         {
-            var s = new SuggestionDatabase();
+            var s = new SuggestionOperations();
             var path = "~/DataFiles/Suggestions.txt";
             var mapPath = Server.MapPath(path);
-            var suggestions = s.GetAll(mapPath);
 
-            Suggestion suggestion = suggestions.First(sug => sug.SuggestionId == id);
+            s.Delete(id, mapPath);
 
-            suggestions.Remove(suggestion);
-            s.Delete(suggestions, mapPath);
-            
             return View("DeleteSuggestion");
         }
     }

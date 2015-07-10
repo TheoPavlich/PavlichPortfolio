@@ -1,0 +1,7 @@
+
+4.  Not all employees have access to the full HR portal.  We still want to allow them to submit suggestions.
+	We need to be able to give these employees a link to the Submit Suggestion page.  Add a route
+	configuration to have a url that looks something like:  <localhost:port>/suggestion
+	This should load the page.  Since we are not actually implementing security at this point, don't 
+	worry that the menu is available.  We can restrict this at a later time.
+	

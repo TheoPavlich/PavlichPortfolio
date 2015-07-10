@@ -1,5 +1,4 @@
-﻿@using SGCorp.Models
-@model List<Suggestion>
+﻿@model List<SGCorp.Models.Suggestion>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,4 +17,3 @@
     @Html.ActionLink("View Submitted Suggestion", "ViewSuggestions", "Suggestion", null, new {@class = "btn btn-primary"})
 
 </div>
-
