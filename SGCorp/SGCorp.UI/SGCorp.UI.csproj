@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PolicyController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\SuggestionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -132,6 +133,8 @@
     <Content Include="Views\Suggestion\SuggestionCompleted.cshtml" />
     <Content Include="Views\Resume\ResumeCompleted.cshtml" />
     <Content Include="Views\Suggestion\DeleteSuggestion.cshtml" />
+    <Content Include="Views\Policy\ViewDocuments.cshtml" />
+    <Content Include="Views\Policy\ManageDocuments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,6 +145,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DataFiles\" />
+    <Folder Include="Policies\" />
     <Folder Include="Resumes\" />
   </ItemGroup>
   <ItemGroup>

@@ -60,7 +60,7 @@ namespace SGCorp.UI.Controllers
         {
             var r = new ResumeOperations();
 
-            var path = "~/DataFiles/Resumes.txt";
+            var path = "~/DataFiles/Resume.txt";
             var mapPath = Server.MapPath(path);
 
             var resumes = r.GetAll(mapPath);

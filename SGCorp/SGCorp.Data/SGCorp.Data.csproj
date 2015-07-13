@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentRepository.cs" />
     <Compile Include="Interfaces\ISuggestionRepository.cs" />
     <Compile Include="ResumeRepository.cs" />
     <Compile Include="SuggestionRepository.cs" />

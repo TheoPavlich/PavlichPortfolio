@@ -9,6 +9,11 @@ namespace SGCorp.UI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "suggestion",
+                url: "suggestion",
+                defaults: new {controller = "Suggestion", action = "AddSuggestion"});
+
             routes.MapRoute("Default", "{controller}/{action}/{id}",
                 new {controller = "Home", action = "Index", id = UrlParameter.Optional}
                 );

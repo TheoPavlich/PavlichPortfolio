@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
+    <Compile Include="Document.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Resume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

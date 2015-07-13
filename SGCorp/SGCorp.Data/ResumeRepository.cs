@@ -7,23 +7,10 @@ namespace SGCorp.Data
 {
     public class ResumeRepository
     {
-        private static readonly List<Resume> _resumes = new List<Resume>();
-        //private const string filePath = @"~/DataFiles/suggestions.txt";
-
-        //public Resume GetById(int id, string filePath)
-        //{
-        //    _resumes = GetAll(filePath);
-
-        //    foreach (var r in _resumes)
-        //    {
-        //        if (r.ResumeId == id)
-        //            return r;
-        //    }
-        //    return null;
-        //}
-
+        List<Resume> _resumes = new List<Resume>(); 
         public List<Resume> GetAll(string filePath)
         {
+            //var _resumes = new List<Resume>();
             if (File.Exists(filePath))
             {
                 var reader = File.ReadAllLines(filePath);
@@ -46,15 +33,15 @@ namespace SGCorp.Data
 
         public void Add(Resume resume, string filePath)
         {
-            //_resumes = GetAll(fileName);
-            if (_resumes.Any())
-                resume.ResumeId = _resumes.Max(r => r.ResumeId) + 1;
+            List<Resume> resumes = GetAll(filePath);
+            if (resumes.Any())
+                resume.ResumeId = resumes.Max(r => r.ResumeId) + 1;
             else
                 resume.ResumeId = 1;
 
-            _resumes.Add(resume);
+            resumes.Add(resume);
 
-            OverwriteFile(_resumes, filePath);
+            OverwriteFile(resumes, filePath);
         }
 
         public void Delete(Resume resume, string filePath)
