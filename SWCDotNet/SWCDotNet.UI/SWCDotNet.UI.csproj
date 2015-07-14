@@ -80,7 +80,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +106,16 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Student\ListApprentices.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,9 +126,21 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Views\Staff\" />
-    <Folder Include="Views\Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWCDotNet.BLL\SWCDotNet.BLL.csproj">
+      <Project>{6ad1d039-e22d-4402-a78b-b03cc02254e9}</Project>
+      <Name>SWCDotNet.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWCDotNet.Data\SWCDotNet.Data.csproj">
+      <Project>{8518eb32-3841-44bd-9504-60d5fedfdd45}</Project>
+      <Name>SWCDotNet.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWCDotNet.Models\SWCDotNet.Models.csproj">
+      <Project>{f664a925-1238-4da0-bed9-b9c1f162360e}</Project>
+      <Name>SWCDotNet.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

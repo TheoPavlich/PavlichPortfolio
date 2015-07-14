@@ -63,17 +63,46 @@ namespace SWCDotNet.Data
 
         public void RemoveStudentFromCohort(int id)
         {
-            
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("RemoveStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StudentID", id);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
-        public void AddStudentToCohort(int id)
+        public void AddStudentToCohort(Student student)
         {
-            
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("AddStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FirstName", student.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", student.LastName);
+                cmd.Parameters.AddWithValue("@State", student.State);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
-        public void Update(int id)
+        public void UpdateStudent(Student student)
         {
-            
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("UpdateStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StudentID", student.StudentId);
+                cmd.Parameters.AddWithValue("@FirstName", student.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", student.LastName);
+                cmd.Parameters.AddWithValue("@State", student.State);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

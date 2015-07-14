@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>SWC Personnel Home</h2>
+
+<div>
+    <h2>Apprentices</h2>
+    @Html.ActionLink("Add an Apprentice", "Add", "Student", null, new { @class = "btn btn-primary" })
+    <p></p>
+    @Html.ActionLink("View Apprentices", "ListApprentices", "Student", null, new { @class = "btn btn-primary" })
+
+</div>
