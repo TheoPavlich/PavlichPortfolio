@@ -116,6 +116,9 @@
     <Content Include="Views\Student\ListApprentices.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Add.cshtml" />
+    <Content Include="Views\Staff\ListStaff.cshtml" />
+    <Content Include="Views\Staff\Add.cshtml" />
+    <Content Include="Views\Staff\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,7 +129,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SWCDotNet.BLL\SWCDotNet.BLL.csproj">
