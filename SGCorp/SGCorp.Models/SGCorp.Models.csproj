@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Resume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Suggestion.cs" />
+    <Compile Include="TimeSheets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
