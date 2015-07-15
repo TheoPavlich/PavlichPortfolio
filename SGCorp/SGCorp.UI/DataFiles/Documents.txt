@@ -1,0 +1,3 @@
+DocumentId`DocumentName`CategoryName`DocumentFilePath
+1`1`Office Policies`C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\Policies\SGCorp RS 1.txt
+2`2`Harassment`C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\Policies\Customers.txt

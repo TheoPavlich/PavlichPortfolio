@@ -1,0 +1,10 @@
+﻿@model SGCorp.Models.Document
+@{
+    ViewBag.Title = "DocumentCompleted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your document has been submitted!</h2>
+<p>Document Name: @Html.DisplayFor(m => m.DocumentName)</p>
+<p>Confirmation ID: @Html.DisplayFor(m => m.DocumentId)</p>
+@Html.ActionLink("Return to Home", "Index", "Home", null, new { @class = "btn btn-success" })

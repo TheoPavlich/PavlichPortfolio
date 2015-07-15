@@ -1,0 +1,47 @@
+﻿@model List<SGCorp.Models.Document>
+@{
+    ViewBag.Title = "ListDocuments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListDocuments</h2>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Resumes</div>
+
+    <!-- Table -->
+    @if (Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Category</th>
+                    <th>Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var apps in Model)
+                {
+                    <tr>
+                        <td>@apps.DocumentName</td>
+                        <td>@apps.CategoryName</td>
+                        <td>
+                            @using (Html.BeginForm("ShowFile", "Resume"))
+                            {
+                                <input type="hidden" name="filePath" id="filePath" value="@apps.DocumentFilePath" />
+                                <input type="submit" class="btn btn-primary" value="Show File" />
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>There are no documents to view.</p>
+    }
+
+</div>

@@ -1,0 +1,19 @@
+﻿@model SGCorp.Models.Document
+@{
+    ViewBag.Title = "AddDocument";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Document</h2>
+
+<div>
+    <form action="AddDocument" method="post" enctype="multipart/form-data">
+        <p>Document Name: @Html.EditorFor(m => m.DocumentName)</p>
+        <p>Category Name: @Html.EditorFor(m => m.CategoryName)</p>
+        <label for="file">Filename:</label>
+        <input type="file" name="file" id="file"/>
+
+        <button>Submit</button>
+         
+    </form>
+</div>

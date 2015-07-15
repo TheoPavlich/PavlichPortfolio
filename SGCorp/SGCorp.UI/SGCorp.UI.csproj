@@ -114,6 +114,7 @@
     <Compile Include="Controllers\PolicyController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\SuggestionController.cs" />
+    <Compile Include="Controllers\TimesheetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,8 +134,9 @@
     <Content Include="Views\Suggestion\SuggestionCompleted.cshtml" />
     <Content Include="Views\Resume\ResumeCompleted.cshtml" />
     <Content Include="Views\Suggestion\DeleteSuggestion.cshtml" />
-    <Content Include="Views\Policy\ViewDocuments.cshtml" />
-    <Content Include="Views\Policy\ManageDocuments.cshtml" />
+    <Content Include="Views\Policy\AddDocument.cshtml" />
+    <Content Include="Views\Policy\DocumentCompleted.cshtml" />
+    <Content Include="Views\Policy\ListDocuments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +149,7 @@
     <Folder Include="DataFiles\" />
     <Folder Include="Policies\" />
     <Folder Include="Resumes\" />
+    <Folder Include="Views\Timesheet\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SGCorp.BLL\SGCorp.BLL.csproj">
