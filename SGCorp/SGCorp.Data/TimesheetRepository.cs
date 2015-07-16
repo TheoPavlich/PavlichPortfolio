@@ -117,7 +117,7 @@ namespace SGCorp.Data
             }
         }
 
-        public void Delete(int id)
+        public void DeleteTimesheet(int id)
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
