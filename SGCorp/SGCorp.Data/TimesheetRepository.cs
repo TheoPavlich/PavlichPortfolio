@@ -131,20 +131,29 @@ namespace SGCorp.Data
             }
         }
 
-        public int SumHours(int id)
+        public decimal SumHours(int id)
         {
+            decimal sum = 0;
             //Called by GetAllEmployees
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("SumTimesheets", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("SumTimesheets", cn) {CommandType = CommandType.StoredProcedure};
 
                 cmd.Parameters.AddWithValue("@EmpID", id);
-                cmd.Parameters.AddWithValue("HoursSum",DbType.Int32);
+                //SqlParameter param = new SqlParameter("@HoursSum",SqlDbType.Int){Direction = ParameterDirection.Output};
+                //cmd.Parameters.Add(param);
+
                 cn.Open();
 
-                return (int)cmd.ExecuteScalar();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        sum = dr[0] is DBNull ? 0 : (decimal)dr[0];
+                    }
+                } 
             }
+            return sum;
         }
     }
 }

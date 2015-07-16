@@ -6,7 +6,7 @@ namespace SGCorp.Models
     {
         public int TimeId { get; set; }
         public DateTime Date { get; set; }
-        public int Hours { get; set; }
+        public decimal Hours { get; set; }
         public int EmpId { get; set; }
     }
 }
