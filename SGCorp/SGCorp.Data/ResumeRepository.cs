@@ -7,7 +7,8 @@ namespace SGCorp.Data
 {
     public class ResumeRepository
     {
-        List<Resume> _resumes = new List<Resume>(); 
+        private readonly List<Resume> _resumes = new List<Resume>();
+
         public List<Resume> GetAll(string filePath)
         {
             //var _resumes = new List<Resume>();
@@ -33,7 +34,7 @@ namespace SGCorp.Data
 
         public void Add(Resume resume, string filePath)
         {
-            List<Resume> resumes = GetAll(filePath);
+            var resumes = GetAll(filePath);
             if (resumes.Any())
                 resume.ResumeId = resumes.Max(r => r.ResumeId) + 1;
             else

@@ -14,12 +14,7 @@ namespace SGCorp.Data
         {
             var suggestions = GetAllSuggestions(filePath);
 
-            foreach (var s in suggestions)
-            {
-                if (s.SuggestionId == id)
-                    return s;
-            }
-            return null;
+            return suggestions.FirstOrDefault(s => s.SuggestionId == id);
         }
 
         public List<Suggestion> GetAllSuggestions(string filePath)

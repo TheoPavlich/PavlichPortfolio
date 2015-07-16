@@ -1,22 +1,123 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Messaging;
 using SGCorp.Models;
 
 namespace SGCorp.Data
 {
     public class TimesheetRepository
     {
-        //GetAll
-        //GetById
-        //Add
-        //Delete
-
-        public List<> GetAll()
+        public List<Employee> GetAllEmployees()
         {
-            
-        } 
+            var employees = new List<Employee>();
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("GetAllEmployees", cn) {CommandType = CommandType.StoredProcedure};
+
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var employee = new Employee {EmpId = (int) dr["EmpID"]};
+                        if (dr["FirstName"] != DBNull.Value)
+                        {
+                            employee.FirstName = dr["FirstName"].ToString();
+                        }
+                        if (dr["LastName"] != DBNull.Value)
+                        {
+                            employee.LastName = dr["LastName"].ToString();
+                        }
+                        if (dr["HireDate"] != DBNull.Value)
+                        {
+                            employee.HireDate = (DateTime) dr["HireDate"];
+                        }
+
+                        employee.HoursSum = SumHours(employee.EmpId);
+                        employees.Add(employee);
+                    }
+                }
+            }
+            return employees;
+        }
+
+        public List<Timesheet> GetAllTimesheets()
+        {
+            var timesheets = new List<Timesheet>();
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("GetAllTimesheets", cn) { CommandType = CommandType.StoredProcedure };
+
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var timesheet = new Timesheet()
+                        {
+                            TimeId = (int) dr["TimeID"],
+                            EmpId = (int) dr["EmpID"]
+                        };
+                        if (dr["Hours"] != DBNull.Value)
+                        {
+                            timesheet.Hours = (decimal)dr["Hours"];
+                        }
+                        if (dr["Date"] != DBNull.Value)
+                        {
+                            timesheet.Date = (DateTime)dr["HireDate"];
+                        }
+                        timesheets.Add(timesheet);
+                    }
+                }
+            }
+            return timesheets;
+        }
+
+        public void AddTimesheet(Timesheet timesheet)
+        {
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("AddTimesheet", cn) {CommandType = CommandType.StoredProcedure};
+                cmd.Parameters.AddWithValue("@Date", timesheet.Date);
+                cmd.Parameters.AddWithValue("@Hours", timesheet.Hours);
+                cmd.Parameters.AddWithValue("@EmpID", timesheet.EmpId);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Delete(int id)
+        {
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("DeleteTimesheet", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@TimeID", id);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public decimal SumHours(int id)
+        {
+            //Called by GetAllEmployees
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("SumTimesheet", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@EmpID", id);
+
+                cn.Open();
+
+                return (decimal)cmd.ExecuteScalar();
+
+            }
+        }
     }
 }

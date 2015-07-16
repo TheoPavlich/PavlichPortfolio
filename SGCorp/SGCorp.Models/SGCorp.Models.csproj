@@ -55,7 +55,7 @@
     <Compile Include="Resume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Suggestion.cs" />
-    <Compile Include="TimeSheets.cs" />
+    <Compile Include="Timesheet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

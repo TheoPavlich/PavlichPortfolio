@@ -15,27 +15,27 @@
     {
         <table class="table">
             <thead>
-                <tr>
-                    <th>Document Name</th>
-                    <th>Category</th>
-                    <th>Path</th>
-                </tr>
+            <tr>
+                <th>Document Name</th>
+                <th>Category</th>
+                <th>Path</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var apps in Model)
-                {
-                    <tr>
-                        <td>@apps.DocumentName</td>
-                        <td>@apps.CategoryName</td>
-                        <td>
-                            @using (Html.BeginForm("ShowFile", "Resume"))
-                            {
-                                <input type="hidden" name="filePath" id="filePath" value="@apps.DocumentFilePath" />
-                                <input type="submit" class="btn btn-primary" value="Show File" />
-                            }
-                        </td>
-                    </tr>
-                }
+            @foreach (var apps in Model)
+            {
+                <tr>
+                    <td>@apps.DocumentName</td>
+                    <td>@apps.CategoryName</td>
+                    <td>
+                        @using (Html.BeginForm("ShowFile", "Resume"))
+                        {
+                            <input type="hidden" name="filePath" id="filePath" value="@apps.DocumentFilePath"/>
+                            <input type="submit" class="btn btn-primary" value="Show File"/>
+                        }
+                    </td>
+                </tr>
+            }
             </tbody>
         </table>
     }

@@ -7,7 +7,8 @@ namespace SGCorp.Data
 {
     public class DocumentRepository
     {
-        List<Document> _documents = new List<Document>();
+        private readonly List<Document> _documents = new List<Document>();
+
         public List<Document> GetAll(string filePath)
         {
             if (File.Exists(filePath))
@@ -18,7 +19,7 @@ namespace SGCorp.Data
                 {
                     var columns = reader[i].Split('`');
 
-                    var doc = new Document()
+                    var doc = new Document
                     {
                         DocumentId = int.Parse(columns[0]),
                         DocumentName = columns[1],
@@ -33,7 +34,7 @@ namespace SGCorp.Data
 
         public void Add(Document doc, string filePath)
         {
-            List<Document> docs = GetAll(filePath);
+            var docs = GetAll(filePath);
             if (docs.Any())
                 doc.DocumentId = docs.Max(d => d.DocumentId) + 1;
             else
@@ -64,7 +65,7 @@ namespace SGCorp.Data
 
                 foreach (var d in docsUpdate)
                 {
-                    writer.WriteLine("{0}`{1}`{2}`{3}", d.DocumentId,d.DocumentName,d.CategoryName,d.DocumentFilePath);
+                    writer.WriteLine("{0}`{1}`{2}`{3}", d.DocumentId, d.DocumentName, d.CategoryName, d.DocumentFilePath);
                 }
             }
         }
