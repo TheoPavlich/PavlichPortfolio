@@ -8,7 +8,7 @@ namespace SGCorp.UI.Controllers
     public class TimesheetController : Controller
     {
         // GET: Timesheet
-        public ActionResult Index()
+        public ActionResult Submit()
         {
             var model = new EmployeeTimesheetVM();
 

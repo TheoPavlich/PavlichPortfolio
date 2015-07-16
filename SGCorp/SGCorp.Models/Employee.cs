@@ -8,6 +8,6 @@ namespace SGCorp.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime HireDate { get; set; }
-        public decimal HoursSum { get; set; }
+        public int HoursSum { get; set; }
     }
 }

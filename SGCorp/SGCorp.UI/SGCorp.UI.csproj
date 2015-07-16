@@ -138,7 +138,7 @@
     <Content Include="Views\Policy\AddDocument.cshtml" />
     <Content Include="Views\Policy\DocumentCompleted.cshtml" />
     <Content Include="Views\Policy\ListDocuments.cshtml" />
-    <Content Include="Views\Timesheet\Index.cshtml" />
+    <Content Include="Views\Timesheet\Submit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

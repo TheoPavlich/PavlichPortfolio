@@ -62,7 +62,7 @@ namespace SGCorp.Data
                         };
                         if (dr["Hours"] != DBNull.Value)
                         {
-                            timesheet.Hours = (decimal)dr["Hours"];
+                            timesheet.Hours = (int)dr["Hours"];
                         }
                         if (dr["Date"] != DBNull.Value)
                         {
@@ -131,19 +131,19 @@ namespace SGCorp.Data
             }
         }
 
-        public decimal SumHours(int id)
+        public int SumHours(int id)
         {
             //Called by GetAllEmployees
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("SumTimesheet", cn);
+                var cmd = new SqlCommand("SumTimesheets", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@EmpID", id);
-
+                cmd.Parameters.AddWithValue("HoursSum",DbType.Int32);
                 cn.Open();
 
-                return (decimal)cmd.ExecuteScalar();
+                return (int)cmd.ExecuteScalar();
             }
         }
     }
