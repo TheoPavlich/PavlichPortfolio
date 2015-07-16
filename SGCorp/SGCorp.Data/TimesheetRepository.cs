@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SGCorp.Models;
 
 namespace SGCorp.Data
 {
@@ -12,5 +13,10 @@ namespace SGCorp.Data
         //GetById
         //Add
         //Delete
+
+        public List<> GetAll()
+        {
+            
+        } 
     }
 }

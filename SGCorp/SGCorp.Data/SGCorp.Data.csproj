@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,7 @@
     <Compile Include="DocumentRepository.cs" />
     <Compile Include="Interfaces\ISuggestionRepository.cs" />
     <Compile Include="ResumeRepository.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SuggestionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimesheetRepository.cs" />
