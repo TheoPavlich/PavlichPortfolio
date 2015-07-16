@@ -138,6 +138,7 @@
     <Content Include="Views\Policy\AddDocument.cshtml" />
     <Content Include="Views\Policy\DocumentCompleted.cshtml" />
     <Content Include="Views\Policy\ListDocuments.cshtml" />
+    <Content Include="Views\Timesheet\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,7 +151,6 @@
     <Folder Include="DataFiles\" />
     <Folder Include="Policies\" />
     <Folder Include="Resumes\" />
-    <Folder Include="Views\Timesheet\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SGCorp.BLL\SGCorp.BLL.csproj">
