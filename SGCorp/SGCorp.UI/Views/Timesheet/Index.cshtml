@@ -1,4 +1,6 @@
 ﻿@using System.Web.Mvc.Html
+@using SGCorp.Models
+@using SGCorp.UI.Models
 @model SGCorp.UI.Models.EmployeeTimesheetVM
 @{
     ViewBag.Title = "Index";
@@ -11,8 +13,11 @@
     <div class="clo=lg-6">
         @using (Html.BeginForm("Index", "Timesheet"))
         {
+            @Html.HiddenFor(m => m.Employee.EmpId)
             <div class="form-group">
-                @Html.DropDownListFor(m=>m.Employee.EmpId, Model.Employees, new {@class = "form-control"})
+                <label>Select Employee</label>
+                @Html.DropDownList("Select Employee", Model.Employees.ToString())
+                
             </div>
         }
     </div>
