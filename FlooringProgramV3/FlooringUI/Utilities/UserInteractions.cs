@@ -31,7 +31,7 @@ namespace FlooringUI.Utilities
         }
 
         public static string PromptForValidStateEdit(string message)
-        
+
         {
             var validInput = false;
             var output = "";
@@ -105,20 +105,19 @@ namespace FlooringUI.Utilities
 
         public static decimal PromptForDecimal(string message, string mode)
         {
-            var validInput = false;
+            bool validInput=false;
             decimal output = 0;
-            string input = "";
 
             while (!validInput)
             {
                 Console.Write(message);
-                input = Console.ReadLine();
+                var input = Console.ReadLine();
 
                 validInput = decimal.TryParse(input, out output);
-                
+
                 if (mode == "Edit")
                 {
-                    if (output == 0 && input == "") 
+                    if (output == 0 && input == "")
                     {
                         var split = message.Split("(".ToCharArray());
                         var split2 = split[1].Split(")".ToCharArray());
@@ -126,11 +125,8 @@ namespace FlooringUI.Utilities
                         return output;
                     }
                 }
-
-                if (!validInput)
-                {
-                    Console.WriteLine("That is not a valid decimal!");
-                }
+                Console.WriteLine("That is not a valid decimal!");
+                
             }
 
             return output;
@@ -174,7 +170,7 @@ namespace FlooringUI.Utilities
                 Console.Write(message);
                 var readLine = Console.ReadLine();
                 if (readLine != null) output = readLine.ToUpper();
-                
+
                 if (mode == "Edit")
                 {
                     if (string.IsNullOrWhiteSpace(output))

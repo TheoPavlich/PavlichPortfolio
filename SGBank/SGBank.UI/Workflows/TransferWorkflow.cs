@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SGBank.BLL;
 using SGBank.Models;
 using SGBank.UI.Utilities;
@@ -13,30 +9,22 @@ namespace SGBank.UI.Workflows
     {
         public void Execute(Account currentAccount)
         {
-            Account otherAccount = GetOtherAccount();
-           
-            decimal amount = GetTransferAmount();
+            var otherAccount = GetOtherAccount();
+
+            var amount = GetTransferAmount();
             var ops = new AccountOperations();
 
-            Account withdrawAccount=TransferDirection(currentAccount, otherAccount);
-            Account depositAccount = new Account();
+            var withdrawAccount = TransferDirection(currentAccount, otherAccount);
 
-            if (currentAccount == withdrawAccount)
-            {
-                depositAccount = otherAccount;
-            }
-            else
-            {
-                depositAccount = currentAccount;
-            }
+            var depositAccount = currentAccount == withdrawAccount ? otherAccount : currentAccount;
 
-            var depositRequest = new DepositRequest()
+            var depositRequest = new DepositRequest
             {
                 Account = depositAccount,
                 DepositAmount = amount
             };
 
-            var withdrawRequest = new WithdrawRequest()
+            var withdrawRequest = new WithdrawRequest
             {
                 Account = withdrawAccount,
                 WithdrawAmount = amount
@@ -48,7 +36,10 @@ namespace SGBank.UI.Workflows
             if (depositResponse.Success && withdrawResponse.Success)
             {
                 Console.Clear();
-                Console.WriteLine("Deposited to account {0} from {2}. New Balance in {0}: {1:C}, new balance in {2}: {3:C}", depositResponse.Data.AccountNumber, depositResponse.Data.Balance, withdrawResponse.Data.AccountNumber,withdrawResponse.Data.Balance);
+                Console.WriteLine(
+                    "Deposited to account {0} from {2}. New Balance in {0}: {1:C}, new balance in {2}: {3:C}",
+                    depositResponse.Data.AccountNumber, depositResponse.Data.Balance,
+                    withdrawResponse.Data.AccountNumber, withdrawResponse.Data.Balance);
                 UserInteractions.PressKeyToContinue();
             }
             else
@@ -57,8 +48,6 @@ namespace SGBank.UI.Workflows
                 Console.WriteLine("An Error Occured:  {0}", withdrawResponse.Message);
                 UserInteractions.PressKeyToContinue();
             }
-
-
         }
 
         private Account TransferDirection(Account currentAccount, Account otherAccount)
@@ -67,13 +56,17 @@ namespace SGBank.UI.Workflows
             {
                 Console.WriteLine(
                     "Is this a deposit to other account or a withdraw from other account? Enter \"D\" or \"W\"");
-                string input = Console.ReadLine().ToUpper();
-                switch (input)
+                var readLine = Console.ReadLine();
+                if (readLine != null)
                 {
-                    case "D":
-                        return currentAccount;
-                    case "W":
-                        return otherAccount;
+                    var input = readLine.ToUpper();
+                    switch (input)
+                    {
+                        case "D":
+                            return currentAccount;
+                        case "W":
+                            return otherAccount;
+                    }
                 }
             } while (true);
         }
@@ -84,7 +77,7 @@ namespace SGBank.UI.Workflows
             {
                 Console.Clear();
                 Console.Write("Enter the account number to transfer money with: ");
-                string input = Console.ReadLine();
+                var input = Console.ReadLine();
                 int thisAccountNumber;
 
                 if (int.TryParse(input, out thisAccountNumber))
@@ -98,13 +91,13 @@ namespace SGBank.UI.Workflows
                         return response.Data;
                     }
                 }
-                    
+
 
                 Console.WriteLine("That was not a valid account number.  Press any key to continue...");
                 Console.ReadKey();
             } while (true);
-         }
-        
+        }
+
         private decimal GetTransferAmount()
         {
             do

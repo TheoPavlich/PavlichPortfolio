@@ -3,54 +3,41 @@
 namespace TicTacToe.BLL
 {
     public class Outcomes
-     {
+    {
         public bool CheckWinner(string[] board, string playerSymbol)
         {
-           
-            bool won = false;
+            var won = false;
 
-            int[] win1 = { 0, 1, 2 };
-            int[] win2 = { 3, 4, 5 };
-            int[] win3 = { 6, 7, 8 };
-            int[] win4 = { 0, 3, 6 };
-            int[] win5 = { 1, 4, 7 };
-            int[] win6 = { 2, 5, 8 };
-            int[] win7 = { 0, 4, 8 };
-            int[] win8 = { 2, 4, 6 };
+            int[] win1 = {0, 1, 2};
+            int[] win2 = {3, 4, 5};
+            int[] win3 = {6, 7, 8};
+            int[] win4 = {0, 3, 6};
+            int[] win5 = {1, 4, 7};
+            int[] win6 = {2, 5, 8};
+            int[] win7 = {0, 4, 8};
+            int[] win8 = {2, 4, 6};
 
-            int[][] winners = { win1, win2, win3, win4, win5, win6, win7, win8 };
-
+            int[][] winners = {win1, win2, win3, win4, win5, win6, win7, win8};
 
 
-            for (int i = 0; i < winners.Length; i++)
+            foreach (var a in winners)
             {
-                int[] a = winners[i];
-                int winCount = 0;
-                for (int j = 0; j < 3; j++)
+                var winCount = 0;
+                for (var j = 0; j < 3; j++)
                 {
-                    
-                    int b = a[j];
-                    if (board[b] == playerSymbol)
-                    {
-                        winCount++;
-                    }
-                    if (winCount == 3)
-                    {
-                        won = true;
-                        return won;
-                    }
+                    var b = a[j];
+                    if (board[b] == playerSymbol) winCount++;
+                    if (winCount == 3) won = true;
                 }
             }
             return won;
-
-
         }
 
         public bool CheckTie(string[] board)
         {
             return board.All(t => t == "X" || t == "O");
         }
-     }
+    }
 }
 
 //bool won = false;

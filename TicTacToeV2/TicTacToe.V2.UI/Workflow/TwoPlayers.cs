@@ -1,50 +1,49 @@
 ﻿using System;
-using Microsoft.Win32;
 using TicTacToe.BLL;
 
 namespace TicTacToe.V2.UI.Workflow
 {
     public class TwoPlayers
     {
-        
-        public void SetupPlay()      
+        public void SetupPlay()
         {
             Console.WriteLine("You have a friend!\n");
             Console.WriteLine("Welcome to TicTacToe Two Player Mode!!\n");
 
-            Person player1 = CreateNewPlayer("Player 1", "X");
-            Person player2 = CreateNewPlayer("Player 2", "O");
+            var player1 = CreateNewPlayer("Player 1", "X");
+            var player2 = CreateNewPlayer("Player 2", "O");
 
             PlayGame(player1, player2);
-      
+
             Console.ReadLine();
-            
         }
 
         private Board CreateNewBoardArray(string owner, string[] bArray)
         {
-            Board newBoard = new Board();
-            newBoard.BoardArray = bArray;
-            newBoard.BoardName = owner;
+            var newBoard = new Board
+            {
+                BoardArray = bArray,
+                BoardName = owner
+            };
 
             return newBoard;
         }
 
         public void PlayGame(Person one, Person two)
         {
-            Board gameBoard = CreateNewBoardArray("Game", new[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"});
-            Board pOneBoard = CreateNewBoardArray(one.Name, new string[9]);
-            Board pTwoBoard = CreateNewBoardArray(two.Name, new string[9]);
+            var gameBoard = CreateNewBoardArray("Game", new[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"});
+            var pOneBoard = CreateNewBoardArray(one.Name, new string[9]);
+            var pTwoBoard = CreateNewBoardArray(two.Name, new string[9]);
 
             Console.WriteLine("{0}, let's start with you!\n", one.Name);
             Console.Clear();
 
-            Person currentPlayer = one;
-            Board currentBoard = pOneBoard;
-            bool win = false;
-            bool tie = false;
+            var currentPlayer = one;
+            var currentBoard = pOneBoard;
+            var win = false;
+            var tie = false;
 
-            while (!win&&!tie)
+            while (!win && !tie)
             {
                 Console.WriteLine("\nOkay, {0}, it's your turn.\n", currentPlayer.Name);
                 Console.WriteLine("Enter a number 1 through 9 corresponding with your choice as shown on the board.");
@@ -62,9 +61,9 @@ namespace TicTacToe.V2.UI.Workflow
                     gameBoard.BoardArray[8]);
                 Console.WriteLine("     |     |      ");
 
-                string playerChoice = Console.ReadLine();
+                var playerChoice = Console.ReadLine();
 
-                bool valid = CheckForValidChoice(playerChoice, gameBoard, currentPlayer);
+                var valid = CheckForValidChoice(playerChoice, gameBoard, currentPlayer);
                 if (!valid)
                 {
                     Console.WriteLine("That isn't a valid choice, {0}. How about you try again?", currentPlayer.Name);
@@ -92,13 +91,12 @@ namespace TicTacToe.V2.UI.Workflow
                 Console.WriteLine(" {0} won this time. Sorry, {1}, better luck next time!", one.Name, two.Name);
                 Console.WriteLine("(Press enter to return to menu) ");
             }
-            
         }
 
         private bool CheckForValidChoice(string playerChoice, Board gameBoard, Person currentPlayer)
         {
-            bool validChoice = false;
-            for (int i = 0; i < 9; i++)
+            var validChoice = false;
+            for (var i = 0; i < 9; i++)
             {
                 if (gameBoard.BoardArray[i] == playerChoice)
                 {
@@ -111,7 +109,7 @@ namespace TicTacToe.V2.UI.Workflow
 
         public Person CreateNewPlayer(string playerNum, string xOrO)
         {
-            Person newPlayer = new Person();
+            var newPlayer = new Person();
 
             Console.WriteLine("\nWhat is your fightin' name, {0}?", playerNum);
             newPlayer.Name = Console.ReadLine();
@@ -120,20 +118,19 @@ namespace TicTacToe.V2.UI.Workflow
 
             return newPlayer;
         }
-    
+
         public bool IsWinner(Board game, Person current)
         {
-            Outcomes win = new Outcomes();
-            bool isWin=win.CheckWinner(game.BoardArray, current.Symbol);
+            var win = new Outcomes();
+            var isWin = win.CheckWinner(game.BoardArray, current.Symbol);
             return isWin;
         }
 
         public bool IsDraw(Board gameBoard)
         {
-            Outcomes tie = new Outcomes();
-            bool isDraw=tie.CheckTie(gameBoard.BoardArray);
+            var tie = new Outcomes();
+            var isDraw = tie.CheckTie(gameBoard.BoardArray);
             return isDraw;
         }
-        
     }
 }

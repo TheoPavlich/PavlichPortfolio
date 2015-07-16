@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using SWCDotNet.BLL;
 using SWCDotNet.Models;
 
@@ -64,6 +60,5 @@ namespace SWCDotNet.UI.Controllers
 
             return View("ListApprentices", students);
         }
-
     }
 }

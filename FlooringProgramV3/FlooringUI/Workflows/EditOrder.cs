@@ -18,11 +18,11 @@ namespace FlooringUI.Workflows
 
             if (orders.Count != 0)
             {
-                bool orderExists = false;
+                var orderExists = false;
                 while (!orderExists)
                 {
                     Console.WriteLine("Select order number to edit.");
-                    string userChoice = Console.ReadLine();
+                    var userChoice = Console.ReadLine();
 
                     if (userChoice == "0") return;
 
@@ -56,7 +56,7 @@ namespace FlooringUI.Workflows
         private Order EditSelectedOrder(string orderNumber, List<Order> orders)
         {
             Console.Clear();
-            
+
             var order = orders.First(o => o.OrderNumber == orderNumber);
             var updatedOrder = new Order
             {

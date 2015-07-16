@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SGBank.UI.Workflows
 {
@@ -22,9 +18,9 @@ namespace SGBank.UI.Workflows
                 Console.WriteLine("\n(Q) to Quit");
 
                 Console.Write("\n\nEnter choice: ");
-                string input = Console.ReadLine();
+                var input = Console.ReadLine();
 
-                if (input.ToUpper() == "Q")
+                if (input != null && input.ToUpper() == "Q")
                     break;
 
                 ProcessUserChoice(input);

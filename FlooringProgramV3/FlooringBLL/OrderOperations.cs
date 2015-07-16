@@ -8,7 +8,6 @@ namespace FlooringBLL
     public class OrderOperations
     {
         private readonly IOrderRepository _orderRepo;
-
         private readonly IProductRepository _productRepository;
 
         public OrderOperations(IOrderRepository myRepo, IProductRepository productRepository)

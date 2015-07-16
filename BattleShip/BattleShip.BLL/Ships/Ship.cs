@@ -6,11 +6,7 @@ namespace BattleShip.BLL.Ships
 {
     public class Ship
     {
-        public ShipType ShipType { get; private set; }
-        public string ShipName { get { return ShipType.ToString(); } }
-        public Coordinate[] BoardPositions { get; set; }
         private int _lifeRemaining;
-        public bool IsSunk { get { return _lifeRemaining == 0; } }
 
         public Ship(ShipType shipType, int numberOfSlots)
         {
@@ -19,13 +15,27 @@ namespace BattleShip.BLL.Ships
             BoardPositions = new Coordinate[numberOfSlots];
         }
 
+        public ShipType ShipType { get; private set; }
+
+        public string ShipName
+        {
+            get { return ShipType.ToString(); }
+        }
+
+        public Coordinate[] BoardPositions { get; set; }
+
+        public bool IsSunk
+        {
+            get { return _lifeRemaining == 0; }
+        }
+
         public ShotStatus FireAtShip(Coordinate position)
         {
             if (BoardPositions.Contains(position))
             {
                 _lifeRemaining--;
 
-                if(_lifeRemaining == 0)
+                if (_lifeRemaining == 0)
                     return ShotStatus.HitAndSunk;
 
                 return ShotStatus.Hit;

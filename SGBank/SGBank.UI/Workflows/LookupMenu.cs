@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SGBank.BLL;
 using SGBank.Models;
 using SGBank.UI.Utilities;
@@ -12,9 +8,10 @@ namespace SGBank.UI.Workflows
     public class LookupMenu
     {
         private Account _currentAccount;
+
         public void Execute()
         {
-            string accountNumber = GetAccountNumberFromUser();
+            var accountNumber = GetAccountNumberFromUser();
 
             DisplayAccountInformation(accountNumber);
         }
@@ -39,7 +36,6 @@ namespace SGBank.UI.Workflows
 
                 UserInteractions.PressKeyToContinue();
             }
-
         }
 
         private void DisplayActionMenu()
@@ -52,9 +48,9 @@ namespace SGBank.UI.Workflows
                 Console.WriteLine("(Q) for quit");
 
                 Console.WriteLine("\n\n Enter your choice: ");
-                string input = Console.ReadLine();
+                var input = Console.ReadLine();
 
-                if (input.ToUpper() == "Q")
+                if (input != null && input.ToUpper() == "Q")
                     break;
 
                 ProcessChoice(input);
@@ -95,21 +91,18 @@ namespace SGBank.UI.Workflows
             {
                 Console.Clear();
                 Console.Write("Enter an account number: ");
-                string input = Console.ReadLine();
+                var input = Console.ReadLine();
                 int thisAccountNumber;
 
                 if (int.TryParse(input, out thisAccountNumber))
                 {
                     return input;
                 }
-                    
+
 
                 Console.WriteLine("That was not a valid account number.  Press any key to continue...");
                 Console.ReadKey();
             } while (true);
-
-            
-
         }
     }
 }

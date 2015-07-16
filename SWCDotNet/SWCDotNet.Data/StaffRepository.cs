@@ -1,36 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SWCDotNet.Models;
 
 namespace SWCDotNet.Data
 {
     public class StaffRepository
     {
-
         public List<Staff> GetStaff()
         {
-            List<Staff> staffMembers = new List<Staff>();
+            var staffMembers = new List<Staff>();
 
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("GetStaff", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("GetStaff", cn) {CommandType = CommandType.StoredProcedure};
 
                 cn.Open();
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        var staff = new Staff();
-                        staff.StaffId = (int)dr["StaffID"];
-                        staff.FirstName = dr["FirstName"].ToString();
-                        staff.LastName = dr["LastName"].ToString();
-                        staff.Role = dr["Role"].ToString();
+                        var staff = new Staff
+                        {
+                            StaffId = (int) dr["StaffID"],
+                            FirstName = dr["FirstName"].ToString(),
+                            LastName = dr["LastName"].ToString(),
+                            Role = dr["Role"].ToString()
+                        };
                         staffMembers.Add(staff);
                     }
                 }
@@ -40,11 +36,10 @@ namespace SWCDotNet.Data
 
         public Staff GetStaffById(int id)
         {
-            Staff staff = new Staff();
+            var staff = new Staff();
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("GetStaffByID", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("GetStaffByID", cn) {CommandType = CommandType.StoredProcedure};
                 cmd.Parameters.AddWithValue("@StaffID", id);
 
                 cn.Open();
@@ -66,8 +61,7 @@ namespace SWCDotNet.Data
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("RemoveStaff", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("RemoveStaff", cn) {CommandType = CommandType.StoredProcedure};
                 cmd.Parameters.AddWithValue("@StaffID", id);
 
                 cn.Open();
@@ -79,8 +73,7 @@ namespace SWCDotNet.Data
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("AddStaff", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("AddStaff", cn) {CommandType = CommandType.StoredProcedure};
                 cmd.Parameters.AddWithValue("@FirstName", staff.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", staff.LastName);
                 cmd.Parameters.AddWithValue("@Role", staff.Role);
@@ -94,8 +87,7 @@ namespace SWCDotNet.Data
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand("UpdateStaff", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand("UpdateStaff", cn) {CommandType = CommandType.StoredProcedure};
                 cmd.Parameters.AddWithValue("@StaffID", staff.StaffId);
                 cmd.Parameters.AddWithValue("@FirstName", staff.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", staff.LastName);

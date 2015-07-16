@@ -12,25 +12,24 @@ namespace FlooringUI.Workflows
     {
         public void Execute()
         {
-
-            string orderFile = GetOrderDateFromUser();
-            List<Order> orders = FindOrderFile(orderFile);
+            var orderFile = GetOrderDateFromUser();
+            var orders = FindOrderFile(orderFile);
             if (orders.Count != 0)
             {
-                bool orderExists = false;
+                var orderExists = false;
                 while (!orderExists)
                 {
-                Console.WriteLine("Select order number to remove.");
-                string userChoice = Console.ReadLine();
+                    Console.WriteLine("Select order number to remove.");
+                    var userChoice = Console.ReadLine();
 
-                if (userChoice == "0") return;
+                    if (userChoice == "0") return;
 
-                var orderNumbers = from o in orders select o.OrderNumber;
-                
+                    var orderNumbers = from o in orders select o.OrderNumber;
+
                     if (orderNumbers.Contains(userChoice))
                     {
                         orderExists = true;
-                        string confirm =
+                        var confirm =
                             UserInteractions.PromptForConfirmation("Would you like to remove this order (Y or N)?");
                         if (confirm == "Y")
                         {
@@ -49,18 +48,17 @@ namespace FlooringUI.Workflows
 
         public string GetOrderDateFromUser()
         {
-
             Console.Clear();
 
             Console.Write("Enter an order date (MMddyyyy): ");
-            string orderDate = Console.ReadLine();
+            var orderDate = Console.ReadLine();
 
             return @"DataFiles\Orders_" + orderDate + ".txt";
         }
 
         private List<Order> FindOrderFile(string orderFile)
         {
-            List<Order> orders = new List<Order>();
+            var orders = new List<Order>();
             if (File.Exists(orderFile))
             {
                 Console.WriteLine("\n*****Order Information*****\n");
@@ -91,8 +89,7 @@ namespace FlooringUI.Workflows
 
         private void RemoveSelectedOrder(string userChoice, List<Order> orders, string orderFile)
         {
-
-            Order order = orders.First(o => o.OrderNumber == userChoice);
+            var order = orders.First(o => o.OrderNumber == userChoice);
 
             orders.Remove(order);
 

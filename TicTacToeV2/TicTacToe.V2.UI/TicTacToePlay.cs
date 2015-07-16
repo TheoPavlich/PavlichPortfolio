@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TicTacToe.V2.UI.Workflow;
 
 /*
@@ -21,15 +17,16 @@ Requirements
 	
 *This should be built with a Console project to serve as our UI, a Class Library to serve as the game logic,
 and a Class Library to serve as our unit tests for the game logic.*/
+
 namespace TicTacToe.V2.UI
 {
     public class TicTacToePlay
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("Welcome to Tic Tac Toe with the SWC Guild!\n");
-            GameStart game = new GameStart();
-           
+            var game = new GameStart();
+
             game.StartPlay();
         }
     }

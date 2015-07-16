@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SGBank.Models;
 
 namespace SGBank.Data
@@ -14,33 +11,29 @@ namespace SGBank.Data
 
         public Account GetAccount(string accountNumber)
         {
-            List<Account> allAccounts = GetAllAcounts();
+            var allAccounts = GetAllAcounts();
 
-            foreach (var account in allAccounts)
-            {
-                if (account.AccountNumber == accountNumber)
-                    return account;
-            }
-
-            return null;
+            return allAccounts.FirstOrDefault(account => account.AccountNumber == accountNumber);
         }
 
         public List<Account> GetAllAcounts()
         {
-            List<Account> accounts = new List<Account>();
+            var accounts = new List<Account>();
 
             var reader = File.ReadAllLines(FilePath);
 
-            for (int i = 1; i < reader.Length; i++)
+            for (var i = 1; i < reader.Length; i++)
             {
                 var columns = reader[i].Split(',');
 
-                var account = new Account();
+                var account = new Account
+                {
+                    AccountNumber = columns[0],
+                    FirstName = columns[1],
+                    LastName = columns[2],
+                    Balance = decimal.Parse(columns[3])
+                };
 
-                account.AccountNumber = columns[0];
-                account.FirstName = columns[1];
-                account.LastName = columns[2];
-                account.Balance = decimal.Parse(columns[3]);
 
                 accounts.Add(account);
             }
@@ -80,7 +73,8 @@ namespace SGBank.Data
 
                 foreach (var account in allAccounts)
                 {
-                    writer.WriteLine("{0},{1},{2},{3}", account.AccountNumber, account.FirstName, account.LastName, account.Balance);
+                    writer.WriteLine("{0},{1},{2},{3}", account.AccountNumber, account.FirstName, account.LastName,
+                        account.Balance);
                 }
             }
         }

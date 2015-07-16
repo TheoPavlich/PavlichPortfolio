@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SGBank.Models
+﻿namespace SGBank.Models
 {
     public class DepositRequest
     {
@@ -15,6 +9,6 @@ namespace SGBank.Models
     public class WithdrawRequest
     {
         public decimal WithdrawAmount { get; set; }
-        public Account Account { get; set; }   
+        public Account Account { get; set; }
     }
 }

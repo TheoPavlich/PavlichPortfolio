@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShip.UI
+﻿namespace BattleShip.UI
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            GameStart game = new GameStart();
+            var game = new GameStart();
             game.Execute();
         }
     }

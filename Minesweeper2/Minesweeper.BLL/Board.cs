@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Minesweeper.BLL
 {
@@ -10,29 +6,29 @@ namespace Minesweeper.BLL
     {
         public int[] EasyBoard()
         {
-            Mines mines = new Mines();
-            int[] mineArray = mines.GenerateMines(10, 64);
-            int[] boardArray = new int[64];
+            var mines = new Mines();
+            var mineArray = mines.GenerateMines(10, 64);
+            var boardArray = new int[64];
 
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
-                int bomb = mineArray[i];
+                var bomb = mineArray[i];
                 boardArray[bomb] = 9;
-
             }
-            for(int i =0; i < 64;i++)
+            for (var i = 0; i < 64; i++)
             {
-                int count = 0;
+                var count = 0;
                 if (boardArray[i] == 9)
                 {
                     continue;
                 }
                 if (i < 8)
                 {
-                    if (i == 0){
-                        if(boardArray[i+1]==9)
+                    if (i == 0)
+                    {
+                        if (boardArray[i + 1] == 9)
                             count++;
-                        if(boardArray[i+8]==9)
+                        if (boardArray[i + 8] == 9)
                             count++;
                         if (boardArray[i + 9] == 9)
                             count++;
@@ -59,7 +55,6 @@ namespace Minesweeper.BLL
                         if (boardArray[i + 9] == 9)
                             count++;
                     }
-                    
                 }
                 else if (i > 55)
                 {
@@ -97,55 +92,49 @@ namespace Minesweeper.BLL
                 }
                 else if (i%8 == 0)
                 {
-
-                        if (boardArray[i - 8] == 9)
-                            count++;
-                        if (boardArray[i + 1] == 9)
-                            count++;
-                        if (boardArray[i - 7] == 9)
-                            count++;
-                        if (boardArray[i + 8] == 9)
-                            count++;
-                        if (boardArray[i + 9] == 9)
-                            count++;
-                    
+                    if (boardArray[i - 8] == 9)
+                        count++;
+                    if (boardArray[i + 1] == 9)
+                        count++;
+                    if (boardArray[i - 7] == 9)
+                        count++;
+                    if (boardArray[i + 8] == 9)
+                        count++;
+                    if (boardArray[i + 9] == 9)
+                        count++;
                 }
-                else if(i%8==7)
+                else if (i%8 == 7)
                 {
-                    
-                        if (boardArray[i - 1] == 9)
-                            count++;
-                        if (boardArray[i - 8] == 9)
-                            count++;
-                        if (boardArray[i - 9] == 9)
-                            count++;
-                        if (boardArray[i + 7] == 9)
-                            count++;
-                        if (boardArray[i + 8] == 9)
-                            count++;
-                   
+                    if (boardArray[i - 1] == 9)
+                        count++;
+                    if (boardArray[i - 8] == 9)
+                        count++;
+                    if (boardArray[i - 9] == 9)
+                        count++;
+                    if (boardArray[i + 7] == 9)
+                        count++;
+                    if (boardArray[i + 8] == 9)
+                        count++;
                 }
-                
+
                 else
                 {
-                   
-                        if (boardArray[i - 1] == 9)
-                            count++;
-                        if (boardArray[i + 1] == 9)
-                            count++;
-                        if (boardArray[i + 7] == 9)
-                            count++;
-                        if (boardArray[i + 8] == 9)
-                            count++;
-                        if (boardArray[i + 9] == 9)
-                            count++;
-                        if (boardArray[i - 7] == 9)
-                            count++;
-                        if (boardArray[i - 8] == 9)
-                            count++;
-                        if (boardArray[i - 9] == 9)
-                            count++;
-                    
+                    if (boardArray[i - 1] == 9)
+                        count++;
+                    if (boardArray[i + 1] == 9)
+                        count++;
+                    if (boardArray[i + 7] == 9)
+                        count++;
+                    if (boardArray[i + 8] == 9)
+                        count++;
+                    if (boardArray[i + 9] == 9)
+                        count++;
+                    if (boardArray[i - 7] == 9)
+                        count++;
+                    if (boardArray[i - 8] == 9)
+                        count++;
+                    if (boardArray[i - 9] == 9)
+                        count++;
                 }
                 boardArray[i] = count;
             }
@@ -164,9 +153,9 @@ namespace Minesweeper.BLL
 
         public string[] EasyDisplay()
         {
-            string[] displayArray = new string[64];
-          
-            for (int i = 0; i < 64; i++)
+            var displayArray = new string[64];
+
+            for (var i = 0; i < 64; i++)
             {
                 displayArray[i] = " []";
             }
@@ -175,18 +164,18 @@ namespace Minesweeper.BLL
 
         public int[] MediumBoard()
         {
-            Mines mines = new Mines();
-            int[] mineArray = mines.GenerateMines(15, 144);
-            int[] boardArray = new int[144];
+            var mines = new Mines();
+            var mineArray = mines.GenerateMines(15, 144);
+            var boardArray = new int[144];
 
-            for (int i = 0; i < 15; i++)
+            for (var i = 0; i < 15; i++)
             {
-                int bomb = mineArray[i];
+                var bomb = mineArray[i];
                 boardArray[bomb] = 9;
             }
-            for (int i = 0; i < 144; i++)
+            for (var i = 0; i < 144; i++)
             {
-                int count = 0;
+                var count = 0;
                 if (boardArray[i] == 9)
                 {
                     continue;
@@ -224,7 +213,6 @@ namespace Minesweeper.BLL
                         if (boardArray[i + 13] == 9)
                             count++;
                     }
-
                 }
                 else if (i > 131)
                 {
@@ -260,9 +248,8 @@ namespace Minesweeper.BLL
                             count++;
                     }
                 }
-                else if (i % 12 == 0)
+                else if (i%12 == 0)
                 {
-
                     if (boardArray[i - 12] == 9)
                         count++;
                     if (boardArray[i + 1] == 9)
@@ -273,11 +260,9 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i + 13] == 9)
                         count++;
-
                 }
-                else if (i % 12 == 11)
+                else if (i%12 == 11)
                 {
-
                     if (boardArray[i - 1] == 9)
                         count++;
                     if (boardArray[i - 12] == 9)
@@ -288,12 +273,10 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i + 12] == 9)
                         count++;
-
                 }
 
                 else
                 {
-
                     if (boardArray[i - 1] == 9)
                         count++;
                     if (boardArray[i + 1] == 9)
@@ -310,7 +293,6 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i - 13] == 9)
                         count++;
-
                 }
                 boardArray[i] = count;
             }
@@ -328,9 +310,9 @@ namespace Minesweeper.BLL
 
         public string[] MediumDisplay()
         {
-            string[] displayArray = new string[144];
-            
-            for (int i = 0; i < 144; i++)
+            var displayArray = new string[144];
+
+            for (var i = 0; i < 144; i++)
             {
                 displayArray[i] = " []";
             }
@@ -340,18 +322,18 @@ namespace Minesweeper.BLL
 
         public int[] DifficultBoard()
         {
-            Mines mines = new Mines();
-            int[] mineArray = mines.GenerateMines(40, 256);
-            int[] boardArray = new int[256];
-           
-            for (int i = 0; i < 40; i++)
+            var mines = new Mines();
+            var mineArray = mines.GenerateMines(40, 256);
+            var boardArray = new int[256];
+
+            for (var i = 0; i < 40; i++)
             {
-                int bomb = mineArray[i];
+                var bomb = mineArray[i];
                 boardArray[bomb] = 9;
             }
-            for (int i = 0; i < 256; i++)
+            for (var i = 0; i < 256; i++)
             {
-                int count = 0;
+                var count = 0;
                 if (boardArray[i] == 9)
                 {
                     continue;
@@ -389,7 +371,6 @@ namespace Minesweeper.BLL
                         if (boardArray[i + 17] == 9)
                             count++;
                     }
-
                 }
                 else if (i > 239)
                 {
@@ -425,9 +406,8 @@ namespace Minesweeper.BLL
                             count++;
                     }
                 }
-                else if (i % 16 == 0)
+                else if (i%16 == 0)
                 {
-
                     if (boardArray[i - 16] == 9)
                         count++;
                     if (boardArray[i + 1] == 9)
@@ -438,11 +418,9 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i + 17] == 9)
                         count++;
-
                 }
-                else if (i % 16 == 15)
+                else if (i%16 == 15)
                 {
-
                     if (boardArray[i - 1] == 9)
                         count++;
                     if (boardArray[i - 16] == 9)
@@ -453,12 +431,10 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i + 16] == 9)
                         count++;
-
                 }
 
                 else
                 {
-
                     if (boardArray[i - 1] == 9)
                         count++;
                     if (boardArray[i + 1] == 9)
@@ -475,7 +451,6 @@ namespace Minesweeper.BLL
                         count++;
                     if (boardArray[i - 17] == 9)
                         count++;
-
                 }
                 boardArray[i] = count;
             }
@@ -494,22 +469,15 @@ namespace Minesweeper.BLL
 
         public string[] DifficultDisplay()
         {
-            string[] displayArray = new string[256];
+            var displayArray = new string[256];
             Console.WriteLine("\nY");
-            for (int i = 0; i < 256; i++)
+            for (var i = 0; i < 256; i++)
             {
                 displayArray[i] = " []";
 
-                if (i % 16 == 0)
+                if (i%16 == 0)
                 {
-                    if (i / 16 < 10)
-                    {
-                        Console.Write("\n{0} ", (i / 16));
-                    }
-                    else
-                    {
-                        Console.Write("\n{0}", (i / 16));
-                    }
+                    Console.Write(i/16 < 10 ? "\n{0} " : "\n{0}", (i/16));
                 }
                 Console.Write("{0}", displayArray[i]);
             }
@@ -517,6 +485,5 @@ namespace Minesweeper.BLL
             Console.ReadLine();
             return displayArray;
         }
-
     }
 }

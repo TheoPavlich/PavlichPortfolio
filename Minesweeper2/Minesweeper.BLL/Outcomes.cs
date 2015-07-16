@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Minesweeper.BLL
 {
@@ -10,18 +6,11 @@ namespace Minesweeper.BLL
     {
         public void CheckGrid(int choice, int[] gameBoard)
         {
-            
         }
 
         public bool IsGameOver(string[] displayBoard)
         {
-            foreach (string isHidden in displayBoard)
-            {
-                if(isHidden==" []")
-                    return false;
-            }
-            return true;
+            return displayBoard.All(isHidden => isHidden != " []");
         }
-
     }
 }

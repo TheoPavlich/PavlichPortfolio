@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Specialized;
-using TicTacToe.BLL;
-
-namespace TicTacToe.V2.UI.Workflow
+﻿namespace TicTacToe.V2.UI.Workflow
 {
     public class OnePlayer
     {
         public void Play()
         {
-          /*  Person player = GetPlayerName();
+            /*  Person player = GetPlayerName();
             Console.WriteLine("Your computer overlord decided to let you go first.");
             Console.WriteLine("Enter a number 1 through 9 corresponding with your choice as shown on the board.");
 
@@ -28,20 +20,6 @@ namespace TicTacToe.V2.UI.Workflow
 
             Console.WriteLine("What is your choice, {0}", player.Name);
             Console.ReadLine();*/
-            
         }
-
-        private Person GetPlayerName()
-        {
-            Person newPlayer = new Person();
-
-            Console.WriteLine("What is your fightin' name, Player 1?");
-            newPlayer.Name = Console.ReadLine();
-            newPlayer.Symbol = "X";
-
-            return newPlayer;
-        }
-
-
     }
 }

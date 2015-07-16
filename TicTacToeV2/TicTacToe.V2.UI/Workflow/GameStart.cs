@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe.V2.UI.Workflow
 {
     public class GameStart
     {
-
         public void StartPlay()
         {
             string userInput;
@@ -16,16 +11,16 @@ namespace TicTacToe.V2.UI.Workflow
             {
                 DisplayMenu();
 
-                userInput = Console.ReadLine().ToUpper();
+                var readLine = Console.ReadLine();
+                if (readLine != null) userInput = readLine.ToUpper();
 
                 ProcessUserChoice(userInput);
-
             } while (userInput != "Q");
         }
 
         public void DisplayMenu()
         {
- 	        Console.WriteLine("Please make your selection:\n");
+            Console.WriteLine("Please make your selection:\n");
             Console.WriteLine("1. Start new game with one player.");
             Console.WriteLine("2. Start new game with two players.");
             Console.WriteLine("Q to quit.\n");
@@ -42,7 +37,7 @@ namespace TicTacToe.V2.UI.Workflow
                     break;
 
                 case "2":
-                    TwoPlayers playTogether = new TwoPlayers();
+                    var playTogether = new TwoPlayers();
                     playTogether.SetupPlay();
                     break;
 
@@ -55,9 +50,6 @@ namespace TicTacToe.V2.UI.Workflow
                     Console.WriteLine("Not a valid selection. Please try again.\n");
                     return;
             }
-
-            
         }
-
-     }
+    }
 }

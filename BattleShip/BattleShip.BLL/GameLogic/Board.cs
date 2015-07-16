@@ -9,9 +9,9 @@ namespace BattleShip.BLL.GameLogic
 {
     public class Board
     {
-        public Dictionary<Coordinate, ShotHistory> ShotHistory;
-        private Ship[] _ships;
+        private readonly Ship[] _ships;
         private int _currentShipIndex;
+        public Dictionary<Coordinate, ShotHistory> ShotHistory;
 
         public Board()
         {
@@ -41,7 +41,7 @@ namespace BattleShip.BLL.GameLogic
             CheckShipsForHit(coordinate, response);
             CheckForVictory(response);
 
-            return response;            
+            return response;
         }
 
         private void CheckForVictory(FireShotResponse response)
@@ -62,9 +62,9 @@ namespace BattleShip.BLL.GameLogic
             {
                 // no need to check sunk ships
                 if (ship.IsSunk)
-                   continue;
+                    continue;
 
-                ShotStatus status = ship.FireAtShip(coordinate);
+                var status = ship.FireAtShip(coordinate);
 
                 switch (status)
                 {
@@ -94,7 +94,7 @@ namespace BattleShip.BLL.GameLogic
         private bool IsValidCoordinate(Coordinate coordinate)
         {
             return coordinate.XCoordinate >= 1 && coordinate.XCoordinate <= 10 &&
-            coordinate.YCoordinate >= 1 && coordinate.YCoordinate <= 10;
+                   coordinate.YCoordinate >= 1 && coordinate.YCoordinate <= 10;
         }
 
         public ShipPlacement PlaceShip(PlaceShipRequest request)
@@ -105,7 +105,7 @@ namespace BattleShip.BLL.GameLogic
             if (!IsValidCoordinate(request.Coordinate))
                 return ShipPlacement.NotEnoughSpace;
 
-            Ship newShip = ShipCreator.CreateShip(request.ShipType);
+            var newShip = ShipCreator.CreateShip(request.ShipType);
             switch (request.Direction)
             {
                 case ShipDirection.Down:
@@ -122,10 +122,10 @@ namespace BattleShip.BLL.GameLogic
         private ShipPlacement PlaceShipRight(Coordinate coordinate, Ship newShip)
         {
             // x coordinate gets bigger
-            int positionIndex = 0;
-            int maxX = coordinate.XCoordinate + newShip.BoardPositions.Length;
+            var positionIndex = 0;
+            var maxX = coordinate.XCoordinate + newShip.BoardPositions.Length;
 
-            for (int i = coordinate.XCoordinate; i < maxX; i++)
+            for (var i = coordinate.XCoordinate; i < maxX; i++)
             {
                 var currentCoordinate = new Coordinate(i, coordinate.YCoordinate);
 
@@ -148,10 +148,10 @@ namespace BattleShip.BLL.GameLogic
         private ShipPlacement PlaceShipLeft(Coordinate coordinate, Ship newShip)
         {
             // x coordinate gets smaller
-            int positionIndex = 0;
-            int minX = coordinate.XCoordinate - newShip.BoardPositions.Length;
+            var positionIndex = 0;
+            var minX = coordinate.XCoordinate - newShip.BoardPositions.Length;
 
-            for (int i = coordinate.XCoordinate; i > minX; i--)
+            for (var i = coordinate.XCoordinate; i > minX; i--)
             {
                 var currentCoordinate = new Coordinate(i, coordinate.YCoordinate);
 
@@ -172,10 +172,10 @@ namespace BattleShip.BLL.GameLogic
         private ShipPlacement PlaceShipUp(Coordinate coordinate, Ship newShip)
         {
             // y coordinate gets smaller
-            int positionIndex = 0;
-            int minY = coordinate.YCoordinate - newShip.BoardPositions.Length;
+            var positionIndex = 0;
+            var minY = coordinate.YCoordinate - newShip.BoardPositions.Length;
 
-            for (int i = coordinate.YCoordinate; i > minY; i--)
+            for (var i = coordinate.YCoordinate; i > minY; i--)
             {
                 var currentCoordinate = new Coordinate(coordinate.XCoordinate, i);
 
@@ -185,7 +185,7 @@ namespace BattleShip.BLL.GameLogic
                 if (OverlapsAnotherShip(currentCoordinate))
                     return ShipPlacement.Overlap;
 
-                newShip.BoardPositions[positionIndex] = currentCoordinate; 
+                newShip.BoardPositions[positionIndex] = currentCoordinate;
                 positionIndex++;
             }
 
@@ -196,10 +196,10 @@ namespace BattleShip.BLL.GameLogic
         private ShipPlacement PlaceShipDown(Coordinate coordinate, Ship newShip)
         {
             // y coordinate gets bigger
-            int positionIndex = 0;
-            int maxY = coordinate.YCoordinate + newShip.BoardPositions.Length;
-            
-            for (int i = coordinate.YCoordinate; i < maxY; i++)
+            var positionIndex = 0;
+            var maxY = coordinate.YCoordinate + newShip.BoardPositions.Length;
+
+            for (var i = coordinate.YCoordinate; i < maxY; i++)
             {
                 var currentCoordinate = new Coordinate(coordinate.XCoordinate, i);
                 if (!IsValidCoordinate(currentCoordinate))
@@ -224,16 +224,7 @@ namespace BattleShip.BLL.GameLogic
 
         private bool OverlapsAnotherShip(Coordinate coordinate)
         {
-            foreach (var ship in _ships)
-            {
-                if (ship != null)
-                {
-                    if (ship.BoardPositions.Contains(coordinate))
-                        return true;
-                }
-            }
-
-            return false;
+            return _ships.Where(ship => ship != null).Any(ship => ship.BoardPositions.Contains(coordinate));
         }
     }
 }

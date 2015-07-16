@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BattleShip.BLL.Requests
 {
     public class TranslateLetter
     {
-
-        public Dictionary<string, int> ConvertLetters = new Dictionary<string, int>()
+        public Dictionary<string, int> ConvertLetters = new Dictionary<string, int>
         {
             {"A", 1},
             {"B", 2},
@@ -23,5 +18,4 @@ namespace BattleShip.BLL.Requests
             {"J", 10}
         };
     }
-
 }

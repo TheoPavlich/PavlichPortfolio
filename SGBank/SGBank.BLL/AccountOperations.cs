@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Cache;
-using System.Text;
-using System.Threading.Tasks;
 using SGBank.Data;
 using SGBank.Models;
 
@@ -30,7 +25,6 @@ namespace SGBank.BLL
                     response.Success = true;
                     response.Data = account;
                 }
-
             }
             catch (Exception ex)
             {
@@ -38,7 +32,6 @@ namespace SGBank.BLL
                 response.Message = ex.Message;
             }
             return response;
-
         }
 
         public Response<Account> MakeDeposit(DepositRequest request)
@@ -107,6 +100,5 @@ namespace SGBank.BLL
 
             return response;
         }
-
     }
 }

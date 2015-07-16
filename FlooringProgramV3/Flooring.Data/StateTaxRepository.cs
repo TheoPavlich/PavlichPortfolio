@@ -16,7 +16,8 @@ namespace Flooring.Data
 
             return reader.Select(t => t.Split(',')).Select(columns => new StateTax
             {
-                StateAbbreviation = columns[0], TaxRate = decimal.Parse(columns[1])
+                StateAbbreviation = columns[0],
+                TaxRate = decimal.Parse(columns[1])
             }).ToList();
         }
     }
