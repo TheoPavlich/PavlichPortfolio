@@ -75,6 +75,34 @@ namespace SGCorp.Data
             return timesheets;
         }
 
+        public Employee GetEmployeeById(int id)
+        {
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EmpID", id);
+
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var employee = new Employee()
+                        {
+                            EmpId = (int) dr["EmpID"],
+                            FirstName = dr["FirstName"].ToString(),
+                            LastName = dr["LastName"].ToString(),
+                            HireDate = (DateTime) dr["HireDate"],
+                            HoursSum = SumHours(id)
+                        };
+                        return employee;
+                    }
+                }
+                return null;
+            }
+        }
+
         public void AddTimesheet(Timesheet timesheet)
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
@@ -116,7 +144,6 @@ namespace SGCorp.Data
                 cn.Open();
 
                 return (decimal)cmd.ExecuteScalar();
-
             }
         }
     }
