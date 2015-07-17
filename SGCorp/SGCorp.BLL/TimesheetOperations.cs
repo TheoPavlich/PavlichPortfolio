@@ -28,6 +28,12 @@ namespace SGCorp.BLL
             return repo.GetAllTimesheets();
         }
 
+        public List<Timesheet> GetTimesheetsByEmployeeId(int id)
+        {
+            var repo = new TimesheetRepository();
+            return repo.GetTimesheetsByEmployeeId(id);
+        } 
+
         public void DeleteTimesheet(int id)
         {
             var repo = new TimesheetRepository();

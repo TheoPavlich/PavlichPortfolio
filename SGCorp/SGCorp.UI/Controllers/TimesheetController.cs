@@ -18,5 +18,18 @@ namespace SGCorp.UI.Controllers
             
             return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Submit(int empId)
+        {
+            var model = new EmployeeTimesheetVM();
+            var tOps = new TimesheetOperations();
+            model.TimesheetList = tOps.GetTimesheetsByEmployeeId(empId);
+
+            model.Employee = tOps.GetEmployeeById(empId);
+            model.ListEmployees(tOps.GetAllEmployees());
+
+            return View(model);
+        }
     }
 }

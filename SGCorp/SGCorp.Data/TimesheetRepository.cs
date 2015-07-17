@@ -103,6 +103,39 @@ namespace SGCorp.Data
             }
         }
 
+        public List<Timesheet> GetTimesheetsByEmployeeId(int id)
+        {
+            var timesheets = new List<Timesheet>();
+            using (var cn = new SqlConnection(Settings.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("GetTimesheetsByEmployeeID", cn) { CommandType = CommandType.StoredProcedure };
+                cmd.Parameters.AddWithValue("@EmpID", id);
+
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var timesheet = new Timesheet()
+                        {
+                            TimeId = (int)dr["TimeID"],
+                            EmpId = id
+                         };
+                        if (dr["Hours"] != DBNull.Value)
+                        {
+                            timesheet.Hours = (int)dr["Hours"];
+                        }
+                        if (dr["Date"] != DBNull.Value)
+                        {
+                            timesheet.Date = (DateTime)dr["HireDate"];
+                        }
+                        timesheets.Add(timesheet);
+                    }
+                }
+            }
+            return timesheets;
+        } 
+
         public void AddTimesheet(Timesheet timesheet)
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
