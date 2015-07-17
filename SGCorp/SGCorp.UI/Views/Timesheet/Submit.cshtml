@@ -11,10 +11,11 @@
     <div class="clo=lg-6">
         @using (Html.BeginForm("Submit", "Timesheet", FormMethod.Post))
         {
-           <div class="form-group">
+            <div class="form-group">
                 <label>Select Employee</label>
                 @Html.DropDownListFor(m => m.SelectEmployeeId, Model.Employees, new {@class = "form-contorl"})
             </div>
+            <button class ="btn btn-primary">Select this Employee</button>
         }
     </div>
 </div>

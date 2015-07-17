@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using SGCorp.BLL;
 using SGCorp.Data;
+using SGCorp.Models;
 using SGCorp.UI.Models;
 
 namespace SGCorp.UI.Controllers
@@ -14,7 +15,7 @@ namespace SGCorp.UI.Controllers
 
             var tOps = new TimesheetOperations();
             model.ListEmployees(tOps.GetAllEmployees());
-
+            
             return View(model);
         }
     }
