@@ -8,3 +8,13 @@ C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\EntityFramework.SqlServ
 C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.dll
 C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.pdb
 C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\SGCorp.Models.dll.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\SGCorp.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\SGCorp.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\EntityFramework.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\EntityFramework.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Models\obj\Debug\SGCorp.Models.pdb

@@ -8,7 +8,7 @@ namespace SGCorp.UI.Models
     public class EmployeeTimesheetVM
     {
         public Employee Employee { get; set; }
-        public int SelectEmployeeId { get; set; }
+        public Timesheet Timesheet { get; set; }
         public List<Timesheet> TimesheetList { get; set; }
         public List<SelectListItem> Employees { get; set; } 
 

@@ -1,0 +1,26 @@
+﻿@using System.Web.Mvc.Html
+@model SGCorp.UI.Models.EmployeeTimesheetVM
+@{
+    ViewBag.Title = "Timesheet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Timesheets</h2>
+
+<div class="row">
+    <div class="clo=lg-6">
+        <div class="form-group">
+            <label>Select Employee</label>
+            @using (Html.BeginForm("UserChoice", "Timesheet"))
+            {
+                @Html.DropDownList("empId", Model.Employees, new {@class = "form-control"})
+                <div class="clo=lg-3" style="margin-top: 15px">
+                    <input type="Submit" class="btn btn-primary" name="option" value="Submit a Timesheet"/>
+                    <input type="Submit" class="btn btn-primary" name="option" value="View Timesheets"/>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

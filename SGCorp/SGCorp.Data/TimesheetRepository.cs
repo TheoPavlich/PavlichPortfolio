@@ -79,7 +79,7 @@ namespace SGCorp.Data
         {
             using (var cn = new SqlConnection(Settings.GetConnectionString()))
             {
-                var cmd = new SqlCommand();
+                var cmd = new SqlCommand("GetEmployeeById", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmpID", id);
 
@@ -123,11 +123,11 @@ namespace SGCorp.Data
                          };
                         if (dr["Hours"] != DBNull.Value)
                         {
-                            timesheet.Hours = (int)dr["Hours"];
+                            timesheet.Hours = (decimal)dr["Hours"];
                         }
                         if (dr["Date"] != DBNull.Value)
                         {
-                            timesheet.Date = (DateTime)dr["HireDate"];
+                            timesheet.Date = (DateTime)dr["Date"];
                         }
                         timesheets.Add(timesheet);
                     }

@@ -1,0 +1,88 @@
+﻿@using System.Web.Mvc.Html
+@model SGCorp.UI.Models.EmployeeTimesheetVM
+@{
+    ViewBag.Title = "ViewHours";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>View Hours</h2>
+
+<div class="row">
+    @*<div class="clo=lg-6">
+        @using (Html.BeginForm("ViewHours", "Timesheet", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Select Employee</label>
+                @Html.DropDownList("EmpId", Model.Employees, new { @class = "form-control" })
+                <button class="btn btn-primary" style="margin-top: 10px; margin-bottom: 10px;">
+                    Select This Employee
+                </button>
+            </div>
+        }
+    </div>*@
+
+
+    <div class="col-md-6">
+        @if (Model.Employee != null)
+        { <h3 style="margin-top: 0px">Employee Summary</h3>
+
+
+            <table class="table">
+                <tr>
+                    <th scope="row">First Name:</th>
+                    <td>@Model.Employee.FirstName</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Last Name:</th>
+                    <td>@Model.Employee.LastName</td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row">Hire Date:</th>
+                    <td>@Model.Employee.HireDate.ToLongDateString()</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Total Hours:</th>
+                    <td>@Model.Employee.HoursSum</td>
+
+                </tr>
+            </table>
+        }
+    </div>
+
+
+    <div>
+        @if (Model.TimesheetList != null)
+        {
+            <table class="table" style="margin-top: 30px">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hours Worked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var timeEntry in Model.TimesheetList)
+                    {
+                        <tr>
+                            <td>@timeEntry.Date.ToShortDateString()</td>
+                            <td>@timeEntry.Hours</td>
+                            <td>
+                                @using(Html.BeginForm("DeleteTimesheet","Timesheet"))
+                                {
+                                    @Html.Hidden("timeId", timeEntry.TimeId);
+                                    @Html.Hidden("empId",Model.Employee.EmpId);
+                                    <button class="btn btn-danger">Delete</button>
+                                }
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        }
+    </div>
+</div>
