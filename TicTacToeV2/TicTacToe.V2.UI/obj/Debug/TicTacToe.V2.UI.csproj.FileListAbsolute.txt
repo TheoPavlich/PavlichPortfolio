@@ -1,0 +1,18 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe.config
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.V2.UI.exe.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.V2.UI\obj\Debug\TicTacToe.V2.UI.pdb

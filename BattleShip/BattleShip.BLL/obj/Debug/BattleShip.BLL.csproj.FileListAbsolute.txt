@@ -1,0 +1,10 @@
+C:\Users\Apprentice\Documents\Github\DennisDrellishakJr\BattleShip\BattleShip.BLL\bin\Debug\BattleShip.BLL.dll
+C:\Users\Apprentice\Documents\Github\DennisDrellishakJr\BattleShip\BattleShip.BLL\bin\Debug\BattleShip.BLL.pdb
+C:\Users\Apprentice\Documents\Github\DennisDrellishakJr\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\DennisDrellishakJr\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.dll
+C:\Users\Apprentice\Documents\Github\DennisDrellishakJr\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\BattleShip\BattleShip.BLL\bin\Debug\BattleShip.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\BattleShip\BattleShip.BLL\bin\Debug\BattleShip.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\BattleShip\BattleShip.BLL\obj\Debug\BattleShip.BLL.pdb

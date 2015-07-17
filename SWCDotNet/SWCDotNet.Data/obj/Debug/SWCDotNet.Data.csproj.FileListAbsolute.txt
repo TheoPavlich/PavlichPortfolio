@@ -1,0 +1,7 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\bin\Debug\SWCDotNet.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\bin\Debug\SWCDotNet.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\bin\Debug\SWCDotNet.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\bin\Debug\SWCDotNet.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\obj\Debug\SWCDotNet.Data.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\obj\Debug\SWCDotNet.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Data\obj\Debug\SWCDotNet.Data.pdb

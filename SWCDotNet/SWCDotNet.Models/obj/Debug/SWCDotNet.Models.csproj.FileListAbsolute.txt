@@ -1,0 +1,5 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Models\bin\Debug\SWCDotNet.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Models\bin\Debug\SWCDotNet.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Models\obj\Debug\SWCDotNet.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Models\obj\Debug\SWCDotNet.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SWCDotNet\SWCDotNet.Models\obj\Debug\SWCDotNet.Models.csprojResolveAssemblyReference.cache

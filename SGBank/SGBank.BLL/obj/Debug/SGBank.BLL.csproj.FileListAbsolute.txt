@@ -1,0 +1,11 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.BLL.dll.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.BLL.dll.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\bin\Debug\SGBank.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\obj\Debug\SGBank.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\obj\Debug\SGBank.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.BLL\obj\Debug\SGBank.BLL.pdb

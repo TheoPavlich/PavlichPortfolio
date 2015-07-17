@@ -1,0 +1,9 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\bin\Debug\RollTheDice.exe.config
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\bin\Debug\RollTheDice.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\bin\Debug\RollTheDice.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\obj\Debug\RollTheDice.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\obj\Debug\RollTheDice.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\RollTheDice\RollTheDice\obj\Debug\RollTheDice.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\RollTheDice\RollTheDice\bin\Debug\RollTheDice.exe.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\RollTheDice\RollTheDice\obj\Debug\RollTheDice.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\RollTheDice\RollTheDice\obj\Debug\RollTheDice.pdb

@@ -1,0 +1,4 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\FlooringTests\bin\Debug\FlooringTests.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\FlooringTests\bin\Debug\FlooringTests.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\FlooringTests\obj\Debug\FlooringTests.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\FlooringTests\obj\Debug\FlooringTests.pdb

@@ -1,0 +1,12 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.dll.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\bin\Debug\TicTacToe.BLL.dll.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.BLL\obj\Debug\TicTacToe.BLL.pdb

@@ -1,0 +1,19 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\bin\Debug\Minesweeper.UI.exe.config
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\bin\Debug\Minesweeper.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\bin\Debug\Minesweeper.UI.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\bin\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\bin\Debug\Minesweeper.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\obj\Debug\Minesweeper.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\obj\Debug\Minesweeper.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.UI\obj\Debug\Minesweeper.UI.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.UI.exe.config
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\obj\Debug\Minesweeper.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.UI.exe
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.UI.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\obj\Debug\Minesweeper.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.UI\obj\Debug\Minesweeper.UI.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\Minesweeper2\Minesweeper.UI\bin\Debug\Minesweeper.UI.exe.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\Minesweeper2\Minesweeper.UI\obj\Debug\Minesweeper.UI.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\Minesweeper2\Minesweeper.UI\obj\Debug\Minesweeper.UI.pdb

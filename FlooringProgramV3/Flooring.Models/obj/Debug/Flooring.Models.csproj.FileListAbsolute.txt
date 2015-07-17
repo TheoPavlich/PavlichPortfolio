@@ -1,0 +1,10 @@
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Models\bin\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Models\bin\Debug\Flooring.Models.pdb
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Models\obj\Debug\Flooring.Models.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Models\obj\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Models\obj\Debug\Flooring.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Models\bin\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Models\bin\Debug\Flooring.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Models\obj\Debug\Flooring.Models.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Models\obj\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Models\obj\Debug\Flooring.Models.pdb

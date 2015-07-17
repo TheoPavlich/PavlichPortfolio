@@ -1,0 +1,20 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\nunit.framework.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\bin\Debug\nunit.framework.xml
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.dll.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.Test.dll.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\nunit.framework.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\TicTacToe.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\bin\Debug\nunit.framework.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\TicTacToeV2\TicTacToe.Test\obj\Debug\TicTacToe.Test.pdb

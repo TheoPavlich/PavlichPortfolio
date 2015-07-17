@@ -1,0 +1,9 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\bin\Debug\SGCorp.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\obj\Debug\SGCorp.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\obj\Debug\SGCorp.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.BLL\obj\Debug\SGCorp.BLL.pdb

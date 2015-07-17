@@ -1,0 +1,14 @@
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\bin\Debug\Flooring.Data.dll
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\bin\Debug\Flooring.Data.pdb
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\bin\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\bin\Debug\Flooring.Models.pdb
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\obj\Debug\Flooring.Data.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\obj\Debug\Flooring.Data.dll
+C:\Users\Apprentice\Documents\Github\JeffResnick\FlooringProgramV2\Flooring.Data\obj\Debug\Flooring.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\bin\Debug\Flooring.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\bin\Debug\Flooring.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\bin\Debug\Flooring.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\bin\Debug\Flooring.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\obj\Debug\Flooring.Data.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\obj\Debug\Flooring.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\FlooringProgramV3\Flooring.Data\obj\Debug\Flooring.Data.pdb

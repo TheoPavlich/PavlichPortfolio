@@ -1,0 +1,10 @@
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.BLL\bin\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.BLL\bin\Debug\Minesweeper.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.BLL\bin\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.BLL\bin\Debug\Minesweeper.BLL.pdb
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.dll
+C:\Users\Apprentice\Documents\Pre-Github Projects\Minesweeper2\Minesweeper.BLL\obj\Debug\Minesweeper.BLL.pdb

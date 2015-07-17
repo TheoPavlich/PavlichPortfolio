@@ -1,0 +1,9 @@
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Data.dll.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Data.dll.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\bin\Debug\SGBank.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\obj\Debug\SGBank.Data.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\obj\Debug\SGBank.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.Data\obj\Debug\SGBank.Data.pdb

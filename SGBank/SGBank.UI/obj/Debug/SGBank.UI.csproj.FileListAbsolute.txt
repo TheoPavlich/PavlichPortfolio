@@ -1,0 +1,16 @@
+C:\Users\Apprentice\Documents\Github\June2015-DotNetAkron-Materials\Samples\SGBank\SGBank.UI\bin\Debug\SGBank.UI.exe.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\DataFiles\Bank.txt
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.UI.exe.config
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.UI.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.UI.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.UI.exe.CodeAnalysisLog.xml
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.UI.exe.lastcodeanalysissucceeded
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.BLL.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.Data.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.Models.dll
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.BLL.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.Data.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\bin\Debug\SGBank.Models.pdb
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\obj\Debug\SGBank.UI.csprojResolveAssemblyReference.cache
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\obj\Debug\SGBank.UI.exe
+C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGBank\SGBank.UI\obj\Debug\SGBank.UI.pdb
