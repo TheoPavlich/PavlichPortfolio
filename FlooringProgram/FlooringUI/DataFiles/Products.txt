@@ -1,6 +1,0 @@
-﻿ProductType,CostPerSqFt,LaborPerSqFt
-MARBLE,1.25,3
-WOOD,1,3
-LINOLIUM,.25,2
-TILE,.75,2.75
-CARPET,.75,2
