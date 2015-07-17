@@ -1,46 +1,28 @@
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\SGCorp.UI.dll.config
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\SGCorp.UI.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\SGCorp.UI.pdb
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Helpers.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Mvc.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Razor.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.Deployment.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.Razor.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Razor.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.Deployment.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Webpages.Razor.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Helpers.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\bin\System.Web.Mvc.xml
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\obj\Debug\SGCorp.UI.csprojResolveAssemblyReference.cache
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\obj\Debug\SGCorp.UI.dll
-C:\Users\Apprentice\Documents\Github\RyanLee\Master Projects\SGCorp - Copy\SGCorp.UI\obj\Debug\SGCorp.UI.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.dll.config
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.SqlServer.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.BLL.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Data.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Models.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Helpers.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Mvc.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Razor.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Deployment.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Razor.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.BLL.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Data.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Models.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.SqlServer.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Mvc.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Razor.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Deployment.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Razor.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Helpers.xml
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.csprojResolveAssemblyReference.cache
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.dll.config
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.UI.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.SqlServer.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.BLL.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Data.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Models.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Helpers.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Mvc.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Razor.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Deployment.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Razor.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.BLL.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Data.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\SGCorp.Models.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\EntityFramework.SqlServer.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Mvc.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Razor.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Deployment.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Webpages.Razor.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\bin\System.Web.Helpers.xml
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.csprojResolveAssemblyReference.cache
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.UI\obj\Debug\SGCorp.UI.pdb

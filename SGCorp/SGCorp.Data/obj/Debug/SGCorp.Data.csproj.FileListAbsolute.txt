@@ -1,7 +1,7 @@
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Data.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Data.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Models.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Models.pdb
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.csprojResolveAssemblyReference.cache
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.dll
-C:\Users\Apprentice\Documents\Github\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Data.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Data.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Models.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\bin\Debug\SGCorp.Models.pdb
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.csprojResolveAssemblyReference.cache
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.dll
+C:\GitHub\TheodorePavlich\SGCorp\SGCorp.Data\obj\Debug\SGCorp.Data.pdb
